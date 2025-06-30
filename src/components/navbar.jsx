@@ -1,8 +1,11 @@
-import { navbarItems } from "@/app/system";
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import ThemeSwitch from "./theme-switch";
+import { navbarItems } from "@/app/system";
+import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Logo = () => (
     <Link href="/" className="flex items-center z-50">
@@ -29,9 +32,34 @@ const LinkItem = ({ href, children }) => (
 )
 
 export const Navbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const path = usePathname()
+
+    const whitePaths = ["/", "/post"];
+
+    const isActive = (href) => {
+        return href === "/" ? path === "/" : path.startsWith(href)
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            setIsScrolled(scrollPosition > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
         <>
-            <div className="navbar sticky top-2 h-14 min-h-14 bg-lightColor dark:bg-darkColor w-auto mx-2 py-2 rounded-main">
+            <div className="md:fixed top-0 left-0 right-0 h-20 z-40 pointer-events-none linear-blur-to-b" />
+            <div className={`navbar z-50 sticky top-2 h-14 min-h-14  w-auto mx-2 py-2 rounded-main
+                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 backdrop-blur-sm" : "bg-lightColor dark:bg-darkColor"}
+                `}>
                 <div className="navbar-start">
                     <Logo />
                 </div>
@@ -64,10 +92,9 @@ export const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-2">
-                    <ThemeSwitch 
-                    className={""}
-                    />
-                    <Button>
+                    <ThemeSwitch />
+                    <Button
+                        variant={"glassColor"}>
                         Contact
                     </Button>
                 </div>

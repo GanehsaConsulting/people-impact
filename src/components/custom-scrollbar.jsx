@@ -142,8 +142,8 @@ export function CustomScrollbar() {
     }
   }
 
-  // Don't render if document is not available (SSR) or document height is same as viewport
-  if (typeof window === "undefined" || typeof document === "undefined" || document.documentElement.scrollHeight <= window.innerHeight) {
+  // Don't render if document height is same as viewport
+  if (document.documentElement.scrollHeight <= window.innerHeight) {
     return null
   }
 

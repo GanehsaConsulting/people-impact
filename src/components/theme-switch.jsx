@@ -26,12 +26,12 @@ export default function ThemeSwitch({ className }) {
         />
 
         {/* Sun icon (for light mode) */}
-        <div className='swap-off rounded-full p-2 bg-main-1/10'>
+        <div className='swap-off rounded-full p-2 bg-main-1/20 hover:bg-main-1 dark:hover:bg-main-2'>
           <HiSun className={`${className} text-xl`} />
         </div>
 
         {/* Moon icon (for dark mode) */}
-        <div className='swap-on rounded-full p-2 bg-main-1/10'>
+        <div className='swap-on rounded-full p-2 bg-main-1/20 hover:bg-main-1 dark:hover:bg-main-2'>
           <HiMoon className={`${className} text-xl`} />
         </div>
       </label>

@@ -21,6 +21,8 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         glass:
           "bg-lightColor/20 dark:bg-darkColor/40 text-white dark:text-white hover:bg-lightColor dark:hover:bg-darkColor backdrop-blur-min",
+        glassColor:
+          "bg-main-1/20 text-secondaryDarkColor dark:text-white hover:bg-main-1 dark:hover:bg-main-2",
         link:
           "text-primary underline-offset-4 hover:underline",
       },
