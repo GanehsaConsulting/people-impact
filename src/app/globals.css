@@ -4,6 +4,70 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  /* Primer Colors */
+  --color-main-1: #8dbb3f;
+  --color-main-2: #35612f;
+  --color-main-3: #119bd3;
+  --color-main-4: #1c305d;
+  --color-main-5: #033700;
+
+  /* Secondary Colors */
+  --color-sec-1: #a8d08d;
+  --color-sec-2: #607d53;
+  --color-sec-3: #6db4a1;
+  --color-sec-4: #7ecff4;
+  --color-sec-5: #496d93;
+
+  /* Color */
+  --color-mainColorLight: #27548a;
+  --color-mainColorDark: #027de2;
+  --color-secondaryColorLight: #dda853;
+  --color-secondaryColorDark: #eace6c;
+  --color-baseColorLight: #e8f1fc;
+  --color-baseColorDark: #0b1522;
+  --color-darkColor: #252525;
+  --color-secondaryDark: #333333;
+  --color-lightColor: #f1f1f1;
+  --color-secondaryLight: #e3e3e3;
+  --color-secondaryGray: #f3f4f5;
+
+  /* Border Radius */
+  --radius-main: 20px;
+  --radius-secondary: 15px;
+  --radius-third: 10px;
+  --radius-btnMain: 10px;
+  --radius-btnSecondary: 7px;
+
+  /* Blur */
+  --backdrop-blur-min: 2px;
+
+  /* BoxShadow */
+  --shadow-custom: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  --shadow-mainShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --shadow-secondaryShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-white: rgba(255, 255, 255, 0.662) 0px 4px 16px,
+    rgba(255, 255, 255, 0.616) 0px 8px 32px;
+  --shadow-black: rgba(0, 0, 0, 0.258) 0px 4px 16px,
+    rgba(0, 0, 0, 0.268) 0px 8px 32px;
+}
+
+:root {
+  background: #00000000;
+}
+
+.bg-root {
+  @apply bg-white dark:bg-black;
+}
+body {
+  @apply bg-white dark:bg-black text-neutral-900 dark:text-neutral-100;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat) !important;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -120,4 +184,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Hide default scrollbar completely */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

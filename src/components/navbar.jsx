@@ -1,0 +1,77 @@
+import { navbarItems } from "@/app/system";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import ThemeSwitch from "./theme-switch";
+
+const Logo = () => (
+    <Link href="/" className="flex items-center z-50">
+        <Image
+            width={60}
+            height={60}
+            src="/icon.png"
+            alt="Ganapatih Logo"
+            className="dark:brightness-125 -ml-2"
+        />
+        <h1 className="font-[850] font-montserrat tracking-widest uppercase text-[20px] -ml-1 bg-gradient-to-br from-main-1 dark:from-white from-10% dark:from-5% via-baseColorDark dark:via-baseColorLight via-40% dark:via-60% to-main-3 dark:to-main-1 to-99% bg-clip-text text-transparent">
+            People Impact
+        </h1>
+    </Link>
+)
+
+const LinkItem = ({ href, children }) => (
+    <Link
+        href={href}
+        className="px-3 py-1 rounded-main hover:bg-darkColor hover:text-white dark:hover:text-white transition-colors duration-200 text-sm font-[500] text-secondaryDark dark:text-secondaryLight"
+    >
+        {children}
+    </Link>
+)
+
+export const Navbar = () => {
+    return (
+        <>
+            <div className="navbar sticky top-2 h-14 min-h-14 bg-lightColor dark:bg-darkColor w-auto mx-2 py-2 rounded-main">
+                <div className="navbar-start">
+                    <Logo />
+                </div>
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="flex items-center gap-1 text-sm">
+                        <li>
+                            <LinkItem href="">
+                                Home
+                            </LinkItem>
+                        </li>
+                        <li>
+                            <LinkItem href="">
+                                About Us
+                            </LinkItem>
+                        </li>
+                        <li>
+                            <LinkItem href="">
+                                Our Services
+                            </LinkItem>
+                        </li>
+                        {navbarItems.map((el, idx) => (
+                            <LinkItem
+                                key={idx}
+                                href={el.href}
+                            >
+                                {el.label}
+                            </LinkItem>
+                        ))}
+
+                    </ul>
+                </div>
+                <div className="navbar-end space-x-2">
+                    <ThemeSwitch 
+                    className={""}
+                    />
+                    <Button>
+                        Contact
+                    </Button>
+                </div>
+            </div>
+        </>
+    );
+}
