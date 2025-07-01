@@ -115,7 +115,7 @@ export const Reviews = () => {
     return (
         <main className="spacing space-y-5">
             <div className="margin flex justify-between items-center">
-                <h1 className="text-4xl tracking-tight ">
+                <h1 className="text-4xl tracking-tight">
                     What Our Clients Say
                 </h1>
                 <div className="flex items-center gap-2">
