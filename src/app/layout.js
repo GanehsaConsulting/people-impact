@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { CustomScrollbar } from "@/components/custom-scrollbar";
 import { ThemeProvider } from "next-themes";
+import { Footer } from "@/components/footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat", // hanya untuk class tertentu
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider enableSystem attribute={'class'}>
           <Navbar />
           {children}
+          <Footer/>
           <CustomScrollbar /> 
         </ThemeProvider>
       </body>
