@@ -23,7 +23,7 @@ export const WhyUs = () => {
     ];
 
     return (
-        <main className="mx-2 my-15">
+        <main className="margin spacing">
             <section>
                 <div className="grid grid-cols-5 gap-2">
                     <div className="relative bg-lightColor rounded-main p-4 dark:bg-darkColor text-secondaryDark dark:text-secondaryLight flex flex-col justify-end">

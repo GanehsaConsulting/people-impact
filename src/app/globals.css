@@ -240,3 +240,11 @@ body {
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+.margin {
+  @apply md:px-15 px-4
+}
+
+.spacing {
+  @apply md:py-15 py-7
+}

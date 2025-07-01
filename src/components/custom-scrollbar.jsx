@@ -8,6 +8,7 @@ export function CustomScrollbar() {
   const [isHovering, setIsHovering] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ y: 0, scrollTop: 0 })
+  const [hasMounted, setHasMounted] = useState(false)
   
   const trackRef = useRef(null)
   const thumbRef = useRef(null)
@@ -15,12 +16,15 @@ export function CustomScrollbar() {
 
   // Calculate scrollbar dimensions
   const getScrollbarDimensions = () => {
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      return { trackHeight: 0, thumbHeight: 0, maxThumbPosition: 0 }
+    }
     const viewportHeight = window.innerHeight
     const documentHeight = document.documentElement.scrollHeight
     const trackHeight = viewportHeight - 32 // minus padding
     const thumbHeight = Math.max(20, (viewportHeight / documentHeight) * trackHeight)
     const maxThumbPosition = trackHeight - thumbHeight
-    
+
     return { trackHeight, thumbHeight, maxThumbPosition }
   }
 
@@ -141,10 +145,20 @@ export function CustomScrollbar() {
       }, 300)
     }
   }
+  // Only render after mount to avoid hydration mismatch
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
-  // Don't render if document height is same as viewport
-  if (document.documentElement.scrollHeight <= window.innerHeight) {
+  if (!hasMounted) {
     return null
+  }
+
+  // Don't render if document height is same as viewport (client-side only)
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
+    if (document.documentElement.scrollHeight <= window.innerHeight) {
+      return null
+    }
   }
 
   const { thumbHeight, maxThumbPosition } = getScrollbarDimensions()
@@ -198,4 +212,4 @@ export function CustomScrollbar() {
       </div>
     </div>
   )
-}
+} 

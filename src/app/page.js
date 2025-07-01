@@ -1,5 +1,6 @@
 import { Banner } from "@/components/banner";
 import { BannerTwo } from "@/components/banner-2";
+import { Reviews } from "@/components/reviews";
 import { WhyUs } from "@/components/why-us";
 
 export default function Home() {
@@ -7,7 +8,8 @@ export default function Home() {
     <>
       {/* <Banner /> */}
       <BannerTwo />
-      <WhyUs/>
+      <WhyUs />
+      <Reviews />
     </>
   );
 }
