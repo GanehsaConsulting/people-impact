@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FaStar } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 import { Button } from './ui/button';
+import { Title } from './ui/title';
 
 const clientReviews = [
     {
@@ -115,10 +116,10 @@ export const Reviews = () => {
     return (
         <main className="spacing space-y-5">
             <div className="margin flex justify-between items-center">
-                <h1 className="text-4xl tracking-tight">
+                <Title>
                     What Our Clients Say
-                </h1>
-                <div className="flex items-center gap-2">
+                </Title>
+                <div className="hidden md:flex items-center gap-2">
                     <Button
                         size={"icon"}
                         variant={"glassColor"}

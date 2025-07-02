@@ -17,9 +17,9 @@ export const AllServicesPage = () => {
     // Filter services based on search
     const filteredServices = servicesArray.filter(service => {
         const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            service.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            service.description.toLowerCase().includes(searchTerm.toLowerCase());
-        
+            service.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            service.description.toLowerCase().includes(searchTerm.toLowerCase());
+
         return matchesSearch;
     });
 
@@ -34,7 +34,7 @@ export const AllServicesPage = () => {
                 {/* Search Section */}
                 <section className="mb-6">
                     <div >
-                        <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+                        <div className="flex flex-col lg:flex-row gap-6 md:items-center justify-between">
                             {/* Search */}
                             <div className="relative flex-1 max-w-xl">
                                 <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-darkColor/40 dark:text-lightColor/40" />
@@ -66,10 +66,10 @@ export const AllServicesPage = () => {
                                         src={service.heroImage}
                                         alt={service.title}
                                     />
-                                    
+
                                     {/* Gradient Overlay */}
                                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-main-2 to-transparent w-full h-80"></div>
-                                    
+
                                     {/* Content */}
                                     <div className="min-h-50 flex justify-between flex-col absolute bottom-0 left-0 right-0 p-6 rounded-b-main text-white drop-shadow">
                                         <h3 className="text-xl font-semibold leading-tight mb-3 line-clamp-2">
@@ -78,7 +78,7 @@ export const AllServicesPage = () => {
                                         <p className="leading-5 text-sm opacity-90 line-clamp-3 mb-4">
                                             {service.description}
                                         </p>
-                                        
+
                                         {/* Services count indicator */}
                                         <div className="flex items-center justify-between text-xs opacity-80">
                                             <span>{service.services.length} Services</span>
@@ -118,10 +118,10 @@ export const AllServicesPage = () => {
                         Need a Custom Solution?
                     </h2>
                     <p className="text-lg text-darkColor/80 dark:text-lightColor/80 max-w-3xl mx-auto mb-8 leading-relaxed">
-                        Can't find exactly what you're looking for? We offer custom HR solutions 
+                        Can't find exactly what you're looking for? We offer custom HR solutions
                         tailored to your unique business needs and challenges.
                     </p>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
@@ -130,7 +130,7 @@ export const AllServicesPage = () => {
                             <span>Discuss Your Needs</span>
                             <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                         </Link>
-                        
+
                         <Link
                             href="/services/custom-services"
                             className="inline-flex items-center justify-center gap-3 bg-white dark:bg-secondaryDark border border-main-1 text-main-1 hover:bg-main-1 hover:text-white dark:hover:bg-main-1 font-semibold px-8 py-4 rounded-secondary transition-colors duration-200"

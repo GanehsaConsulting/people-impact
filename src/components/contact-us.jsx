@@ -95,13 +95,13 @@ export const ContactUs = () => {
 
     return (
         <section className="margin spacing">
-            <div className="max-w-7xl mx-auto">
+            <div className="">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-darkColor dark:text-lightColor mb-6">
+                    <h1 className="text-2xl md:text-5xl font-bold text-darkColor dark:text-lightColor mb-6">
                         Get in touch with <span className="text-main-1">us!</span>
                     </h1>
-                    <p className="text-lg text-darkColor/80 dark:text-lightColor/80 max-w-3xl mx-auto leading-relaxed">
+                    <p className="md:text-lg text-darkColor/80 dark:text-lightColor/80 max-w-3xl mx-auto leading-relaxed">
                         At People Impact, we are here to assist you with all your HR consulting needs. Whether you have
                         questions about our services, want to discuss a potential project, or need further information,
                         feel free to reach out to us.
@@ -109,7 +109,7 @@ export const ContactUs = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Left Column - Contact Info */}
                     <div className="space-y-8">
                         {/* Hero Image */}
@@ -122,7 +122,7 @@ export const ContactUs = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-main-2/60 to-transparent"></div>
 
                             {/* Floating elements */}
-                            <div className="absolute top-6 left-6 bg-white dark:bg-secondaryDark rounded-secondary p-3 shadow-secondaryShadow">
+                            <div className="absolute top-3 md:p-6 left-6 bg-white dark:bg-secondaryDark rounded-secondary p-3 shadow-secondaryShadow">
                                 <FaBuilding className="w-6 h-6 text-main-1" />
                             </div>
                             <div className="absolute bottom-6 right-6 bg-white dark:bg-secondaryDark rounded-secondary p-3 shadow-secondaryShadow">
@@ -131,7 +131,7 @@ export const ContactUs = () => {
                         </div>
 
                         {/* Contact Information */}
-                        <div className="bg-white dark:bg-secondaryDark rounded-main p-8 border border-secondaryLight dark:border-secondaryDark" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
+                        <div className="bg-white dark:bg-secondaryDark rounded-main md:p-3 md:p-6 p-4 border border-secondaryLight dark:border-secondaryDark" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
                             <h2 className="text-2xl font-bold text-darkColor dark:text-lightColor mb-6">
                                 Contact Information
                             </h2>
@@ -145,7 +145,7 @@ export const ContactUs = () => {
                                                 href={item.href}
                                                 target={item.label === "Address" ? "_blank" : undefined}
                                                 rel={item.label === "Address" ? "noopener noreferrer" : undefined}
-                                                className="flex items-start gap-4 p-4 rounded-secondary hover:bg-secondaryGray dark:hover:bg-darkColor transition-colors duration-200"
+                                                className="flex items-start gap-4 md:p-4 rounded-secondary hover:bg-secondaryGray dark:hover:bg-darkColor transition-colors duration-200"
                                             >
                                                 <div className={`w-12 h-12 rounded-secondary bg-main-1/10 dark:bg-main-1/20 flex items-center justify-center flex-shrink-0`}>
                                                     <IconComponent className={`w-6 h-6 ${item.color}`} />
@@ -158,7 +158,7 @@ export const ContactUs = () => {
                                                         {item.value}
                                                     </p>
                                                 </div>
-                                                <FiArrowRight className="w-5 h-5 text-darkColor/40 dark:text-lightColor/40 group-hover:text-main-1 group-hover:translate-x-1 transition-all duration-200" />
+                                                <FiArrowRight className="w-3 md:w-5 h-3 md:h-5 text-darkColor/40 dark:text-lightColor/40 group-hover:text-main-1 group-hover:translate-x-1 transition-all duration-200" />
                                             </a>
                                         </div>
                                     );
@@ -167,7 +167,7 @@ export const ContactUs = () => {
                         </div>
 
                         {/* Business Hours */}
-                        <div className="bg-main-1/5 dark:bg-main-1/10 rounded-secondary p-6 border border-main-1/30">
+                        <div className="bg-main-1/5 dark:bg-main-1/10 rounded-secondary p-3 md:p-6 border border-main-1/30">
                             <div className="flex items-center gap-3 mb-4">
                                 <FiClock className="w-6 h-6 text-main-1" />
                                 <h3 className="font-semibold text-darkColor dark:text-lightColor">Business Hours</h3>
@@ -190,7 +190,7 @@ export const ContactUs = () => {
                     </div>
 
                     {/* Right Column - Contact Form */}
-                    <div className="bg-white dark:bg-secondaryDark rounded-main p-8 border border-secondaryLight dark:border-secondaryDark" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
+                    <div className="bg-white dark:bg-secondaryDark rounded-main p-4 md:p-8 border border-secondaryLight dark:border-secondaryDark" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
                         <div className="mb-8">
                             <h2 className="text-2xl font-bold text-darkColor dark:text-lightColor mb-3">
                                 Send us a message!

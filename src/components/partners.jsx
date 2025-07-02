@@ -4,6 +4,7 @@ import { IoLogoTableau } from "react-icons/io5";
 import { PiCodaLogoFill } from "react-icons/pi";
 import { BiLogoPatreon } from "react-icons/bi";
 import { BiLogoOpera } from "react-icons/bi";
+import { Title } from "./ui/title";
 
 const partners = [
     { name: "Star Inc", logo: <FaStarOfLife /> },
@@ -19,9 +20,9 @@ export const Partners = () => {
         <>
             <section className="margin spacing space-y-5">
                 <div className="">
-                    <h1 className="text-4xl tracking-tight">
+                    <Title>
                         Our Trusted Partner
-                    </h1>
+                    </Title>
                 </div>
                 <div className="w-full md:h-full h-fit dark:bg-darkColor bg-lightColor py-6 md:py-16 space-y-10 rounded-xl">
                     <div className="flex flex-wrap md:flex-nowrap p-3 md:p-0 items-center justify-evenly gap-10 h-fit">
