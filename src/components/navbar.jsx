@@ -98,7 +98,7 @@ export const Navbar = ({ children }) => {
                 </>
             )}
             <div className={`navbar z-50 sticky top-2 h-14 min-h-14 w-auto mx-2 py-2 rounded-main
-                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom backdrop-blur-sm" : "bg-lightColor dark:bg-darkColor"}
+                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom" : "bg-lightColor dark:bg-darkColor"}
                 `}
             >
                 <div className="navbar-start">

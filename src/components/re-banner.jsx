@@ -21,7 +21,7 @@ export const ReBanner = ({
                 {title}
             </h1>
             {subtitle && (
-                <p className="text-lg md:text-xl font-light drop-shadow-lg opacity-90">
+                <p className="text-sm md:text-lg font-light drop-shadow-lg opacity-90 max-w-2xl">
                     {subtitle}
                 </p>
             )}
@@ -40,7 +40,7 @@ export const ReBanner = ({
                     alt={imageAlt}
                     priority={priority}
                 />
-                <div className="absolute bottom-0 right-0 left-0 rounded-b-main w-full h-[50%] bg-gradient-to-t from-main-5/80 via-main-2/40 to-transparent" />
+                <div className="absolute bottom-0 right-0 left-0 rounded-b-main w-full h-[70%] bg-gradient-to-t from-main-5/80 via-main-2/40 to-transparent" />
                 <div className="absolute bottom-2 left-2">
                     {renderContent ? renderContent({ title, subtitle }) : defaultContent}
                 </div>
