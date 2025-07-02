@@ -1,7 +1,7 @@
 import { JobBoard } from "@/components/job-board";
 import { ReBanner } from "@/components/re-banner";
 
-export default function ResourcesPage() {
+export default function JobBoardPage() {
     return (
         <>
             <ReBanner

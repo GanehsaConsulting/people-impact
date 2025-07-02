@@ -132,11 +132,11 @@ export const Navbar = ({ children }) => {
                                 </MegaMenuNavbar>
                             </div>
                         </li>
-                        <li className="z-50">
+                        {/* <li className="z-50">
                             <LinkItem href="/blog" isActive={isActive("/blog")}>
                                 Resources
                             </LinkItem>
-                        </li>
+                        </li> */}
                         <li className="z-50">
                             <LinkItem href="/job-board" isActive={isActive("/job-board")}>
                                 Job Board
