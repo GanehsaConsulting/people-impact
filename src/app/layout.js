@@ -34,10 +34,11 @@ export default function RootLayout({ children }) {
         className={`${nunito.className} ${montserrat.variable}  antialiased`}
       >
         <ThemeProvider enableSystem attribute={'class'}>
-          <Navbar />
-          {children}
-          <Footer/>
-          <CustomScrollbar /> 
+          <Navbar>
+            {children}
+          </Navbar>
+          <Footer />
+          <CustomScrollbar />
         </ThemeProvider>
       </body>
     </html>
