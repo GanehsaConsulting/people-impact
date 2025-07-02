@@ -6,6 +6,7 @@ export const ReBanner = ({
     subtitle,
     imageAlt = "",
     className = "",
+    imageClassName = "",
     titleClassName = "",
     contentClassName = "",
     imageWidth = 1920,
@@ -34,7 +35,7 @@ export const ReBanner = ({
                 <Image
                     width={imageWidth}
                     height={imageHeight}
-                    className="w-full max-h-[50vh] object-cover rounded-main"
+                    className={`${imageClassName} w-full max-h-[50vh] object-cover rounded-main`}
                     src={imageSrc}
                     alt={imageAlt}
                     priority={priority}

@@ -24,13 +24,40 @@ const Logo = () => (
     </Link>
 )
 
-const LinkItem = ({ href, children }) => (
+const LinkItem = ({ href, children, isActive }) => (
     <Link
         href={href}
-        className="!z-999 px-3 py-1 rounded-main hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white transition-colors duration-200 text-sm font-[500] text-secondaryDark dark:text-secondaryLight"
+        className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-sm font-[500] relative
+            ${isActive 
+                ? "bg-sec-2/20 dark:bg-main-1/20 dark:text-white" 
+                : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
+            }
+        `}
     >
         {children}
+        {/* Active indicator dot */}
+        {isActive && (
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-sec-2 dark:bg-main-1 rounded-full"></div>
+        )}
     </Link>
+)
+
+const ServiceLinkItem = ({ title, isActive, onClick }) => (
+    <button
+        onClick={onClick}
+        className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-sm font-[500] relative
+            ${isActive 
+                ? "bg-main-1 text-white dark:bg-main-1 dark:text-white" 
+                : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
+            }
+        `}
+    >
+        {title}
+        {/* Active indicator dot */}
+        {isActive && (
+            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white dark:bg-darkColor rounded-full"></div>
+        )}
+    </button>
 )
 
 export const Navbar = ({ children }) => {
@@ -45,6 +72,11 @@ export const Navbar = ({ children }) => {
         return href === "/" ? path === "/" : path.startsWith(href)
     };
 
+    // Check if current path is a service page
+    const isServiceActive = () => {
+        return path.startsWith("/services") || path.includes("service");
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
@@ -57,6 +89,7 @@ export const Navbar = ({ children }) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
     return (
         <>
             {isScrolled && (
@@ -64,8 +97,8 @@ export const Navbar = ({ children }) => {
                     <div className="md:fixed top-0 left-0 right-0 h-35 z-40 pointer-events-none linear-blur-to-b" />
                 </>
             )}
-            <div className={`navbar z-50 sticky top-2 h-14 min-h-14  w-auto mx-2 py-2 rounded-main
-                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom" : "bg-lightColor dark:bg-darkColor"}
+            <div className={`navbar z-50 sticky top-2 h-14 min-h-14 w-auto mx-2 py-2 rounded-main
+                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom backdrop-blur-sm" : "bg-lightColor dark:bg-darkColor"}
                 `}
             >
                 <div className="navbar-start">
@@ -74,35 +107,38 @@ export const Navbar = ({ children }) => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex items-center gap-1 text-sm">
                         <li className="z-50">
-                            <LinkItem href="/">
+                            <LinkItem href="/" isActive={isActive("/")}>
                                 Home
                             </LinkItem>
                         </li>
                         <li className="z-50">
-                            <LinkItem href="/about-us">
+                            <LinkItem href="/about-us" isActive={isActive("/about-us")}>
                                 About Us
                             </LinkItem>
                         </li>
                         <li>
-                            <MegaMenuNavbar
-                                id="service"
-                                title="Services"
-                                expandedId={expandedId}
-                                setExpandedId={setExpandedId}
-                            >
-                                <ServiceMenu
-                                    onClose={() => setExpandedId(null)}
+                            <div className="relative">
+                                <MegaMenuNavbar
+                                    id="service"
+                                    title="Services"
                                     expandedId={expandedId}
-                                />
-                            </MegaMenuNavbar>
+                                    setExpandedId={setExpandedId}
+                                    className="absolute"
+                                >
+                                    <ServiceMenu
+                                        onClose={() => setExpandedId(null)}
+                                        expandedId={expandedId}
+                                    />
+                                </MegaMenuNavbar>
+                            </div>
                         </li>
                         <li className="z-50">
-                            <LinkItem href="/blog">
+                            <LinkItem href="/blog" isActive={isActive("/blog")}>
                                 Resources
                             </LinkItem>
                         </li>
                         <li className="z-50">
-                            <LinkItem href="/job-board">
+                            <LinkItem href="/job-board" isActive={isActive("/job-board")}>
                                 Job Board
                             </LinkItem>
                         </li>
@@ -110,12 +146,18 @@ export const Navbar = ({ children }) => {
                 </div>
                 <div className="navbar-end space-x-2 z-50">
                     <ThemeSwitch />
-                    <a href="/contact">
+                    <Link href="/contact">
                         <Button
-                            variant={"glassColor"}>
+                            variant={"glassColor"}
+                            className={`transition-all duration-200 ${
+                                isActive("/contact") 
+                                    ? "ring-2 ring-main-1 ring-offset-2 ring-offset-lightColor dark:ring-offset-darkColor" 
+                                    : ""
+                            }`}
+                        >
                             Contact
                         </Button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -128,7 +170,7 @@ export const Navbar = ({ children }) => {
             `} />
 
             {/* Main Content */}
-            <div className={expandedId === 'mobile-menu' ? 'pointer-events-none' : ''}>
+            <div className={`${expandedId ? 'pointer-events-none scale-105' : ''} duration-300 ease-in-out`}>
                 {children}
             </div>
         </>
