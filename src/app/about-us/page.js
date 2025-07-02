@@ -2,6 +2,7 @@ import { About } from "@/components/about-us";
 import { CoreValues } from "@/components/core-values";
 import { OurStory } from "@/components/our-story";
 import { ReBanner } from "@/components/re-banner";
+import { TeamSection } from "@/components/team-section";
 
 export default function AboutUs() {
     return (
@@ -13,7 +14,8 @@ export default function AboutUs() {
             />
             <About />
             <OurStory />
-            <CoreValues/>
+            <CoreValues />
+            <TeamSection />
         </>
     )
 }
