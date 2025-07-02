@@ -27,7 +27,7 @@ const Logo = () => (
 const LinkItem = ({ href, children }) => (
     <Link
         href={href}
-        className="!z-999 px-3 py-1 rounded-main hover:bg-darkColor hover:text-white dark:hover:text-white transition-colors duration-200 text-sm font-[500] text-secondaryDark dark:text-secondaryLight"
+        className="!z-999 px-3 py-1 rounded-main hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white transition-colors duration-200 text-sm font-[500] text-secondaryDark dark:text-secondaryLight"
     >
         {children}
     </Link>
@@ -74,12 +74,12 @@ export const Navbar = ({ children }) => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex items-center gap-1 text-sm">
                         <li className="z-50">
-                            <LinkItem href="">
+                            <LinkItem href="/">
                                 Home
                             </LinkItem>
                         </li>
                         <li className="z-50">
-                            <LinkItem href="">
+                            <LinkItem href="/about-us">
                                 About Us
                             </LinkItem>
                         </li>
@@ -97,12 +97,12 @@ export const Navbar = ({ children }) => {
                             </MegaMenuNavbar>
                         </li>
                         <li className="z-50">
-                            <LinkItem href="">
+                            <LinkItem href="/blog">
                                 Resources
                             </LinkItem>
                         </li>
                         <li className="z-50">
-                            <LinkItem href="">
+                            <LinkItem href="/job-board">
                                 Job Board
                             </LinkItem>
                         </li>
@@ -110,10 +110,12 @@ export const Navbar = ({ children }) => {
                 </div>
                 <div className="navbar-end space-x-2 z-50">
                     <ThemeSwitch />
-                    <Button
-                        variant={"glassColor"}>
-                        Contact
-                    </Button>
+                    <a href="/contact">
+                        <Button
+                            variant={"glassColor"}>
+                            Contact
+                        </Button>
+                    </a>
                 </div>
             </div>
 

@@ -93,6 +93,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                     <div className="mt-2 grid grid-cols-3 gap-2">
                         {hrServicesMenu.map((el, idx) => (
                             <a
+                                key={idx}
                                 href=""
                                 style={{ transitionDelay: `${idx * 10}ms` }}
                                 className={`${expandAnimationClass} flex gap-3 rounded-main p-4 bg-lightColor/30 dark:bg-darkColor/30 text-secondaryDark dark:text-secondaryLight hover:bg-main-2/10 hover:dark:bg-main-1/10 transition-all duration-300 ease-in-out transform hover:scale-[1.02] relative`}
