@@ -59,7 +59,7 @@ export const MegaMenuNavbar = ({
             <div className="z-[100] relative">
                 {title ? (
                     <div
-                        className="cursor-pointer gap-1 py-[6px] px-3 flex items-center"
+                        className={`${isExpanded ? 'bg-darkColor text-white dark:bg-lightColor dark:text-black' : ''}  cursor-pointer gap-1 flex items-center !z-999 px-3 py-1 rounded-main hover:bg-darkColor hover:text-white dark:hover:text-black transition-colors duration-200 text-sm font-[500] `}
                         onClick={handleToggleExpand}
                     >
                         {title}

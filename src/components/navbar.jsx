@@ -59,7 +59,11 @@ export const Navbar = ({ children }) => {
     }, []);
     return (
         <>
-            <div className="md:fixed top-0 left-0 right-0 h-35 z-40 pointer-events-none linear-blur-to-b" />
+            {isScrolled && (
+                <>
+                    <div className="md:fixed top-0 left-0 right-0 h-35 z-40 pointer-events-none linear-blur-to-b" />
+                </>
+            )}
             <div className={`navbar z-50 sticky top-2 h-14 min-h-14  w-auto mx-2 py-2 rounded-main
                 ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom" : "bg-lightColor dark:bg-darkColor"}
                 `}
