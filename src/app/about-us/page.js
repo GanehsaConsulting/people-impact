@@ -1,4 +1,5 @@
 import { About } from "@/components/about-us";
+import { CoreValues } from "@/components/core-values";
 import { OurStory } from "@/components/our-story";
 import { ReBanner } from "@/components/re-banner";
 
@@ -12,6 +13,7 @@ export default function AboutUs() {
             />
             <About />
             <OurStory />
+            <CoreValues/>
         </>
     )
 }

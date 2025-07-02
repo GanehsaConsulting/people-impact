@@ -78,14 +78,11 @@ export const OurStory = () => {
 
             {/* Mission Section - Card-based Layout */}
             <section className="space-y-12">
-                <div className=" space-y-6">
-                    <div className="">
-
-                        <Title>
-                            Our Mission
-                        </Title>
-                    </div>
-                    <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                <div className="space-y-3">
+                    <Title>
+                        Our Mission
+                    </Title>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                         Our mission is founded on the belief that organizations flourish when their people thrive. Through tailored consulting strategies, we are dedicated to creating lasting impact.
                     </p>
                 </div>

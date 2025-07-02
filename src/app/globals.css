@@ -248,3 +248,16 @@ body {
 .spacing {
   @apply md:py-15 py-7
 }
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
