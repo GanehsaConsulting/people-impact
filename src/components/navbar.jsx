@@ -116,7 +116,7 @@ export const Navbar = ({ children }) => {
             {/* Mega Menu Backdrop for Desktop */}
             <div className={`fixed top-0 transition-opacity duration-300 z-10 bg-black/50 dark:bg-white/50
                 ${expandedId
-                    ? "opacity-100 backdrop-blur-none md:backdrop-blur-sm w-screen h-screen"
+                    ? "opacity-100 backdrop-blur-none md:backdrop-blur-[4px] w-screen h-screen"
                     : "opacity-0 pointer-events-none"
                 } 
             `} />
