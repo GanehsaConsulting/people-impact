@@ -29,12 +29,12 @@ export const ReBanner = ({
     )
 
     return (
-        <main className={`min-h-[80vh] mx-2 mt-4 ${className}`}>
+        <main className={`min-h-[50vh] mx-2 mt-4 ${className}`}>
             <section className="relative w-full rounded-main overflow-hidden">
                 <Image
                     width={imageWidth}
                     height={imageHeight}
-                    className="w-full h-[60vh] object-cover rounded-main"
+                    className="w-full max-h-[50vh] object-cover rounded-main"
                     src={imageSrc}
                     alt={imageAlt}
                     priority={priority}
