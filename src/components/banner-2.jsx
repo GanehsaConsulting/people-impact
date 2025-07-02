@@ -4,7 +4,7 @@ import { MdArrowDownward, MdArrowOutward } from "react-icons/md";
 export const BannerTwo = () => {
     return (
         <>
-            <main className="mx-2 my-4 h-[90vh] relative overflow-hidden flex flex-col">
+            <main className="mx-2 my-4 h-[80vh] md:h-[90vh] relative overflow-hidden flex flex-col">
                 <img
                     className="w-full h-[90vh] object-cover rounded-main"
                     src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -19,11 +19,16 @@ export const BannerTwo = () => {
                             Transforming Organizations.
                         </h1>
                         <p className="max-w-2xl text-sm leading-4.5 opacity-80">
-                           At People Impact, we recognized that every organization is distinct, which is why we adopt a tailored approach for each engagement. By gaining a thorough understanding of your goals, challenges, and opportunities, we create customized solutions that align perfectly with your vision for success. Our comprehensive methodology integrates business strategy, leadership development, and process optimization, empowering our clients to flourish in a competitive environment.
+                            <span className="md:block hidden">
+                                At People Impact, we recognized that every organization is distinct, which is why we adopt a tailored approach for each engagement. By gaining a thorough understanding of your goals, challenges, and opportunities, we create customized solutions that align perfectly with your vision for success. Our comprehensive methodology integrates business strategy, leadership development, and process optimization, empowering our clients to flourish in a competitive environment.
+                            </span>
+                            <span className="md:hidden block">
+                                People Impact delivers tailored solutions that align with your unique goals—combining business strategy, leadership development, and process optimization to drive success.
+                            </span>
                         </p>
                         <div className="space-x-2">
                             <Button
-                            className={"bg-lightColor dark:bg-darkColor"}
+                                className={"bg-lightColor dark:bg-darkColor"}
                             >
                                 Enquire Now
                                 <MdArrowOutward />
