@@ -32,7 +32,7 @@ export const BannerTwo = () => {
 
     return (
         <>
-            <main className="mx-2 my-2 md:my-4 h-[85vh] md:h-[90vh] relative overflow-hidden flex flex-col group">
+            <main className="mx-2 my-2 md:my-4 h-[70vh] md:h-[90vh] relative overflow-hidden flex flex-col group">
                 {/* Background Image with Enhanced Effects */}
                 <div className="absolute inset-0 rounded-main overflow-hidden">
                     <img

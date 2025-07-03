@@ -172,7 +172,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                                 className={`${expandAnimationClass} flex flex-row items-center gap-2 rounded-2xl p-3 min-h-[70px] transition-all duration-300 ease-out active:scale-95 group ${
                                     isActive(link.href)
                                         ? "bg-main-1 text-white shadow-lg shadow-main-1/25"
-                                        : "bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 text-secondaryDark dark:text-secondaryLight hover:bg-main-1/10 dark:hover:bg-main-1/20 hover:border-main-1/20"
+                                        : "bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/10 text-secondaryDark dark:text-secondaryLight hover:bg-main-1/10 dark:hover:bg-main-1/20 hover:border-main-1/20"
                                 }`}
                                 aria-label={`Navigate to ${link.title} page`}
                                 role="button"
@@ -225,7 +225,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                                 href={`/services/${el.slug}`}
                                 onClick={handleServiceClick}
                                 style={{ transitionDelay: `${(quickLinks.length * 25) + (idx * 20)}ms` }}
-                                className={`${expandAnimationClass} flex items-center gap-3 rounded-2xl px-4 py-3 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 text-secondaryLight dark:text-secondaryLight hover:bg-main-1/5 dark:hover:bg-main-1/10 hover:border-main-1/20 transition-all duration-300 ease-out active:scale-[0.98] group`}
+                                className={`${expandAnimationClass} flex items-center gap-3 rounded-2xl px-4 py-3 bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/10 text-secondaryLight dark:text-secondaryLight hover:bg-main-1/5 dark:hover:bg-main-1/10 hover:border-main-1/20 transition-all duration-300 ease-out active:scale-[0.98] group`}
                                 aria-label={`Learn about ${el.title} service`}
                                 role="button"
                             >
@@ -280,7 +280,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                                 <div className="font-bold text-base mb-0.5">Let's Connect</div>
                                 <div className="text-sm opacity-90 font-medium">Get personalized HR solutions</div>
                             </div>
-                            <div className="bg-white/20 backdrop-blur-xl rounded-full p-2.5 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+                            <div className="bg-white/20 rounded-full p-2.5 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
                                 <FaArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
                             </div>
                         </Link>

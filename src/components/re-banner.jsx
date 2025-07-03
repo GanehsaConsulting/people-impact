@@ -17,7 +17,7 @@ export const ReBanner = ({
 }) => {
     const defaultContent = (
         <div className={`m-5 text-white space-y-2 md:space-y-5 ${contentClassName}`}>
-            <h1 className={`text-2xl md:text-5xl font-medium tracking-tighter drop-shadow-2xl ${titleClassName}`}>
+            <h1 className={`text-3xl md:text-5xl font-medium tracking-tighter drop-shadow-2xl ${titleClassName}`}>
                 {title}
             </h1>
             {subtitle && (
@@ -30,12 +30,12 @@ export const ReBanner = ({
     )
 
     return (
-        <main className={`min-h-[80vh] md:min-h-[50vh] mx-2 mt-4 ${className}`}>
+        <main className={`min-h-[50vh] md:min-h-[50vh] mx-2 mt-4 ${className}`}>
             <section className="relative w-full rounded-main overflow-hidden">
                 <Image
                     width={imageWidth}
                     height={imageHeight}
-                    className={`${imageClassName} w-full min-h-[80vh] md:max-h-[50vh] object-cover rounded-main`}
+                    className={`${imageClassName} w-full min-h-[50vh] md:max-h-[50vh] object-cover rounded-main`}
                     src={imageSrc}
                     alt={imageAlt}
                     priority={priority}

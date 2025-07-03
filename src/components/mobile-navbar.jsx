@@ -78,7 +78,7 @@ export const MobileNavbar = () => {
             </nav>
                     <div className={`fixed top-0 transition-opacity duration-300 z-10
                 ${expandedId
-                    ? "opacity-100 backdrop-blur-min md:backdrop-blur-[4px] w-screen h-screen"
+                    ? "opacity-100 backdrop-blur-xl w-screen h-screen"
                     : "opacity-0 pointer-events-none"
                 } 
             `} />
