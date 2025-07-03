@@ -3,7 +3,7 @@ import { FiPhone, FiMail, FiMapPin, FiExternalLink } from "react-icons/fi";
 
 export const Footer = () => {
     return (
-        <footer className="py-12 bg-secondaryGray dark:bg-baseColorDark border-t border-secondaryLight dark:border-secondaryDark">
+        <footer className="py-12 bg-lightColor dark:bg-darkColor border-t border-secondaryLight dark:border-secondaryDark">
             <div className="margin">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 

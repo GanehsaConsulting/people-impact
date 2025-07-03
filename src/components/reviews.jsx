@@ -150,7 +150,7 @@ export const Reviews = () => {
                         key={idx}
                         className={`
                         ${idx == 0 && "ml-5 md:ml-15"} ${clientReviews.length - 1 == idx && "mr-5 md:mr-15"}
-                        min-w-[30vh] p-4 rounded-main bg-lightColor dark:bg-darkColor flex flex-col
+                        min-w-[35vh] md:min-w-[30vh] p-4 rounded-main bg-lightColor dark:bg-darkColor flex flex-col
                         `}>
                         <div className="flex items-start mb-20">
                             {[...Array(el.rating)].map((_, i) => (
