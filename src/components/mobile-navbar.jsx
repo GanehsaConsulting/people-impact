@@ -55,7 +55,7 @@ export const MobileNavbar = () => {
     return (
         <>
             <div className="z-40 fixed top-0 left-0 right-0 h-20 pointer-events-none linear-blur-mnavbar" />
-            <nav className={`${expandedId ? "" : "bg-lightColor/50 dark:bg-darkColor/50"}  z-50 flex justify-between md:hidden navbar sticky top-2 min-h-13 h-13  w-auto mx-2 my-2 rounded-main`}>
+            <nav className={`${expandedId ? "" : "bg-lightColor/50 dark:bg-darkColor/50 border border-white/30 dark:border-secondaryGray/10"}  z-50 flex justify-between md:hidden navbar sticky top-2 min-h-13 h-13  w-auto mx-2 my-2 rounded-main`}>
                 <Logo />
                 <div className="space-x-2 flex items-center">
                     <div className={`${expandedId ? "flex" : "hidden"}`}>
