@@ -171,7 +171,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                                 style={{ transitionDelay: `${idx * 25}ms` }}
                                 className={`${expandAnimationClass} flex flex-row items-center gap-2 rounded-2xl p-3 min-h-[70px] transition-all duration-300 ease-out active:scale-95 group ${
                                     isActive(link.href)
-                                        ? "bg-main-1 text-white shadow-lg shadow-main-1/25"
+                                        ? "bg-main-1/70 text-white shadow-lg shadow-main-1/25"
                                         : "bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/10 text-secondaryDark dark:text-secondaryLight hover:bg-main-1/10 dark:hover:bg-main-1/20 hover:border-main-1/20"
                                 }`}
                                 aria-label={`Navigate to ${link.title} page`}
