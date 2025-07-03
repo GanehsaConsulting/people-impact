@@ -28,8 +28,8 @@ const LinkItem = ({ href, children, isActive }) => (
     <Link
         href={href}
         className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-sm font-[500] relative
-            ${isActive 
-                ? "bg-sec-2/20 dark:bg-main-1/20 dark:text-white" 
+            ${isActive
+                ? "bg-sec-2/20 dark:bg-main-1/20 dark:text-white"
                 : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
             }
         `}
@@ -46,8 +46,8 @@ const ServiceLinkItem = ({ title, isActive, onClick }) => (
     <button
         onClick={onClick}
         className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-sm font-[500] relative
-            ${isActive 
-                ? "bg-main-1 text-white dark:bg-main-1 dark:text-white" 
+            ${isActive
+                ? "bg-main-1 text-white dark:bg-main-1 dark:text-white"
                 : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
             }
         `}
@@ -97,7 +97,7 @@ export const Navbar = ({ children }) => {
                     <div className="md:fixed top-0 left-0 right-0 h-35 z-40 pointer-events-none linear-blur-to-b" />
                 </>
             )}
-            <div className={`navbar z-50 sticky top-2 h-14 min-h-14 w-auto mx-2 py-2 rounded-main
+            <div className={`hidden md:flex navbar z-50 sticky top-2 h-14 min-h-14 w-auto mx-2 py-2 rounded-main
                 ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom" : "bg-lightColor dark:bg-darkColor"}
                 `}
             >
@@ -149,11 +149,10 @@ export const Navbar = ({ children }) => {
                     <Link href="/contact">
                         <Button
                             variant={"glassColor"}
-                            className={`transition-all duration-200 ${
-                                isActive("/contact") 
-                                    ? "ring-2 ring-main-1 ring-offset-2 ring-offset-lightColor dark:ring-offset-darkColor" 
-                                    : ""
-                            }`}
+                            className={`transition-all duration-200 ${isActive("/contact")
+                                ? "ring-2 ring-main-1 ring-offset-2 ring-offset-lightColor dark:ring-offset-darkColor"
+                                : ""
+                                }`}
                         >
                             Contact
                         </Button>
@@ -161,8 +160,7 @@ export const Navbar = ({ children }) => {
                 </div>
             </div>
 
-            {/* Mega Menu Backdrop for Desktop */}
-            <div className={`fixed top-0 transition-opacity duration-300 z-10 bg-black/50 dark:bg-white/50
+            <div className={`md:flex hidden fixed top-0 transition-opacity duration-300 z-10 bg-black/50 dark:bg-white/50
                 ${expandedId
                     ? "opacity-100 backdrop-blur-none md:backdrop-blur-[4px] w-screen h-screen"
                     : "opacity-0 pointer-events-none"
@@ -170,7 +168,7 @@ export const Navbar = ({ children }) => {
             `} />
 
             {/* Main Content */}
-            <div className={`${expandedId ? 'pointer-events-none scale-105' : ''} duration-300 ease-in-out`}>
+            <div className={`${expandedId ? 'pointer-events-none md:scale-105' : ''} md:duration-300 md:ease-in-out`}>
                 {children}
             </div>
         </>

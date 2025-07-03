@@ -16,7 +16,7 @@ export default function ThemeSwitch({ className }) {
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <div className='flex'>
+    <div className='flex z-40'>
       <label className="swap swap-rotate">
         {/* Hidden checkbox to control the state */}
         <input
@@ -26,13 +26,13 @@ export default function ThemeSwitch({ className }) {
         />
 
         {/* Sun icon (for light mode) */}
-        <div className='swap-off rounded-full p-2 bg-main-1/20 hover:bg-main-1 dark:hover:bg-main-2'>
-          <HiSun className={`${className} text-xl`} />
+        <div className='swap-off rounded-full p-2 md:bg-main-1/20 md:hover:bg-main-1 md:dark:hover:bg-main-2'>
+          <HiSun className={`${className} text-lg md:text-xl`} />
         </div>
 
         {/* Moon icon (for dark mode) */}
-        <div className='swap-on rounded-full p-2 bg-main-1/20 hover:bg-main-1 dark:hover:bg-main-2'>
-          <HiMoon className={`${className} text-xl`} />
+        <div className='swap-on rounded-full p-2 md:bg-main-1/20 md:hover:bg-main-1 md:dark:hover:bg-main-2'>
+          <HiMoon className={`${className} text-lg md:text-xl`} />
         </div>
       </label>
     </div>

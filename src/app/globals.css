@@ -241,6 +241,26 @@ body {
   );
 }
 
+.linear-blur-mnavbar {
+  width: 100%;
+  pointer-events: none;
+  border-bottom-right-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+  backdrop-filter: blur(15px);
+  mask-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 35%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 35%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
 .margin {
   @apply md:px-15 px-4
 }

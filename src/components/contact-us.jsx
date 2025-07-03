@@ -131,7 +131,7 @@ export const ContactUs = () => {
                         </div>
 
                         {/* Contact Information */}
-                        <div className="bg-white dark:bg-secondaryDark rounded-main md:p-3 md:p-6 p-4 border border-secondaryLight dark:border-secondaryDark" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
+                        <div className="bg-white dark:bg-secondaryDark rounded-main md:p-6 p-4 border border-secondaryLight dark:border-secondaryDark" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
                             <h2 className="text-2xl font-bold text-darkColor dark:text-lightColor mb-6">
                                 Contact Information
                             </h2>

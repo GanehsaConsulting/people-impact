@@ -15,7 +15,7 @@ export default function ServicesPage() {
                 imageAlt="Office workspace"
                 subtitle={"Comprehensive HR consulting solutions designed to transform your organization, enhance employee engagement, and drive sustainable business growth."}
             />
-            <AllServicesPage />;
+            <AllServicesPage />
         </>
     )
 }

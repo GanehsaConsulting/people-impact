@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { CustomScrollbar } from "@/components/custom-scrollbar";
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/footer";
+import { MobileNavbar } from "@/components/mobile-navbar";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat", // hanya untuk class tertentu
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         className={`${nunito.className} ${montserrat.variable}  antialiased`}
       >
         <ThemeProvider enableSystem attribute={'class'}>
+          <MobileNavbar />
           <Navbar>
             {children}
           </Navbar>

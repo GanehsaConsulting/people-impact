@@ -1,5 +1,6 @@
 import { slugify } from "@/helper/slugify";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
     FaUserTie,
     FaChartLine,
@@ -13,11 +14,48 @@ import {
     FaLaptopCode,
     FaUsersCog,
     FaPuzzlePiece,
+    FaHome,
+    FaUsers,
+    FaBriefcase,
+    FaEnvelope,
 } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 
 export const ServiceMenu = ({ expandedId, onClose }) => {
     const expandAnimationClass = expandedId ? "scale-100 -translate-y-0 opacity-100 duration-500 ease-in-out" : "scale-[.90] -translate-y-12 opacity-0 duration-500 ease-in-out";
+    const path = usePathname();
+
+    // Quick navigation links from desktop navbar
+    const quickLinks = [
+        {
+            title: "Home",
+            href: "/",
+            icon: <FaHome />,
+            desc: "Back to homepage"
+        },
+        {
+            title: "About Us", 
+            href: "/about-us",
+            icon: <FaUsers />,
+            desc: "Learn more about our company"
+        },
+        {
+            title: "Job Board",
+            href: "/job-board", 
+            icon: <FaBriefcase />,
+            desc: "Find your next opportunity"
+        },
+        {
+            title: "Contact",
+            href: "/contact",
+            icon: <FaEnvelope />,
+            desc: "Get in touch with us"
+        }
+    ];
+
+    const isActive = (href) => {
+        return href === "/" ? path === "/" : path.startsWith(href);
+    };
 
     const hrServicesMenu = [
         {
@@ -116,69 +154,205 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
     };
 
     return (
-        <div className={`${expandAnimationClass} pb-15`}>
-            <div className="grid grid-cols-6 gap-10">
-                <div className="col-span-4">
-                    <div className="flex items-center justify-between">
-                        <p className="text-sm font-bold tracking-wide opacity-80 uppercase">
-                            Our Services
-                        </p>
+        <div className={`${expandAnimationClass} pb-6`}>
+            {/* Mobile Layout */}
+            <div className="block md:hidden pt-10">
+                {/* Quick Navigation - Compact Grid */}
+                <div className="mb-5">
+                    <h2 className="text-xs font-semibold text-secondaryLight/60 dark:text-secondaryLight/60 uppercase tracking-wider mb-3">
+                        Navigate
+                    </h2>
+                    <div className="grid grid-cols-2 gap-2">
+                        {quickLinks.map((link, idx) => (
+                            <Link
+                                key={idx}
+                                href={link.href}
+                                onClick={handleServiceClick}
+                                style={{ transitionDelay: `${idx * 25}ms` }}
+                                className={`${expandAnimationClass} flex flex-row items-center gap-2 rounded-2xl p-3 min-h-[70px] transition-all duration-300 ease-out active:scale-95 group ${
+                                    isActive(link.href)
+                                        ? "bg-main-1 text-white shadow-lg shadow-main-1/25"
+                                        : "bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 text-secondaryDark dark:text-secondaryLight hover:bg-main-1/10 dark:hover:bg-main-1/20 hover:border-main-1/20"
+                                }`}
+                                aria-label={`Navigate to ${link.title} page`}
+                                role="button"
+                            >
+                                {/* Icon */}
+                                <div className={`text-lg p-2 bg-main-2/10 rounded-full transition-all duration-300 ${
+                                    isActive(link.href)
+                                        ? "text-white scale-110"
+                                        : "text-sec-2 dark:text-sec-1  group-hover:scale-110"
+                                }`}>
+                                    {link.icon}
+                                </div>
+                                
+                                {/* Title */}
+                                <span className={`text-sm font-medium text-center leading-tight transition-colors duration-300 ${
+                                    isActive(link.href)
+                                        ? "text-white"
+                                        : "group-hover:text-main-1 dark:group-hover:text-main-2"
+                                }`}>
+                                    {link.title}
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Services Section - Compact List */}
+                <div className="mb-4">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-3">
+                        <h2 className="text-xs font-semibold text-secondaryLight/60 dark:text-secondaryLight/60 uppercase tracking-wider">
+                            Services
+                        </h2>
                         <Link
                             href="/services"
                             onClick={handleViewAllClick}
-                            className="font-bold px-3 py-2 bg-main-2/10 dark:bg-main-1/30 rounded-full text-xs duration-300 ease-in-out hover:bg-main-1 dark:hover:bg-main-2"
+                            className="text-xs font-medium text-main-1  hover:text-main-2 dark:hover:text-main-1 transition-colors duration-200 flex items-center gap-1 group"
+                            aria-label="View all services page"
                         >
-                            View All Services
+                            View All
+                            <FaArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform duration-200" />
                         </Link>
                     </div>
-                    <div className="mt-2 grid grid-cols-3 gap-2">
+
+                    {/* Services Compact List */}
+                    <div className="space-y-1.5">
                         {hrServicesMenu.map((el, idx) => (
                             <Link
                                 key={idx}
                                 href={`/services/${el.slug}`}
                                 onClick={handleServiceClick}
-                                style={{ transitionDelay: `${idx * 10}ms` }}
-                                className={`${expandAnimationClass} flex gap-3 rounded-main p-4 bg-lightColor/30 dark:bg-darkColor/30 text-secondaryDark dark:text-secondaryLight hover:bg-main-2/10 hover:dark:bg-main-1/10 transition-all duration-300 ease-in-out transform hover:scale-[1.02] relative group`}
-                                aria-label={`Navigate to ${el.title} service page`}
+                                style={{ transitionDelay: `${(quickLinks.length * 25) + (idx * 20)}ms` }}
+                                className={`${expandAnimationClass} flex items-center gap-3 rounded-2xl px-4 py-3 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 text-secondaryLight dark:text-secondaryLight hover:bg-main-1/5 dark:hover:bg-main-1/10 hover:border-main-1/20 transition-all duration-300 ease-out active:scale-[0.98] group`}
+                                aria-label={`Learn about ${el.title} service`}
+                                role="button"
                             >
-                                <div className="text-xl p-2 h-fit rounded-secondary bg-black/10 dark:bg-white/20 group-hover:bg-main-1/20 dark:group-hover:bg-main-2/20 transition-colors duration-300">
+                                {/* Icon */}
+                                <div className="text-sec-2 dark:text-sec-1 text-sm p-2 bg-main-1/10 dark:bg-main-2/10 rounded-xl group-hover:bg-main-1/20 dark:group-hover:bg-main-2/20 transition-all duration-300 flex-shrink-0">
                                     {el.icon}
                                 </div>
+                                
+                                {/* Content */}
                                 <div className="flex-1 min-w-0">
-                                    <h3 className="font-semibold text-sm leading-tight mb-1 group-hover:text-main-1 dark:group-hover:text-main-2 transition-colors duration-300">
+                                    <h3 className="font-medium text-sm leading-tight text-secondaryDark dark:text-secondaryLight group-hover:text-main-1 dark:group-hover:text-main-2 transition-colors duration-300">
                                         {el.title}
                                     </h3>
-                                    <p className="text-xs text-secondaryDark/70 dark:text-secondaryLight/70 leading-relaxed line-clamp-2">
-                                        {el.desc}
-                                    </p>
                                 </div>
                                 
-                                {/* Hover indicator */}
-                                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <FaArrowRight className="w-3 h-3 text-main-1 dark:text-main-2" />
+                                {/* Arrow Icon */}
+                                <div className="text-main-1/40 group-hover:text-main-1 dark:group-hover:text-main-2 group-hover:translate-x-0.5 transition-all duration-300 flex-shrink-0">
+                                    <FaArrowRight className="w-3 h-3" />
                                 </div>
                             </Link>
                         ))}
+                        
+                       
                     </div>
                 </div>
-                <div className="col-span-2 relative overflow-hidden rounded-main group">
-                    <img
-                        className="rounded-secondary w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Professional HR consulting team meeting"
-                        loading="lazy"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-main-1/80 dark:from-main-2/80 to-transparent rounded-b-secondary h-30 group-hover:from-main-1/90 dark:group-hover:from-main-2/90 transition-all duration-300">
+
+                {/* CTA Section - Compact */}
+                <div className="relative overflow-hidden rounded-2xl group">
+                    <div className="relative h-24 bg-gradient-to-br from-main-1/80 via-sec-1 to-sec-4/80 dark:from-main-2 dark:via-sec-2 dark:to-sec-3 rounded-2xl overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10"></div>
+                        
+                        {/* Subtle pattern overlay */}
+                        <div className="absolute inset-0 opacity-10">
+                            <svg className="w-full h-full" viewBox="0 0 100 100">
+                                <defs>
+                                    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <circle cx="10" cy="10" r="1" fill="white"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100" height="100" fill="url(#dots)"/>
+                            </svg>
+                        </div>
+                        
+                        <Link
+                            href="/contact"
+                            onClick={handleConnectClick}
+                            className="absolute inset-0 flex items-center justify-between px-5 text-white group focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-2xl"
+                            aria-label="Contact us for personalized HR solutions"
+                            role="button"
+                        >
+                            <div>
+                                <div className="font-bold text-base mb-0.5">Let's Connect</div>
+                                <div className="text-sm opacity-90 font-medium">Get personalized HR solutions</div>
+                            </div>
+                            <div className="bg-white/20 backdrop-blur-xl rounded-full p-2.5 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+                                <FaArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
+                            </div>
+                        </Link>
                     </div>
-                    <Link
-                        href="/contact"
-                        onClick={handleConnectClick}
-                        className="absolute bottom-3 left-3 right-3 text-white text-2xl font-semibold flex items-center gap-2 hover:gap-3 transition-all duration-300 group"
-                        aria-label="Navigate to contact page"
-                    >
-                        Connect With Us Now 
-                        <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
+                </div>
+            </div>
+
+            {/* Desktop Layout (unchanged) */}
+            <div className="hidden md:block">
+                <div className="grid grid-cols-6 gap-10">
+                    <div className="col-span-4">
+                        <div className="flex items-center justify-between">
+                            <p className="text-sm font-bold tracking-wide opacity-80 uppercase">
+                                Our Services
+                            </p>
+                            <Link
+                                href="/services"
+                                onClick={handleViewAllClick}
+                                className="font-bold px-3 py-2 bg-main-2/10 dark:bg-main-1/30 rounded-full text-xs duration-300 ease-in-out hover:bg-main-1 dark:hover:bg-main-2"
+                            >
+                                View All Services
+                            </Link>
+                        </div>
+                        <div className="mt-2 grid grid-cols-3 gap-2">
+                            {hrServicesMenu.map((el, idx) => (
+                                <Link
+                                    key={idx}
+                                    href={`/services/${el.slug}`}
+                                    onClick={handleServiceClick}
+                                    style={{ transitionDelay: `${idx * 10}ms` }}
+                                    className={`${expandAnimationClass} flex gap-3 rounded-main p-4 bg-lightColor/30 dark:bg-darkColor/30 text-secondaryDark dark:text-secondaryLight hover:bg-main-2/10 hover:dark:bg-main-1/10 transition-all duration-300 ease-in-out transform hover:scale-[1.02] relative group`}
+                                    aria-label={`Navigate to ${el.title} service page`}
+                                >
+                                    <div className="text-xl p-2 h-fit rounded-secondary bg-black/10 dark:bg-white/20 group-hover:bg-main-1/20 dark:group-hover:bg-main-2/20 transition-colors duration-300">
+                                        {el.icon}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="font-semibold text-sm leading-tight mb-1 group-hover:text-main-1 dark:group-hover:text-main-2 transition-colors duration-300">
+                                            {el.title}
+                                        </h3>
+                                        <p className="text-xs text-secondaryDark/70 dark:text-secondaryLight/70 leading-relaxed line-clamp-2">
+                                            {el.desc}
+                                        </p>
+                                    </div>
+                                    
+                                    {/* Hover indicator */}
+                                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <FaArrowRight className="w-3 h-3 text-main-1 dark:text-main-2" />
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="col-span-2 relative overflow-hidden rounded-main group">
+                        <img
+                            className="rounded-secondary w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Professional HR consulting team meeting"
+                            loading="lazy"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-main-1/80 dark:from-main-2/80 to-transparent rounded-b-secondary h-30 group-hover:from-main-1/90 dark:group-hover:from-main-2/90 transition-all duration-300">
+                        </div>
+                        <Link
+                            href="/contact"
+                            onClick={handleConnectClick}
+                            className="absolute bottom-3 left-3 right-3 text-white text-2xl font-semibold flex items-center gap-2 hover:gap-3 transition-all duration-300 group"
+                            aria-label="Navigate to contact page"
+                        >
+                            Connect With Us Now 
+                            <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

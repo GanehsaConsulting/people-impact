@@ -90,6 +90,7 @@ export const MegaMenuNavbar = ({
                             : 'pointer-events-none opacity-0 -translate-y-5 max-h-0'}`}
                     style={{
                         minHeight: isExpanded ? '30vh' : '0',
+                        top: `${navbarHeight + 8}px`, // Use dynamic navbar height
                     }}
                 >
                     <div className={`mx-15 mt-20`}>
@@ -101,11 +102,17 @@ export const MegaMenuNavbar = ({
             {/* Mobile Mega Menu */}
             {isMobile && (
                 <div
-                    onMouseEnter={() => setExpandedId(id)}
-                    className={`fixed inset-0 w-full transition-all duration-700 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${isExpanded ? 'pointer-events-auto max-h-[100vh] opacity-100 translate-y-0 overflow-y-scroll noBar' : 'pointer-events-none max-h-0 opacity-0 -translate-y-5'} overflow-hidden`}
+                    className={`z-20 fixed inset-0 w-full h-screen bg-darkColor/50 dark:bg-darkColor/50 transition-all duration-700 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${
+                        isExpanded 
+                            ? 'pointer-events-auto opacity-100 translate-y-0 overflow-y-auto' 
+                            : 'pointer-events-none opacity-0 translate-y-5 overflow-hidden'
+                    }`}
+                 
                 >
                     <div
-                        className={`transition-transform duration-700 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}   `}
+                        className={`transition-all duration-700 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] p-4 ${
+                            isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                        }`}
                     >
                         {children}
                     </div>
