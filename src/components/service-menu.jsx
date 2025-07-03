@@ -156,7 +156,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
     return (
         <div className={`${expandAnimationClass} pb-6`}>
             {/* Mobile Layout */}
-            <div className="block md:hidden pt-10">
+            <div className="block md:hidden pt-10 pb-15">
                 {/* Quick Navigation - Compact Grid */}
                 <div className="mb-5">
                     <h2 className="text-xs font-semibold text-secondaryLight/60 dark:text-secondaryLight/60 uppercase tracking-wider mb-3">
