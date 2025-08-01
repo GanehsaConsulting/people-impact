@@ -288,7 +288,7 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                 </div>
             </div>
 
-            {/* Desktop Layout (unchanged) */}
+            {/* Desktop Layout - Fixed Image Container */}
             <div className="hidden md:block">
                 <div className="grid grid-cols-6 gap-10">
                     <div className="col-span-4">
@@ -334,24 +334,72 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="col-span-2 relative overflow-hidden rounded-main group">
-                        <img
-                            className="rounded-secondary w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Professional HR consulting team meeting"
-                            loading="lazy"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-main-1/80 dark:from-main-2/80 to-transparent rounded-b-secondary h-30 group-hover:from-main-1/90 dark:group-hover:from-main-2/90 transition-all duration-300">
+                    
+                    {/* Fixed Image Container */}
+                    <div className="col-span-2">
+                        <div className="relative h-full min-h-[400px] overflow-hidden rounded-main group">
+                            {/* Image with proper sizing */}
+                            <div className="absolute inset-0">
+                                <img
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    src="https://images.unsplash.com/photo-1594022527131-2c26853089f1?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Professional HR consulting team meeting"
+                                    loading="lazy"
+                                />
+                            </div>
+                            
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-main-1/90 via-main-1/40 to-transparent dark:from-main-2/90 dark:via-main-2/40 group-hover:from-main-1/95 dark:group-hover:from-main-2/95 transition-all duration-300"></div>
+                            
+                            {/* Decorative Pattern Overlay */}
+                            <div className="absolute inset-0 opacity-10">
+                                <svg className="w-full h-full" viewBox="0 0 100 100">
+                                    <defs>
+                                        <pattern id="desktop-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                            <circle cx="10" cy="10" r="1" fill="white"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100" height="100" fill="url(#desktop-dots)"/>
+                                </svg>
+                            </div>
+                            
+                            {/* Content Overlay */}
+                            <div className="absolute inset-0 flex flex-col justify-between p-6">
+                                {/* Top Badge */}
+                                <div className="flex justify-end">
+                                    <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs font-medium border border-white/30">
+                                        Expert Consultants
+                                    </div>
+                                </div>
+                                
+                                {/* Bottom Content */}
+                                <div className="space-y-4">
+                                    <div className="text-white">
+                                        <h3 className="text-xl font-bold mb-2 leading-tight">
+                                            Ready to Transform Your HR?
+                                        </h3>
+                                        <p className="text-sm opacity-90 leading-relaxed">
+                                            Get personalized solutions from our expert team
+                                        </p>
+                                    </div>
+                                    
+                                    <Link
+                                        href="/contact"
+                                        onClick={handleConnectClick}
+                                        className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 border border-white/30 hover:border-white/50 rounded-xl px-6 py-3 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn"
+                                        aria-label="Navigate to contact page"
+                                    >
+                                        <span>Connect With Us</span>
+                                        <div className="bg-white/20 rounded-full p-1 group-hover/btn:bg-white/40 transition-all duration-300">
+                                            <FaArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform duration-300" />
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+                            
+                            {/* Hover Shine Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
                         </div>
-                        <Link
-                            href="/contact"
-                            onClick={handleConnectClick}
-                            className="absolute bottom-3 left-3 right-3 text-white text-2xl font-semibold flex items-center gap-2 hover:gap-3 transition-all duration-300 group"
-                            aria-label="Navigate to contact page"
-                        >
-                            Connect With Us Now 
-                            <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                        </Link>
                     </div>
                 </div>
             </div>
