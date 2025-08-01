@@ -3,7 +3,35 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FiArrowRight, FiSearch } from 'react-icons/fi';
+import {
+    HiOutlineUsers,
+    HiOutlineChartBar,
+    HiOutlineHeart,
+    HiOutlineCurrencyDollar,
+    HiOutlineCalculator,
+    HiOutlineDocumentText,
+    HiOutlineLightBulb,
+    HiOutlineShieldCheck,
+    HiOutlineDesktopComputer,
+    HiOutlineSparkles,
+    HiOutlineCog
+} from 'react-icons/hi';
 import { servicesData } from '@/lib/servicesData';
+
+// Icon mapping untuk setiap service
+const serviceIcons = {
+    "talent-acquisition-recruitment": HiOutlineUsers,
+    "performance-management": HiOutlineChartBar,
+    "employee-engagement-retention": HiOutlineHeart,
+    "compensation-benefits": HiOutlineCurrencyDollar,
+    "payroll-services": HiOutlineCalculator,
+    "hr-policies-procedures": HiOutlineDocumentText,
+    "organizational-development": HiOutlineLightBulb,
+    "compliance-support": HiOutlineShieldCheck,
+    "hr-technology-implementation": HiOutlineDesktopComputer,
+    "diversity-equity-inclusion": HiOutlineSparkles,
+    "custom-services": HiOutlineCog
+};
 
 export const AllServicesPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -32,7 +60,7 @@ export const AllServicesPage = () => {
             <div className="">
 
                 {/* Search Section */}
-                <section className="mb-6">
+                <section className="mb-8">
                     <div >
                         <div className="flex flex-col lg:flex-row gap-6 md:items-center justify-between">
                             {/* Search */}
@@ -43,7 +71,7 @@ export const AllServicesPage = () => {
                                     placeholder="Search services..."
                                     value={searchTerm}
                                     onChange={handleSearch}
-                                    className="w-full pl-10 pr-4 py-3 rounded-main border border-secondaryLight dark:border-secondaryDark bg-secondaryGray dark:bg-darkColor text-darkColor dark:text-lightColor placeholder-darkColor/50 dark:placeholder-lightColor/50 focus:outline-none focus:ring-2 focus:ring-main-1 focus:border-transparent transition-all duration-200"
+                                    className="w-full pl-10 pr-4 py-3 rounded-main border border-secondaryLight dark:border-secondaryDark bg-lightColor dark:bg-darkColor text-darkColor dark:text-lightColor placeholder-darkColor/50 dark:placeholder-lightColor/50 focus:outline-none focus:ring-2 focus:ring-main-1 focus:border-transparent transition-all duration-200"
                                 />
                             </div>
 
@@ -57,44 +85,90 @@ export const AllServicesPage = () => {
 
                 {/* Services Grid */}
                 <section className="mb-16">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {filteredServices.map((service) => (
-                            <Link href={`/services/${service.slug}`} key={service.slug} className="group">
-                                <div className="h-120 relative overflow-hidden rounded-main bg-white dark:bg-gray-800 transition-transform transform hover:-translate-y-4 duration-300 ease-in-out cursor-pointer">
-                                    <img
-                                        className="w-full h-full object-cover rounded-main"
-                                        src={service.heroImage}
-                                        alt={service.title}
-                                    />
+                    {/* Mobile & Tablet Layout */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 mb-8">
+                        {filteredServices.map((service) => {
+                            const IconComponent = serviceIcons[service.slug] || HiOutlineCog;
 
-                                    {/* Gradient Overlay */}
-                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-main-2 to-transparent w-full h-80"></div>
+                            return (
+                                <Link href={`/services/${service.slug}`} key={service.slug} className="group">
+                                    <div className="relative overflow-hidden bg-lightColor rounded-main p-6 dark:bg-darkColor text-secondaryDark dark:text-secondaryLight hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-2 border border-secondaryLight dark:border-secondaryDark">
+                                        <div className='absolute -top-20 -left-20 w-40 h-40 bg-sec-5/40 rounded-full blur-3xl'></div>
+                                        <div className='absolute bottom-0 -right-30 w-50 h-50 bg-main-1/30 rounded-full blur-3xl'></div>
 
-                                    {/* Content */}
-                                    <div className="min-h-50 flex justify-between flex-col absolute bottom-0 left-0 right-0 p-6 rounded-b-main text-white drop-shadow">
-                                        <h3 className="text-xl font-semibold leading-tight mb-3 line-clamp-2">
+                                        {/* Icon */}
+                                        <div className="mb-6 p-4 rounded-full dark:bg-black bg-white w-fit shadow-sm border border-secondaryLight dark:border-secondaryDark">
+                                            <IconComponent className="w-8 h-8 text-main-2 dark:text-main-1" />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="text-xl font-semibold text-main-2 dark:text-main-1 mb-4 line-clamp-2 min-h-[3.5rem]">
                                             {service.title}
                                         </h3>
-                                        <p className="leading-5 text-sm opacity-90 line-clamp-3 mb-4">
+
+                                        {/* Description */}
+                                        <p className="text-sm leading-relaxed opacity-80 line-clamp-3 mb-4">
                                             {service.description}
                                         </p>
 
                                         {/* Services count indicator */}
-                                        <div className="flex items-center justify-between text-xs opacity-80">
-                                            <span>{service.services.length} Services</span>
+                                        <div className="flex items-center justify-between text-xs opacity-70 pt-4 border-t border-secondaryLight dark:border-secondaryDark">
+                                            <span>{service.services.length} Services Available</span>
                                             <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                                         </div>
                                     </div>
-                                </div>
-                            </Link>
-                        ))}
+                                </Link>
+                            );
+                        })}
+                    </div>
+
+                    {/* Desktop Layout */}
+                    <div className="hidden lg:grid grid-cols-4 gap-6">
+                        {filteredServices.map((service) => {
+                            const IconComponent = serviceIcons[service.slug] || HiOutlineCog;
+
+                            return (
+                                <Link href={`/services/${service.slug}`} key={service.slug} className="group">
+                                    <div className="overflow-hidden relative bg-lightColor rounded-main p-6 dark:bg-darkColor text-secondaryDark dark:text-secondaryLight hover:shadow-xl transition-all duration-300 ease-in-out hover:-translate-y-3 border border-secondaryLight dark:border-secondaryDark min-h-[28rem] flex flex-col">
+                                        <div className='absolute -top-20 -left-20 w-40 h-40 bg-sec-5/40 rounded-full blur-3xl'></div>
+                                        <div className='absolute bottom-0 -right-30 w-50 h-50 bg-main-1/30 rounded-full blur-3xl'></div>
+
+                                        {/* Icon */}
+                                        <div className="mb-6 p-4 rounded-full dark:bg-black bg-white w-fit shadow-sm border border-secondaryLight dark:border-secondaryDark">
+                                            <IconComponent className="w-10 h-10 text-main-2 dark:text-main-1" />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="text-2xl font-semibold text-main-2 dark:text-main-1 mb-4 flex-grow min-h-[8rem] flex items-start">
+                                            {service.title}
+                                        </h3>
+
+                                        {/* Description */}
+                                        <div className="flex-grow flex flex-col justify-between">
+                                            <p className="text-sm leading-relaxed opacity-80 line-clamp-4 mb-6">
+                                                {service.description}
+                                            </p>
+
+                                            {/* Services count indicator */}
+                                            <div className="flex items-center justify-between text-xs opacity-70 pt-4 border-t border-secondaryLight dark:border-secondaryDark mt-auto">
+                                                <span className="font-medium">{service.services.length} Services</span>
+                                                <div className="flex items-center gap-2 text-main-2 dark:text-main-1">
+                                                    <span className="text-xs font-medium">Learn More</span>
+                                                    <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            );
+                        })}
                     </div>
                 </section>
 
                 {/* No Results */}
                 {filteredServices.length === 0 && (
                     <div className="text-center py-16">
-                        <div className="w-24 h-24 bg-main-1/10 dark:bg-main-1/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <div className="w-24 h-24 bg-main-1/10 dark:bg-main-1/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-main-1/20">
                             <FiSearch className="w-12 h-12 text-main-1" />
                         </div>
                         <h3 className="text-2xl font-semibold text-darkColor dark:text-lightColor mb-4">
@@ -105,7 +179,7 @@ export const AllServicesPage = () => {
                         </p>
                         <button
                             onClick={() => setSearchTerm('')}
-                            className="bg-main-1 hover:bg-main-2 text-white font-medium px-6 py-3 rounded-secondary transition-colors duration-200"
+                            className="bg-main-1 hover:bg-main-2 text-white font-medium px-6 py-3 rounded-main transition-colors duration-200 shadow-sm"
                         >
                             Clear Search
                         </button>
@@ -125,7 +199,7 @@ export const AllServicesPage = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center gap-3 bg-main-1 hover:bg-main-2 text-white font-semibold px-8 py-4 rounded-secondary transition-colors duration-200 group"
+                            className="inline-flex items-center justify-center gap-3 bg-main-1 hover:bg-main-2 text-white font-semibold px-8 py-4 rounded-main transition-all duration-200 group shadow-sm hover:shadow-md"
                         >
                             <span>Discuss Your Needs</span>
                             <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -133,7 +207,7 @@ export const AllServicesPage = () => {
 
                         <Link
                             href="/services/custom-services"
-                            className="inline-flex items-center justify-center gap-3 bg-white dark:bg-secondaryDark border border-main-1 text-main-1 hover:bg-main-1 hover:text-white dark:hover:bg-main-1 font-semibold px-8 py-4 rounded-secondary transition-colors duration-200"
+                            className="inline-flex items-center justify-center gap-3 bg-lightColor dark:bg-secondaryDark border border-main-1 text-main-1 hover:bg-main-1 hover:text-white dark:hover:bg-main-1 font-semibold px-8 py-4 rounded-main transition-all duration-200 shadow-sm hover:shadow-md"
                         >
                             Learn About Custom Services
                         </Link>

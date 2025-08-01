@@ -48,7 +48,7 @@ export const ContactUs = () => {
             }
 
             setIsSubmitted(true);
-            
+
             // Reset form after 5 seconds
             setTimeout(() => {
                 setIsSubmitted(false);
@@ -163,28 +163,6 @@ export const ContactUs = () => {
                                         </div>
                                     );
                                 })}
-                            </div>
-                        </div>
-
-                        {/* Business Hours */}
-                        <div className="bg-main-1/5 dark:bg-main-1/10 rounded-secondary p-3 md:p-6 border border-main-1/30">
-                            <div className="flex items-center gap-3 mb-4">
-                                <FiClock className="w-6 h-6 text-main-1" />
-                                <h3 className="font-semibold text-darkColor dark:text-lightColor">Business Hours</h3>
-                            </div>
-                            <div className="space-y-2 text-sm text-darkColor/80 dark:text-lightColor/80">
-                                <div className="flex justify-between">
-                                    <span>Monday - Friday:</span>
-                                    <span>9:00 AM - 6:00 PM</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span>Saturday:</span>
-                                    <span>9:00 AM - 1:00 PM</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span>Sunday:</span>
-                                    <span>Closed</span>
-                                </div>
                             </div>
                         </div>
                     </div>

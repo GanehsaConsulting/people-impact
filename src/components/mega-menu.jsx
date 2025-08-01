@@ -13,6 +13,7 @@ export const MegaMenuNavbar = ({
     icon,
     iconClassName,
     isMobile = false,
+    isActive = false, // Tambahkan prop isActive
 }) => {
     const [navbarHeight, setNavbarHeight] = useState(56);
 
@@ -59,11 +60,24 @@ export const MegaMenuNavbar = ({
             <div className="z-[100] relative">
                 {title ? (
                     <div
-                        className={`${isExpanded ? 'bg-darkColor text-white dark:bg-lightColor dark:text-black' : ''}  cursor-pointer gap-1 flex items-center !z-999 px-3 py-1 rounded-main hover:bg-darkColor hover:text-white dark:hover:text-black transition-colors duration-200 text-sm font-[500] `}
+                        className={`cursor-pointer gap-1 flex items-center !z-999 px-3 py-1 rounded-main transition-all duration-200 text-base font-[700] relative
+                            ${isExpanded 
+                                ? 'bg-darkColor text-white dark:bg-lightColor dark:text-black' 
+                                : isActive
+                                    ? "bg-sec-2/20 dark:bg-main-1/20 dark:text-white pl-4.5 pr-2"
+                                    : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
+                            }
+                        `}
                         onClick={handleToggleExpand}
                     >
                         {title}
-                        <span className={`${arrowVisibility} ${isExpanded ? 'rotate-180' : ''} duration-300 ease-in-out`}>
+                        
+                        {/* Active indicator dot */}
+                        {isActive && !isExpanded && (
+                            <div className="absolute left-1.5 top-1/2 transform -translate-y-1/2 w-[6px] h-[6px] bg-sec-2 dark:bg-main-1 rounded-full"></div>
+                        )}
+                        
+                        <span className={`${arrowVisibility} ${isExpanded ? 'rotate-180' : ''} duration-300 ease-in-out ml-auto`}>
                             <IoIosArrowDown />
                         </span>
                     </div>

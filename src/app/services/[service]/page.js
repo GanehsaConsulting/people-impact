@@ -4,8 +4,36 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { FiArrowLeft, FiCheck, FiArrowRight } from 'react-icons/fi';
+import { 
+    HiOutlineUsers, 
+    HiOutlineChartBar, 
+    HiOutlineHeart, 
+    HiOutlineCurrencyDollar,
+    HiOutlineCalculator,
+    HiOutlineDocumentText,
+    HiOutlineLightBulb,
+    HiOutlineShieldCheck,
+    HiOutlineDesktopComputer,
+    HiOutlineSparkles,
+    HiOutlineCog
+} from 'react-icons/hi';
 import { servicesData } from '@/lib/servicesData';
 import { IoIosArrowForward } from 'react-icons/io';
+
+// Icon mapping untuk setiap service
+const serviceIcons = {
+    "talent-acquisition-recruitment": HiOutlineUsers,
+    "performance-management": HiOutlineChartBar,
+    "employee-engagement-retention": HiOutlineHeart,
+    "compensation-benefits": HiOutlineCurrencyDollar,
+    "payroll-services": HiOutlineCalculator,
+    "hr-policies-procedures": HiOutlineDocumentText,
+    "organizational-development": HiOutlineLightBulb,
+    "compliance-support": HiOutlineShieldCheck,
+    "hr-technology-implementation": HiOutlineDesktopComputer,
+    "diversity-equity-inclusion": HiOutlineSparkles,
+    "custom-services": HiOutlineCog
+};
 
 export default function ServicePage() {
     const params = useParams();
@@ -34,6 +62,8 @@ export default function ServicePage() {
             </div>
         );
     }
+
+    const IconComponent = serviceIcons[serviceSlug] || HiOutlineCog;
 
     return (
         <div className="margin spacing">
@@ -96,30 +126,108 @@ export default function ServicePage() {
                         </div>
                     </div>
 
-                    {/* Hero Image - Responsive */}
+                    {/* Hero Banner dengan Wave Effect - Responsive */}
                     <div className="relative order-1 lg:order-2">
-                        <div className="relative rounded-main overflow-hidden" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
-                            <img
-                                src={serviceData.heroImage}
-                                alt={serviceData.title}
-                                className="w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] object-cover"
-                                loading="lazy"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-main-2/60 to-transparent"></div>
+                        <div className="relative rounded-main overflow-hidden min-h-[320px] md:min-h-[420px] lg:min-h-[520px]" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
+                            {/* Main Background dengan gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-main-1 via-main-2 to-main-5"></div>
+                            
+                            {/* Wave Background Layers */}
+                            <div className="absolute inset-0">
+                                {/* Wave Layer 1 - Bottom */}
+                                <div className="absolute bottom-0 left-0 w-full h-32 md:h-40 bg-main-5/80" 
+                                     style={{
+                                         clipPath: 'polygon(0 60%, 100% 40%, 100% 100%, 0% 100%)'
+                                     }}>
+                                </div>
+                                
+                                {/* Wave Layer 2 - Middle */}
+                                <div className="absolute bottom-0 left-0 w-full h-24 md:h-32 bg-main-4/60" 
+                                     style={{
+                                         clipPath: 'polygon(0 70%, 100% 50%, 100% 100%, 0% 100%)'
+                                     }}>
+                                </div>
+                                
+                                {/* Wave Layer 3 - Top Wave */}
+                                <div className="absolute top-0 left-0 w-full h-20 md:h-24 bg-sec-1/20" 
+                                     style={{
+                                         clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 40%)'
+                                     }}>
+                                </div>
+                            </div>
 
-                            {/* Floating Badge - Responsive */}
-                            <div className="absolute bottom-3 left-3 md:bottom-4 lg:bottom-6 md:left-4 lg:left-6 bg-white dark:bg-secondaryDark rounded-secondary p-2 md:p-3 lg:p-4" style={{ boxShadow: 'var(--shadow-secondaryShadow)' }}>
+                            {/* Animated Wave SVG Overlay */}
+                            <div className="absolute inset-0 opacity-30">
+                                <svg className="absolute bottom-0 w-full h-32 md:h-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                                    <path d="M0,60 C200,100 300,20 600,60 C900,100 1000,20 1200,60 L1200,120 L0,120 Z" 
+                                          fill="rgba(255,255,255,0.1)" 
+                                          className="animate-pulse">
+                                    </path>
+                                </svg>
+                                
+                                <svg className="absolute bottom-0 w-full h-24 md:h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                                    <path d="M0,80 C300,40 400,100 600,80 C800,60 900,120 1200,80 L1200,120 L0,120 Z" 
+                                          fill="rgba(255,255,255,0.05)" 
+                                          className="animate-pulse delay-1000">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            {/* Floating Particles */}
+                            <div className="absolute inset-0">
+                                <div className="absolute top-[20%] left-[15%] w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+                                <div className="absolute top-[60%] right-[20%] w-1.5 h-1.5 bg-sec-1/40 rounded-full animate-pulse delay-500"></div>
+                                <div className="absolute top-[40%] left-[70%] w-1 h-1 bg-main-3/30 rounded-full animate-pulse delay-1000"></div>
+                                <div className="absolute bottom-[30%] left-[25%] w-2.5 h-2.5 bg-white/15 rounded-full animate-pulse delay-700"></div>
+                                <div className="absolute top-[80%] right-[40%] w-1.5 h-1.5 bg-sec-4/30 rounded-full animate-pulse delay-300"></div>
+                            </div>
+
+                            {/* Geometric Patterns */}
+                            <div className="absolute inset-0 opacity-10">
+                                <div className="absolute top-[10%] right-[10%] w-20 h-20 md:w-28 md:h-28 border border-white/20 rounded-full"></div>
+                                <div className="absolute bottom-[20%] left-[5%] w-16 h-16 md:w-20 md:h-20 border border-white/15 rounded-full"></div>
+                                <div className="absolute top-[50%] left-[5%] w-12 h-12 md:w-16 md:h-16 border border-white/25 rounded-full"></div>
+                            </div>
+
+                            {/* Icon Container - Improved Positioning */}
+                            <div className="absolute inset-0 flex items-center justify-center z-10">
+                                <div className="relative">
+                                    {/* Icon Glow Effect */}
+                                    <div className="absolute inset-0 bg-white/10 rounded-full blur-xl scale-150"></div>
+                                    
+                                    {/* Main Icon Container */}
+                                    <div className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 bg-white/15 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/20 shadow-2xl">
+                                        <div className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-white/10 rounded-full flex items-center justify-center border border-white/30">
+                                            <IconComponent className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 text-white drop-shadow-2xl" />
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Rotating Ring Around Icon */}
+                                    <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-white/30 border-r-white/20 animate-spin" style={{ animationDuration: '8s' }}></div>
+                                </div>
+                            </div>
+
+                            {/* Floating Badge - Enhanced */}
+                            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8 bg-white/90 dark:bg-secondaryDark/90 backdrop-blur-md rounded-xl p-3 md:p-4 border border-white/30 shadow-xl z-20">
                                 <div className="flex items-center gap-2 md:gap-3">
-                                    <div className="w-2 h-2 md:w-3 md:h-3 bg-main-1 rounded-full flex-shrink-0"></div>
-                                    <span className="text-xs md:text-sm font-medium text-darkColor dark:text-lightColor whitespace-nowrap">
+                                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-main-1 rounded-full flex-shrink-0 animate-pulse"></div>
+                                    <span className="text-xs md:text-sm font-semibold text-darkColor dark:text-lightColor whitespace-nowrap">
                                         Expert Solutions
                                     </span>
                                 </div>
                             </div>
+
+                            {/* Service Count Badge - Top Right */}
+                            <div className="absolute top-4 right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 bg-main-1/90 backdrop-blur-md rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-white/20 shadow-lg z-20">
+                                <span className="text-xs md:text-sm font-bold text-white whitespace-nowrap">
+                                    {serviceData.services.length} Services
+                                </span>
+                            </div>
                         </div>
 
-                        {/* Decorative element - hidden on small screens */}
-                        <div className="hidden lg:block absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-main-1/20 to-main-2/20 rounded-main -z-10"></div>
+                        {/* Decorative elements */}
+                        <div className="hidden lg:block absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-main-1/20 to-main-2/20 rounded-full -z-10"></div>
+                        <div className="hidden lg:block absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-sec-1/20 to-main-3/20 rounded-full -z-10"></div>
                     </div>
                 </div>
             </section>

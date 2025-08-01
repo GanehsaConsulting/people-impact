@@ -6,18 +6,31 @@
 
 @theme {
   /* Primer Colors */
-  --color-main-1: #8dbb3f;
+  --color-main-1: #119bd3;
+  --color-main-2: #1c305d;
+  --color-main-3: #8dbb3f;
+  --color-main-4: #35612f;
+  --color-main-5: #033700;
+
+  --color-sec-1: #7ecff4;
+  --color-sec-2: #496d93;
+  --color-sec-3: #1c305d;
+  --color-sec-4: #a8d08d;
+  --color-sec-5: #607d53;
+
+  /* Primer Colors */
+  /* --color-main-1: #8dbb3f;
   --color-main-2: #35612f;
   --color-main-3: #119bd3;
   --color-main-4: #1c305d;
-  --color-main-5: #033700;
+  --color-main-5: #033700; */
 
   /* Secondary Colors */
-  --color-sec-1: #a8d08d;
+  /* --color-sec-1: #a8d08d;
   --color-sec-2: #607d53;
   --color-sec-3: #6db4a1;
   --color-sec-4: #7ecff4;
-  --color-sec-5: #496d93;
+  --color-sec-5: #496d93; */
 
   /* Color */
   --color-mainColorLight: #27548a;
@@ -200,7 +213,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .linear-blur-to-t {
   width: 100%;
   pointer-events: none;
@@ -262,15 +274,16 @@ body {
 }
 
 .margin {
-  @apply md:px-15 px-4
+  @apply md:px-15 px-4;
 }
 
 .spacing {
-  @apply md:py-15 py-7
+  @apply md:py-15 py-7;
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
   }
   50% {
@@ -280,4 +293,15 @@ body {
 
 .animate-pulse-slow {
   animation: pulse 3s infinite;
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

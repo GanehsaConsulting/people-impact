@@ -32,7 +32,7 @@ export const About = () => {
                 <div className="relative">
                     <img
                         className="w-full h-48 sm:h-64 md:h-80 lg:h-full object-cover rounded-main shadow-lg"
-                        src="https://images.unsplash.com/photo-1573165706511-3ffde6ef1fe3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Professional team working together in a modern office environment"
                         loading="lazy"
                     />

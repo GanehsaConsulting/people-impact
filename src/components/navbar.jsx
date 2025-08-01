@@ -10,15 +10,15 @@ import { MegaMenuNavbar } from "./mega-menu";
 import { ServiceMenu } from "./service-menu";
 
 const Logo = () => (
-    <Link href="/" className="flex items-center z-50">
+    <Link href="/" className="flex items-center z-999">
         <Image
-            width={60}
-            height={60}
+            width={70}
+            height={70}
             src="/icon.png"
             alt="Ganapatih Logo"
             className="dark:brightness-125 -ml-2"
         />
-        <h1 className="font-[850] font-montserrat tracking-widest uppercase text-[20px] -ml-1 bg-gradient-to-br from-main-1 dark:from-white from-10% dark:from-5% via-baseColorDark dark:via-baseColorLight via-40% dark:via-60% to-main-3 dark:to-main-1 to-99% bg-clip-text text-transparent">
+        <h1 className="font-[850] font-montserrat tracking-widest uppercase text-[22px] -ml-1 bg-gradient-to-br from-main-1 dark:from-white from-10% dark:from-5% via-baseColorDark dark:via-baseColorLight via-40% dark:via-60% to-main-3 dark:to-main-1 to-99% bg-clip-text text-transparent">
             People Impact
         </h1>
     </Link>
@@ -27,37 +27,19 @@ const Logo = () => (
 const LinkItem = ({ href, children, isActive }) => (
     <Link
         href={href}
-        className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-sm font-[500] relative
-            ${isActive
-                ? "bg-sec-2/20 dark:bg-main-1/20 dark:text-white"
+        className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-base font-[700] relative
+        ${isActive
+                ? "bg-sec-2/20 dark:bg-main-1/20 dark:text-white pl-4.5 pr-2"
                 : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
             }
-        `}
+    `}
     >
         {children}
         {/* Active indicator dot */}
         {isActive && (
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-sec-2 dark:bg-main-1 rounded-full"></div>
+            <div className="absolute left-1.5 top-1/2 transform -translate-y-1/2 w-[6px] h-[6px] bg-sec-2 dark:bg-main-1 rounded-full"></div>
         )}
     </Link>
-)
-
-const ServiceLinkItem = ({ title, isActive, onClick }) => (
-    <button
-        onClick={onClick}
-        className={`!z-999 px-3 py-1 rounded-main transition-all duration-200 text-sm font-[500] relative
-            ${isActive
-                ? "bg-main-1 text-white dark:bg-main-1 dark:text-white"
-                : "hover:bg-darkColor dark:hover:bg-lightColor dark:hover:text-black hover:text-white text-secondaryDark dark:text-secondaryLight"
-            }
-        `}
-    >
-        {title}
-        {/* Active indicator dot */}
-        {isActive && (
-            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white dark:bg-darkColor rounded-full"></div>
-        )}
-    </button>
 )
 
 export const Navbar = ({ children }) => {
@@ -72,10 +54,8 @@ export const Navbar = ({ children }) => {
         return href === "/" ? path === "/" : path.startsWith(href)
     };
 
-    // Check if current path is a service page
-    const isServiceActive = () => {
-        return path.startsWith("/services") || path.includes("service");
-    };
+    // Check if current page is a service page
+    const isServicePage = path.startsWith("/services") || path === "/services";
 
     useEffect(() => {
         const handleScroll = () => {
@@ -97,14 +77,17 @@ export const Navbar = ({ children }) => {
                     <div className="md:fixed top-0 left-0 right-0 h-35 z-40 pointer-events-none linear-blur-to-b" />
                 </>
             )}
-            <div className={`hidden md:flex navbar z-50 sticky top-2 h-14 min-h-14 w-auto mx-2 py-2 rounded-main
-                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom border border-white/30 dark:border-secondaryGray/10" : "bg-lightColor dark:bg-darkColor"}
+            <div className={`hidden md:flex navbar z-50 sticky top-2 w-auto mx-2 py-2 rounded-main min-h-16 h-17
+                ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom border border-neutral-300/30 dark:border-secondaryGray/10" : "bg-white dark:bg-black"}
                 `}
             >
                 <div className="navbar-start">
                     <Logo />
                 </div>
                 <div className="navbar-center hidden lg:flex">
+
+                </div>
+                <div className="navbar-end space-x-2 z-50">
                     <ul className="flex items-center gap-1 text-sm">
                         <li className="z-50">
                             <LinkItem href="/" isActive={isActive("/")}>
@@ -124,6 +107,7 @@ export const Navbar = ({ children }) => {
                                     expandedId={expandedId}
                                     setExpandedId={setExpandedId}
                                     className="absolute"
+                                    isActive={isServicePage} // Pass isActive prop
                                 >
                                     <ServiceMenu
                                         onClose={() => setExpandedId(null)}
@@ -142,21 +126,24 @@ export const Navbar = ({ children }) => {
                                 Job Board
                             </LinkItem>
                         </li>
+                        <li className="z-50">
+                            <LinkItem href="/contact" isActive={isActive("/contact")}>
+                                Contact
+                            </LinkItem>
+                        </li>
                     </ul>
-                </div>
-                <div className="navbar-end space-x-2 z-50">
                     <ThemeSwitch />
-                    <Link href="/contact">
+                    {/* <Link href="/contact">
                         <Button
                             variant={"glassColor"}
-                            className={`transition-all duration-200 ${isActive("/contact")
+                            className={`text-base font-[700] transition-all duration-200 ${isActive("/contact")
                                 ? "ring-2 ring-main-1 ring-offset-2 ring-offset-lightColor dark:ring-offset-darkColor"
                                 : ""
                                 }`}
                         >
                             Contact
                         </Button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
 

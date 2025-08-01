@@ -98,8 +98,6 @@ const clientReviews = [
     },
 ];
 
-
-
 export const Reviews = () => {
     const [carouselRef, setCarouselRef] = useState(null);
     const [isAtStart, setIsAtStart] = useState(true);
@@ -115,62 +113,78 @@ export const Reviews = () => {
     
     return (
         <main className="spacing space-y-5">
-            <div className="margin flex justify-between items-center">
+            <div className="margin">
                 <Title>
                     What Our Clients Say
                 </Title>
-                <div className="hidden md:flex items-center gap-2">
-                    <Button
-                        size={"icon"}
-                        variant={"glassColor"}
-                        onClick={() => carouselRef?.scrollBy({ left: -320, behavior: "smooth" })}
-                        disabled={isAtStart}
-                        className={`${isAtStart ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} rounded-full`}
-                    >
-                        <IoIosArrowBack />
-                    </Button>
-                    <Button
-                        size={"icon"}
-                        variant={"glassColor"}
-                        className={`rotate-180 ${isAtEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} rounded-full`}
-                        onClick={() => carouselRef?.scrollBy({ left: 320, behavior: "smooth" })}
-                        disabled={isAtEnd}
-                    >
-                        <IoIosArrowBack />
-                    </Button>
-                </div>
             </div>
-            <section 
-                ref={ref => setCarouselRef(ref)}
-                onScroll={updateCarouselPosition}
-                className="carousel w-full gap-3"
-            >
-                {clientReviews.map((el, idx) => (
-                    <div
-                        key={idx}
-                        className={`
-                        ${idx == 0 && "ml-5 md:ml-15"} ${clientReviews.length - 1 == idx && "mr-5 md:mr-15"}
-                        min-w-[35vh] md:min-w-[30vh] p-4 rounded-main bg-lightColor dark:bg-darkColor flex flex-col
-                        `}>
-                        <div className="flex items-start mb-20">
-                            {[...Array(el.rating)].map((_, i) => (
-                                <span key={i} className="text-yellow-500">
-                                    <FaStar />
-                                </span>
-                            ))}
-                            {[...Array(5 - el.rating)].map((_, i) => (
-                                <span key={i} className="text-baseColorDark/30 dark:text-baseColorLight/40">
-                                    <FaStar />
-                                </span>
-                            ))}
+            
+            {/* Container untuk carousel dan arrows */}
+            <div className="relative">
+                {/* Left Arrow - positioned at center left of carousel */}
+                <Button
+                    size={"icon"}
+                    variant={"glassColor"}
+                    onClick={() => carouselRef?.scrollBy({ left: -300, behavior: "smooth" })}
+                    disabled={isAtStart}
+                    className={`
+                        absolute left-15 top-1/2 transform -translate-y-1/2 z-15 backdrop-blur-md
+                        ${isAtStart ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} 
+                        rounded-full shadow-lg
+                    `}
+                >
+                    <IoIosArrowBack />
+                </Button>
+                
+                {/* Right Arrow - positioned at center right of carousel */}
+                <Button
+                    size={"icon"}
+                    variant={"glassColor"}
+                    className={`
+                        absolute right-15 top-1/2 transform -translate-y-1/2 z-10 rotate-180 backdrop-blur-md
+                        ${isAtEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} 
+                        rounded-full shadow-lg
+                    `}
+                    onClick={() => carouselRef?.scrollBy({ left: 300, behavior: "smooth" })}
+                    disabled={isAtEnd}
+                >
+                    <IoIosArrowBack />
+                </Button>
+                
+                {/* Carousel Section */}
+                <section 
+                    ref={ref => setCarouselRef(ref)}
+                    onScroll={updateCarouselPosition}
+                    className="carousel w-full gap-4 px-12"
+                >
+                    {clientReviews.map((el, idx) => (
+                        <div
+                            key={idx}
+                            className={`
+                            ${idx == 0 && "ml-0"} ${clientReviews.length - 1 == idx && "mr-0"}
+                            min-w-[calc(25%-12px)] w-[calc(25%-12px)] p-4 rounded-main bg-lightColor dark:bg-darkColor flex flex-col
+                            `}>
+                            <div className="flex items-start mb-4">
+                                {[...Array(el.rating)].map((_, i) => (
+                                    <span key={i} className="text-yellow-500">
+                                        <FaStar />
+                                    </span>
+                                ))}
+                                {[...Array(5 - el.rating)].map((_, i) => (
+                                    <span key={i} className="text-baseColorDark/30 dark:text-baseColorLight/40">
+                                        <FaStar />
+                                    </span>
+                                ))}
+                            </div>
+                            <div className="text-main-2 dark:text-main-1 flex items-center gap-2 mb-2">
+                                <h2 className="text-lg font-semibold">{el.name}</h2>
+                            </div>
+                            <p className="text-sm opacity-70 mb-2">{el.company}</p>
+                            <p className="text-[15px] leading-5.5">{el.review}</p>
                         </div>
-                        <div className="text-main-2 dark:text-main-1 flex items-center gap-2 mb-2">
-                            <h2 className="text-xl font-semibold">{el.name}</h2>
-                        </div>
-                        <p className="text-[15px] leading-5.5">{el.review}</p>
-                    </div>
-                ))}
-            </section>
+                    ))}
+                </section>
+            </div>
         </main>
     );
 };
