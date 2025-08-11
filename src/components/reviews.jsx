@@ -112,8 +112,8 @@ export const Reviews = () => {
     };
     
     return (
-        <main className="spacing space-y-5">
-            <div className="margin">
+        <main className="space-y-5 mt-10">
+            <div className="margin mb-10">
                 <Title>
                     What Our Clients Say
                 </Title>

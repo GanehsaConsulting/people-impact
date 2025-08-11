@@ -18,14 +18,14 @@ const partners = [
 export const Partners = () => {
     return (
         <>
-            <section className="margin spacing space-y-5">
-                <div className="">
+            <section className="margin space-y-5 mt-10">
+                <div className="mb-10">
                     <Title>
                         Our Trusted Partner
                     </Title>
                 </div>
-                <div className="w-full md:h-full h-fit dark:bg-darkColor bg-lightColor py-6 md:py-16 space-y-10 rounded-xl">
-                    <div className="flex flex-wrap md:flex-nowrap p-3 md:p-0 items-center justify-evenly gap-10 h-fit">
+                <div className="w-full md:h-full h-fit dark:bg-darkColor bg-lightColor py-4 md:py-8 space-y-6 rounded-lg">
+                    <div className="flex flex-wrap md:flex-nowrap p-3 md:p-0 items-center justify-evenly gap-6 h-fit">
                         {partners.map((el, idx) => (
                             <div key={idx} className="flex flex-col items-center text-5xl md:text-7xl space-y-2 duration-300 ease-in-out hover:scale-105">
                                 {el.logo}
