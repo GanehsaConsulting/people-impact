@@ -17,45 +17,45 @@ export const OurStory = () => {
             title: "Transforming Businesses",
             description: "Delivering strategic and innovative solutions that inspire meaningful change, setting the stage for long-term success and sustainable growth.",
             icon: FaRocket,
-            color: "from-blue-500 to-blue-600",
-            bgColor: "bg-blue-50 dark:bg-blue-900/20",
-            iconColor: "text-blue-600 dark:text-blue-400"
+            color: "from-main-1 to-main-1/80",
+            bgColor: "bg-main-1/5 dark:bg-main-1/10",
+            iconColor: "text-main-1"
         },
         {
             id: 2,
             title: "Optimizing People & Processes",
             description: "Enhancing organizational efficiency, talent management, and operational excellence through customized consulting approaches that drive results.",
             icon: FaUsers,
-            color: "from-green-500 to-green-600",
-            bgColor: "bg-green-50 dark:bg-green-900/20",
-            iconColor: "text-green-600 dark:text-green-400"
+            color: "from-main-3 to-main-3/80",
+            bgColor: "bg-main-3/5 dark:bg-main-3/10",
+            iconColor: "text-main-3"
         },
         {
             id: 3,
             title: "Partnering for Success",
             description: "Building robust, trust-based relationships with our clients and providing expert guidance and ongoing support throughout their journey.",
             icon: FaHandshake,
-            color: "from-purple-500 to-purple-600",
-            bgColor: "bg-purple-50 dark:bg-purple-900/20",
-            iconColor: "text-purple-600 dark:text-purple-400"
+            color: "from-main-1 to-main-1/80",
+            bgColor: "bg-main-1/5 dark:bg-main-1/10",
+            iconColor: "text-main-1"
         },
         {
             id: 4,
             title: "Empowering Leadership",
             description: "Developing strong and dynamic leaders and teams that promote collaboration, innovation, and a vibrant workplace culture that inspires excellence.",
             icon: FaCrown,
-            color: "from-orange-500 to-orange-600",
-            bgColor: "bg-orange-50 dark:bg-orange-900/20",
-            iconColor: "text-orange-600 dark:text-orange-400"
+            color: "from-main-3 to-main-3/80",
+            bgColor: "bg-main-3/5 dark:bg-main-3/10",
+            iconColor: "text-main-3"
         },
         {
             id: 5,
             title: "Driving Sustainable Impact",
             description: "Offering solutions that tackle immediate challenges while fostering lasting, positive transformations for future success and environmental responsibility.",
             icon: FaLeaf,
-            color: "from-teal-500 to-teal-600",
-            bgColor: "bg-teal-50 dark:bg-teal-900/20",
-            iconColor: "text-teal-600 dark:text-teal-400"
+            color: "from-main-1 to-main-1/80",
+            bgColor: "bg-main-1/5 dark:bg-main-1/10",
+            iconColor: "text-main-1"
         }
     ];
 
@@ -65,21 +65,21 @@ export const OurStory = () => {
             title: "Innovation",
             description: "Embracing cutting-edge solutions and creative thinking",
             icon: FaLightbulb,
-            iconColor: "text-yellow-500"
+            iconColor: "text-main-3"
         },
         {
             id: 2,
             title: "Growth",
             description: "Fostering continuous improvement and development",
             icon: FaChartLine,
-            iconColor: "text-blue-500"
+            iconColor: "text-main-1"
         },
         {
             id: 3,
             title: "Passion",
             description: "Bringing enthusiasm and dedication to every project",
             icon: FaHeart,
-            iconColor: "text-red-500"
+            iconColor: "text-main-3"
         }
     ];
 
@@ -98,7 +98,7 @@ export const OurStory = () => {
                                 loading="lazy"
                             />
                             {/* Decorative element - hidden on mobile */}
-                            <div className="hidden lg:block absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-main-1/20 to-main-2/20 rounded-main -z-10"></div>
+                            <div className="hidden lg:block absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-main-1/20 to-main-3/20 rounded-main -z-10"></div>
                         </div>
                     </div>
 
@@ -136,7 +136,7 @@ export const OurStory = () => {
                     </div>
                 </div>
 
-                {/* Mission Cards - Enhanced Icon-Based Design */}
+                {/* Mission Cards - Enhanced Icon-Based Design with Custom Theme */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 md:gap-3">
                     {consultingServices.map((service, index) => {
                         const IconComponent = service.icon;
@@ -158,7 +158,7 @@ export const OurStory = () => {
 
                                 {/* Content */}
                                 <div className="relative space-y-4">
-                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-main-1 group-hover:to-main-2 transition-all duration-500">
+                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-main-1 group-hover:to-main-3 transition-all duration-500">
                                         {service.title}
                                     </h3>
                                     
@@ -179,7 +179,7 @@ export const OurStory = () => {
 
                                 {/* Decorative Elements */}
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-main-1/5 to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className={`absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr ${service.iconColor === 'text-main-1' ? 'from-main-1/5' : 'from-main-3/5'} to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                             </div>
                         );
                     })}
