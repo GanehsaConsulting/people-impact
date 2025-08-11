@@ -3,35 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FiArrowRight, FiSearch } from 'react-icons/fi';
-import {
-    HiOutlineUsers,
-    HiOutlineChartBar,
-    HiOutlineHeart,
-    HiOutlineCurrencyDollar,
-    HiOutlineCalculator,
-    HiOutlineDocumentText,
-    HiOutlineLightBulb,
-    HiOutlineShieldCheck,
-    HiOutlineDesktopComputer,
-    HiOutlineSparkles,
-    HiOutlineCog
-} from 'react-icons/hi';
+import { HiOutlineCog } from 'react-icons/hi';
 import { servicesData } from '@/lib/servicesData';
-
-// Icon mapping untuk setiap service
-const serviceIcons = {
-    "talent-acquisition-recruitment": HiOutlineUsers,
-    "performance-management": HiOutlineChartBar,
-    "employee-engagement-retention": HiOutlineHeart,
-    "compensation-benefits": HiOutlineCurrencyDollar,
-    "payroll-services": HiOutlineCalculator,
-    "hr-policies-procedures": HiOutlineDocumentText,
-    "organizational-development": HiOutlineLightBulb,
-    "compliance-support": HiOutlineShieldCheck,
-    "hr-technology-implementation": HiOutlineDesktopComputer,
-    "diversity-equity-inclusion": HiOutlineSparkles,
-    "custom-services": HiOutlineCog
-};
 
 export const AllServicesPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -88,7 +61,8 @@ export const AllServicesPage = () => {
                     {/* Mobile & Tablet Layout */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-6 mb-8">
                         {filteredServices.map((service) => {
-                            const IconComponent = serviceIcons[service.slug] || HiOutlineCog;
+                            // Use the first service's icon as the main icon for the service card
+                            const IconComponent = service.services[0]?.icon || HiOutlineCog;
 
                             return (
                                 <Link href={`/services/${service.slug}`} key={service.slug} className="group">
@@ -125,7 +99,8 @@ export const AllServicesPage = () => {
                     {/* Desktop Layout */}
                     <div className="hidden lg:grid grid-cols-4 gap-6">
                         {filteredServices.map((service) => {
-                            const IconComponent = serviceIcons[service.slug] || HiOutlineCog;
+                            // Use the first service's icon as the main icon for the service card
+                            const IconComponent = service.services[0]?.icon || HiOutlineCog;
 
                             return (
                                 <Link href={`/services/${service.slug}`} key={service.slug} className="group">

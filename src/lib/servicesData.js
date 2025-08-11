@@ -1,24 +1,18 @@
 // lib/servicesData.js
 import { 
-  FaUserTie, 
-  FaSearch, 
   FaClipboardCheck, 
-  FaUserPlus,
   FaChartLine,
   FaComments,
   FaBullseye,
   FaCouch,
   FaHeart,
-  FaLightbulb,
   FaHandshake,
   FaUserShield,
   FaDollarSign,
   FaBalanceScale,
   FaGift,
-  FaShieldAlt,
   FaCalculator,
-  FaPercentage,
-  FaTax,
+  FaReceipt, // Changed from FaTax
   FaFileInvoiceDollar,
   FaFileAlt,
   FaCogs,
@@ -26,16 +20,13 @@ import {
   FaExclamationTriangle,
   FaSitemap,
   FaEye,
-  FaBuilding,
   FaUsers,
   FaRocket,
-  FaHeadset,
   FaClipboardList,
   FaLaptopCode,
   FaGraduationCap,
   FaRobot,
   FaChartBar,
-  FaDiversity,
   FaBrain,
   FaFlag,
   FaUserCheck,
@@ -44,6 +35,11 @@ import {
   FaTools,
   FaExchangeAlt
 } from 'react-icons/fa';
+import { TbTargetArrow } from "react-icons/tb";
+import { PiChalkboardTeacherDuotone } from "react-icons/pi";
+import { MdFindInPage } from "react-icons/md";
+import { DiGoogleAnalytics } from "react-icons/di";
+
 
 export const servicesData = {
   "talent-acquisition-recruitment": {
@@ -56,22 +52,22 @@ export const servicesData = {
       {
         title: "Job Analysis and Development of Job Descriptions",
         description: "We begin with a thorough job analysis to understand the specific requirements and expectations for each role. Our team collaborates with you to develop clear and compelling job descriptions that not only attract qualified candidates but also accurately reflect your organization's culture and values.",
-        icon: FaFileAlt
+        icon: DiGoogleAnalytics
       },
       {
         title: "Sourcing and Screening Candidates", 
         description: "Leveraging a variety of sourcing strategies, we identify and reach out to top talent in the market. Our multi-channel approach includes utilizing online job boards, social media platforms, and our extensive network. We meticulously screen candidates based on their skills, experiences, and alignment with your organizational values to ensure the best fit for your team.",
-        icon: FaSearch
+        icon: MdFindInPage
       },
       {
         title: "Conducting Interviews and Assessments",
         description: "Our structured interview and assessment process ensures consistency and fairness in candidate evaluation. We conduct in-depth interviews and utilize tailored assessment tools that measure both technical skills and soft skills, allowing us to select candidates who can contribute effectively to your team.",
-        icon: FaClipboardCheck
+        icon: TbTargetArrow
       },
       {
         title: "Onboarding and Orientation Programs",
         description: "A smooth onboarding experience is critical for new hires. We provide comprehensive onboarding solutions that help integrate new employees into your organization seamlessly. Our programs include orientation sessions, training plans, and mentorship opportunities to ensure that new hires feel welcomed, informed, and prepared to succeed from day one.",
-        icon: FaUserPlus
+        icon: PiChalkboardTeacherDuotone
       }
     ],
     ctaText: "Ready to Elevate Your Talent Acquisition?",
@@ -194,7 +190,7 @@ export const servicesData = {
       {
         title: "Compliance with Tax Regulations and Reporting",
         description: "Navigating tax laws can be complex. Our payroll experts ensure compliance with all local, state, and federal tax regulations. We take care of tax calculations, withholding, and reporting, minimizing your risk of penalties and ensuring that your payroll processes adhere to legal standards.",
-        icon: FaTax
+        icon: FaReceipt
       },
       {
         title: "Conducting Payroll Audits and Reconciliation",
