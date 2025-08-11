@@ -30,7 +30,7 @@ export const BannerTwo = () => {
 
     return (
         <>
-            <main className="mx-0 my-0 md:my-4 h-[70vh] md:h-[90vh] relative overflow-hidden flex flex-col group">
+            <main className="mx-0 my-0 md:my-4 h-[60vh] sm:h-[70vh] md:h-[90vh] relative overflow-hidden flex flex-col group">
                 {/* Background Image with Enhanced Effects */}
                 <div className="absolute inset-0 rounded-none overflow-hidden">
                     <img
@@ -75,26 +75,26 @@ export const BannerTwo = () => {
 
                 </div> */}
 
-                {/* Main Content */}
-                <div className="absolute bottom-4 md:bottom-17 left-4 md:left-15 right-4 md:right-15">
-                    <div className="max-w-4xl text-white space-y-4 md:space-y-6">
+                {/* Main Content - Responsive Positioning */}
+                <div className="absolute bottom-6 sm:bottom-8 md:bottom-17 left-3 sm:left-4 md:left-15 right-3 sm:right-4 md:right-15">
+                    <div className="max-w-4xl text-white space-y-3 sm:space-y-4 md:space-y-6">
                         {/* Badge */}
                         {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-medium">
                             <FiCheckCircle className="w-4 h-4 text-green-400" />
                             <span>Trusted by Industry Leaders</span>
                         </div> */}
 
-                        {/* Main Heading with Animation */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight drop-shadow-2xl leading-tight">
+                        {/* Main Heading with Enhanced Responsive Typography */}
+                        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight drop-shadow-2xl leading-tight">
                             <span className="block">Empowering People</span>
                             <span className="block bg-gradient-to-r from-white via-sky-200 to-white bg-clip-text text-transparent">
                                 Transforming Organizations
                             </span>
                         </h1>
 
-                        {/* Description with Better Typography */}
+                        {/* Description with Better Responsive Typography */}
                         <div className="max-w-3xl">
-                            <p className="text-sm md:text-base leading-relaxed text-white/90 backdrop-blur-sm">
+                            <p className="text-xs xs:text-sm md:text-base leading-relaxed text-white/90 backdrop-blur-sm">
                                 <span className="hidden md:block">
                                     At People Impact, we recognize that  every organization is unique. Our tailored approach combines deep understanding of your goals with strategic solutions that drive meaningful transformation. Through integrated business strategy, leadership development, and process optimization, we empower organizations to thrive in today's competitive landscape.
                                 </span>
@@ -104,22 +104,22 @@ export const BannerTwo = () => {
                             </p>
                         </div>
 
-                        {/* Enhanced Action Buttons */}
-                        <div className="flex flex-row gap-3 sm:gap-4 pt-2">
+                        {/* Enhanced Responsive Action Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 pt-2 w-full">
                             <Button
                                 onClick={handleEnrollNow}
                                 disabled={isEnrolling}
-                                className="bg-white dark:bg-black dark:text-white hover:bg-gray-100 text-darkColor  font-semibold px-6 py-3 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group flex items-center justify-center gap-2 min-w-[160px]"
+                                className="bg-white dark:bg-black dark:text-white hover:bg-gray-100 text-darkColor font-semibold px-4 xs:px-6 py-2.5 xs:py-3 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group flex items-center justify-center gap-2 min-w-[140px] xs:min-w-[160px] text-sm xs:text-base"
                             >
                                 {isEnrolling ? (
                                     <>
-                                        <div className="w-4 h-4 border-2 border-main-1 border-t-transparent rounded-full animate-spin"></div>
-                                        <span>Opening Form...</span>
+                                        <div className="w-3 h-3 xs:w-4 xs:h-4 border-2 border-main-1 border-t-transparent rounded-full animate-spin"></div>
+                                        <span className="text-xs xs:text-sm">Opening Form...</span>
                                     </>
                                 ) : (
                                     <>
                                         <span>Enroll Now</span>
-                                        <MdArrowOutward className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                                        <MdArrowOutward className="w-3 h-3 xs:w-4 xs:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                                     </>
                                 )}
                             </Button>
@@ -127,16 +127,14 @@ export const BannerTwo = () => {
                             <Button
                                 onClick={scrollToExplore}
                                 variant="glass"
-                                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold px-6 py-3 transition-all duration-300 transform hover:scale-105 group flex items-center justify-center gap-2"
+                                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold px-4 xs:px-6 py-2.5 xs:py-3 transition-all duration-300 transform hover:scale-105 group flex items-center justify-center gap-2 text-sm xs:text-base"
                             >
                                 <span>Explore Services</span>
-                                <MdArrowDownward className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
+                                <MdArrowDownward className="w-3 h-3 xs:w-4 xs:h-4 group-hover:translate-y-1 transition-transform duration-300" />
                             </Button>
                         </div>
                     </div>
                 </div>
-
-
             </main>
         </>
     )
