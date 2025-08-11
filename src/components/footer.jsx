@@ -126,7 +126,7 @@ export const Footer = () => {
     return (
         <footer className="relative">
             {/* Thicker Wave Effect that flows into footer background */}
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-fit overflow-hidden">
                 <svg
                     className="absolute bottom-0 w-full h-full"
                     viewBox="0 0 1200 200"
@@ -160,13 +160,13 @@ export const Footer = () => {
 
             {/* Main Footer Content - seamlessly connected */}
             <div className="bg-lightColor dark:bg-darkColor relative -mt-1">
-                <div className="relative py-16 px-4 sm:px-6 lg:px-8">
+                <div className="relative py-12 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 
                             {/* Left Side - Logo & Social Media */}
-                            <div className="space-y-8">
-                                <div className="space-y-4">
+                            <div className="space-y-2" >
+                                <div className="space-y-2" >
                                     <Link href="/" className="inline-block group">
                                         <Image
                                             width={150}
@@ -184,17 +184,17 @@ export const Footer = () => {
                                     </p>
                                 </div>
 
-                                <div className="space-y-4">
+                                <div className="space-y-2" >
                                     <h4 className="text-sm font-semibold text-darkColor dark:text-lightColor uppercase tracking-wider flex items-center gap-2">
                                         <div className="w-8 h-0.5 bg-gradient-to-r from-main-1 to-main-3 rounded-full"></div>
                                         Follow Us
                                     </h4>
-                                    <div className="flex space-x-4">
+                                    <div className="flex space-x-3">
                                         <a
                                             href="https://instagram.com/peopleimpact_consulting"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:from-sec-2 hover:to-main-2 text-darkColor dark:text-lightColor hover:text-white p-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 hover:-translate-y-1"
+                                            className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:from-sec-2 hover:to-main-2 text-darkColor dark:text-lightColor hover:text-white p-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 hover:-translate-y-1"
                                             aria-label="Follow us on Instagram"
                                         >
                                             <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -206,7 +206,7 @@ export const Footer = () => {
                                             href="https://linkedin.com/company/people-impact-consulting"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:from-main-1 hover:to-main-2 text-darkColor dark:text-lightColor hover:text-white p-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 hover:-translate-y-1"
+                                            className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:from-main-1 hover:to-main-2 text-darkColor dark:text-lightColor hover:text-white p-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 hover:-translate-y-1"
                                             aria-label="Follow us on LinkedIn"
                                         >
                                             <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -218,7 +218,7 @@ export const Footer = () => {
                                             href="https://youtube.com/@PeopleImpact_Consulting"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:from-main-4 hover:to-main-5 text-darkColor dark:text-lightColor hover:text-white p-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 hover:-translate-y-1"
+                                            className="group relative bg-white/80 dark:bg-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:from-main-4 hover:to-main-5 text-darkColor dark:text-lightColor hover:text-white p-3 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 hover:-translate-y-1"
                                             aria-label="Subscribe to our YouTube channel"
                                         >
                                             <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -230,19 +230,19 @@ export const Footer = () => {
                             </div>
 
                             {/* Middle - Contact Details */}
-                            <div className="space-y-8">
+                            <div className="space-y-5">
                                 <h4 className="text-xl font-semibold text-darkColor dark:text-lightColor flex items-center gap-3">
                                     <div className="w-8 h-0.5 bg-gradient-to-r from-main-1 to-main-3 rounded-full"></div>
                                     Contact Details
                                 </h4>
 
-                                <div className="space-y-6">
+                                <div className="space-y-1">
                                     <a
                                         href="tel:+6281297770201"
-                                        className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-4 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
+                                        className="group flex items-start space-x-3 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                                     >
-                                        <div className="bg-gradient-to-r from-main-3 to-sec-4 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
-                                            <FiPhone className="w-5 h-5" />
+                                        <div className="bg-gradient-to-r from-main-3 to-sec-4 p-2 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
+                                            <FiPhone className="w-4 h-4" />
                                         </div>
                                         <div>
                                             <p className="font-medium text-darkColor dark:text-lightColor">Phone</p>
@@ -252,10 +252,10 @@ export const Footer = () => {
 
                                     <a
                                         href="mailto:support@peopleimpact.co.id"
-                                        className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-4 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
+                                        className="group flex items-start space-x-3 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                                     >
-                                        <div className="bg-gradient-to-r from-main-1 to-sec-1 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
-                                            <FiMail className="w-5 h-5" />
+                                        <div className="bg-gradient-to-r from-main-1 to-sec-1 p-2 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
+                                            <FiMail className="w-4 h-4" />
                                         </div>
                                         <div>
                                             <p className="font-medium text-darkColor dark:text-lightColor">Email</p>
@@ -267,10 +267,10 @@ export const Footer = () => {
                                         href="https://maps.google.com/?q=Epicentrum Walk Jakarta"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-4 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
+                                        className="group flex items-start space-x-3 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                                     >
-                                        <div className="bg-gradient-to-r from-main-2 to-sec-3 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
-                                            <FiMapPin className="w-5 h-5" />
+                                        <div className="bg-gradient-to-r from-main-2 to-sec-3 p-2 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
+                                            <FiMapPin className="w-4 h-4" />
                                         </div>
                                         <div className="text-sm">
                                             <p className="font-medium text-darkColor dark:text-lightColor mb-1">PT People Impact Consulting</p>
@@ -283,14 +283,14 @@ export const Footer = () => {
                             </div>
 
                             {/* Right Side - Quick Links & Location */}
-                            <div className="space-y-8">
+                            <div className="space-y-2">
                                 <h4 className="text-xl font-semibold text-darkColor dark:text-lightColor flex items-center gap-3">
                                     <div className="w-8 h-0.5 bg-gradient-to-r from-main-1 to-main-3 rounded-full"></div>
                                     Quick Links
                                 </h4>
 
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="space-y-3">
+                                <div className="grid grid-cols-2 gap-1">
+                                    <div>
                                         <Link href="/about-us" className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm">
                                             About Us
                                         </Link>
@@ -301,7 +301,7 @@ export const Footer = () => {
                                             Contact Us
                                         </Link>
                                     </div>
-                                    <div className="space-y-3">
+                                    <div>
                                         <Link href="/job-board" className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm">
                                             Job Board
                                         </Link>
@@ -315,7 +315,7 @@ export const Footer = () => {
                                 </div>
 
                                 {/* Location Map */}
-                                <div className="space-y-4">
+                                <div className="space-y-3">
                                     <h5 className="text-sm font-semibold text-darkColor dark:text-lightColor uppercase tracking-wider flex items-center gap-2">
                                         <div className="w-6 h-0.5 bg-gradient-to-r from-main-1 to-main-3 rounded-full"></div>
                                         Our Location
@@ -324,7 +324,7 @@ export const Footer = () => {
                                         <iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.264754392871!2d106.83070!3d-6.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f39c9c2c2c2c%3A0x2c2c2c2c2c2c2c2c!2sEpicentrum%20Walk!5e0!3m2!1sen!2sid!4v1635000000000!5m2!1sen!2sid"
                                             width="100%"
-                                            height="180"
+                                            height="160"
                                             style={{ border: 0 }}
                                             allowFullScreen=""
                                             loading="lazy"
@@ -338,13 +338,13 @@ export const Footer = () => {
                         </div>
 
                         {/* Bottom Section - Copyright & Links */}
-                        <div className="border-t border-white/20 dark:border-white/10 mt-16 pt-8 pb-0">
-                            <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                        <div className="border-t border-white/20 dark:border-white/10 mt-5 pt-6 pb-0">
+                            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                                 <p className="text-darkColor/60 dark:text-lightColor/60 text-center md:text-left">
                                     Copyright ©2025 People Impact - Human Resources Consultant. All Rights Reserved.
                                 </p>
 
-                                <div className="flex space-x-8">
+                                <div className="flex space-x-6">
                                     <button
                                         onClick={() => openDocument('terms')}
                                         className="text-darkColor/60 dark:text-lightColor/60 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 inline-flex items-center gap-2 group"
