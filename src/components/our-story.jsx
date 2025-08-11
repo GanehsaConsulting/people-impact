@@ -87,12 +87,12 @@ export const OurStory = () => {
         <main className="margin spacing space-y-12 md:space-y-16 lg:space-y-20">
             {/* Vision Section - Responsive Layout */}
             <section className="relative">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
                     {/* Image - Mobile First, Desktop Left */}
-                    <div className="lg:col-span-5 relative order-1 lg:order-1">
+                    <div className="relative order-1 lg:order-1">
                         <div className="relative">
                             <img
-                                className="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover rounded-main shadow-xl"
+                                className="w-full h-48 sm:h-64 md:h-80 lg:h-full min-h-[400px] object-cover rounded-main shadow-xl"
                                 src="https://images.unsplash.com/photo-1550305080-4e029753abcf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Vision - Team collaboration and growth"
                                 loading="lazy"
@@ -103,7 +103,7 @@ export const OurStory = () => {
                     </div>
 
                     {/* Content - Mobile Second, Desktop Right */}
-                    <div className="lg:col-span-7 space-y-4 md:space-y-6 order-2 lg:order-2 lg:pr-8">
+                    <div className="space-y-4 md:space-y-6 order-2 lg:order-2 flex flex-col ">
                         <Title>
                             Our Vision
                         </Title>
@@ -121,7 +121,7 @@ export const OurStory = () => {
             </section>
 
             {/* Mission Section - Enhanced with Icons */}
-            <section className="space-y-8 md:space-y-12 lg:space-y-16">
+                        <section className="space-y-8 md:space-y-12 lg:space-y-16">
                 <div className="text-left space-y-4 md:space-y-6">
                     <Title>
                         Our Mission
@@ -185,6 +185,7 @@ export const OurStory = () => {
                     })}
                 </div>
             </section>
+  
         </main>
     )
 }

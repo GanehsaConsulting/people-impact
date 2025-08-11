@@ -2,9 +2,9 @@ import { Title } from "./ui/title"
 
 export const About = () => {
     return (
-        <main className="margin spacing grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+        <main className="margin spacing grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
             {/* Content Section */}
-            <section className="space-y-4 md:space-y-5 order-2 lg:order-1">
+            <section className=" space-y-4 md:space-y-5 order-2 lg:order-1 flex flex-col justify-center">
                 <Title>
                     Who We Are
                 </Title>
@@ -31,7 +31,7 @@ export const About = () => {
             <section className="order-1 lg:order-2">
                 <div className="relative">
                     <img
-                        className="w-full h-48 sm:h-64 md:h-80 lg:h-full object-cover rounded-main shadow-lg"
+                        className="w-full h-48 sm:h-64 md:h-80 lg:h-full min-h-[400px] object-cover rounded-main shadow-lg"
                         src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Professional team working together in a modern office environment"
                         loading="lazy"
