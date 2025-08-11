@@ -100,10 +100,10 @@ export const MegaMenuNavbar = ({
                     onMouseEnter={() => setExpandedId(id)}
                     className={`fixed top-2 left-2 right-2 rounded-main w-auto bg-lightColor dark:bg-darkColor transition-all duration-450 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] overflow-hidden 
                              ${isExpanded
-                            ? 'pointer-events-auto opacity-100 translate-y-0 max-h-[80vh]'
+                            ? 'pointer-events-auto opacity-100 translate-y-0'
                             : 'pointer-events-none opacity-0 -translate-y-5 max-h-0'}`}
                     style={{
-                        minHeight: isExpanded ? '30vh' : '0',
+                        minHeight: isExpanded ? 'min-h-screen' : '0',
                         top: `${navbarHeight + 8}px`, // Use dynamic navbar height
                     }}
                 >
