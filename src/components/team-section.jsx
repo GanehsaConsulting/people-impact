@@ -30,10 +30,7 @@ export const TeamSection = () => {
         "Change Management",
         "Project Management",
       ],
-      education: "Diploma in Project Management (S.A.C.), Stonebridge Associated Colleges, United Kingdom",
-      certifications: [],
-      email: "lady@example.com",
-      linkedin: "https://linkedin.com/in/lady-meiske",
+      linkedin: "https://www.linkedin.com/in/lady-meiske",
       summary: "20+ years experience across multiple industries, 10 years in strategic HR leadership",
       experience: "20+ Years",
       specialty: "Strategic HR Leadership & Organizational Development",
@@ -46,10 +43,7 @@ export const TeamSection = () => {
       alt: "Siska Rajagukguk Photo",
       bio: "Siska is a Certified Human Resources Professional with over 18 years of experience across NGOs, donor-funded projects (World Bank, DFAT, USAID, etc), private companies, and start-ups. She holds a Bachelor's degree in Human Resources Management from Atma Jaya Catholic University, Jakarta. Previously, Siska served as the HR Director at an NGO, where she played a key role in strengthening the organization’s HR functions, systems, and structure.\n\nHer expertise covers HR strategy, organizational development, compliance, change management, recruitment, contracts, compensation & benefit, performance management, HRIS, and policy design. She has led national HR operations, built HR systems from scratch, managed over 3,000 hires, and supported remote teams across Indonesia.\n\nAs an independent consultant, Siska has provided strategic advice to a diverse range of organizations—including wealth management firms, reinsurance companies, logistics firms, banks, NGOs, and early-stage start-ups—helping them establish ethical, scalable, and compliant HR practices. A people-centered leader and strategic partner, Siska is dedicated to aligning HR initiatives with organizational objectives while fostering inclusive, values-driven, and impactful workplaces.",
       expertise: ["HR Strategy", "Organizational Development", "Compliance", "Change Management", "Recruitment", "Contracts", "Compensation & Benefit", "Performance Management", "HRIS", "Policy Design"],
-      education: "Bachelor's in Human Resources Management, Atma Jaya Catholic University, Jakarta",
-      certifications: ["Certified Human Resources Professional"],
-      email: "siska@example.com",
-      linkedin: "https://linkedin.com/in/siska-rajagukguk",
+      linkedin: "https://www.linkedin.com/in/siska-rajagukguk-280b4988/",
       summary: "Certified HR Professional with 18+ years across NGOs, private companies, and start-ups",
       experience: "18+ Years",
       specialty: "HR Strategy & Organizational Development",
@@ -137,23 +131,6 @@ export const TeamSection = () => {
                         <p className={`font-semibold text-lg mb-2 ${index === 0 ? "text-main-1" : "text-main-3"}`}>{member.position}</p>
                         <p className="text-sm text-darkColor/60 dark:text-lightColor/60 font-medium">{member.specialty}</p>
                       </div>
-
-                      {/* Quick Stats */}
-                      <div className="flex items-center gap-4 mb-4">
-                        {member.certifications.length != 0 && (
-                          <>
-                            <div className="flex items-center gap-2 text-sm text-darkColor/70 dark:text-lightColor/70">
-                              <FiAward className="w-4 h-4" />
-                              <span>{member.certifications.length} Certs</span>
-                            </div>
-                            <div className="w-1 h-1 bg-darkColor/30 dark:bg-lightColor/30 rounded-full"></div>
-                          </>
-                        )}
-                        <div className="flex items-center gap-2 text-sm text-darkColor/70 dark:text-lightColor/70">
-                          <FiBookOpen className="w-4 h-4" />
-                          <span>Advanced Degree</span>
-                        </div>
-                      </div>
                     </div>
                   </div>
 
@@ -232,18 +209,6 @@ export const TeamSection = () => {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold text-darkColor dark:text-lightColor mb-4">Get in Touch</h4>
                     <a
-                      href={`mailto:${selectedMember.email}`}
-                      className="flex items-center gap-4 p-4 bg-gradient-to-r from-main-1/10 to-main-1/5 dark:from-main-1/20 dark:to-main-1/10 rounded-2xl hover:from-main-1/20 hover:to-main-1/10 dark:hover:from-main-1/30 dark:hover:to-main-1/20 transition-all duration-300 group"
-                    >
-                      <div className="w-10 h-10 bg-main-1 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <FiMail className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-darkColor dark:text-lightColor">Email</p>
-                        <p className="text-xs text-darkColor/60 dark:text-lightColor/60">Send a message</p>
-                      </div>
-                    </a>
-                    <a
                       href={selectedMember.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -290,38 +255,6 @@ export const TeamSection = () => {
                     </div>
                   </div>
 
-                  {/* Education & Certifications */}
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-4 flex items-center gap-2">
-                        <FiBookOpen className="w-5 h-5" />
-                        Education
-                      </h4>
-                      <div className="p-4 bg-gradient-to-br from-main-1/5 to-transparent dark:from-main-1/10 rounded-xl">
-                        <p className="text-darkColor/80 dark:text-lightColor/80 leading-relaxed">{selectedMember.education}</p>
-                      </div>
-                    </div>
-
-                    {selectedMember?.certifications.length != 0 && (
-                      <div>
-                        <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-4 flex items-center gap-2">
-                          <FiAward className="w-5 h-5" />
-                          Certifications
-                        </h4>
-                        <div className="space-y-3">
-                          {selectedMember.certifications.map((cert, index) => (
-                            <div
-                              key={index}
-                              className="flex items-center gap-3 p-3 bg-gradient-to-r from-main-3/5 to-transparent dark:from-main-3/10 rounded-xl group hover:from-main-3/10 dark:hover:from-main-3/20 transition-all duration-300"
-                            >
-                              <div className="w-3 h-3 bg-main-3 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                              <span className="text-sm text-darkColor dark:text-lightColor font-medium">{cert}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
                 </div>
               </div>
             </div>
