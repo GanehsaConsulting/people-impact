@@ -24,7 +24,6 @@ import {
 import { IoIosArrowForward } from 'react-icons/io';
 import { servicesData } from '@/lib/servicesData';
 
-// Constants
 const SERVICE_ICONS = {
   "talent-acquisition-recruitment": HiOutlineUsers,
   "performance-management": HiOutlineChartBar,
