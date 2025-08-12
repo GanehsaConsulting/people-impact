@@ -119,17 +119,17 @@ export const Reviews = () => {
         }
         return 300;
     };
-    
+
     return (
-        <main className="space-y-5 mt-10">
+        <main className="space-y-5 spacing">
             <div className="margin mb-10">
                 <Title>
                     What Our Clients Say
                 </Title>
             </div>
-            
+
             {/* Container untuk carousel dan arrows */}
-            <div className="relative">
+            <div className="relative group">
                 {/* Left Arrow - responsive positioning */}
                 <Button
                     size={"icon"}
@@ -137,21 +137,21 @@ export const Reviews = () => {
                     onClick={() => carouselRef?.scrollBy({ left: -scrollAmount(), behavior: "smooth" })}
                     disabled={isAtStart}
                     className={`
-                        absolute left-2 sm:left-4 lg:left-15 top-1/2 transform -translate-y-1/2 z-15 backdrop-blur-md
-                        ${isAtStart ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} 
+                        absolute left-2 sm:left-4 lg:left-15 top-1/2 transform -translate-y-1/2 z-15 backdrop-blur-md 
+                        ${isAtStart ? '!opacity-5 cursor-not-allowed' : 'group-hover:!opacity-100 !opacity-20 cursor-pointer'} 
                         rounded-full shadow-lg w-8 h-8 sm:w-10 sm:h-10
                     `}
                 >
                     <IoIosArrowBack className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
-                
+
                 {/* Right Arrow - responsive positioning */}
                 <Button
                     size={"icon"}
                     variant={"glassColor"}
                     className={`
                         absolute right-2 sm:right-4 lg:right-15 top-1/2 transform -translate-y-1/2 z-10 rotate-180 backdrop-blur-md
-                        ${isAtEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} 
+                        ${isAtEnd ? '!opacity-5 cursor-not-allowed' : 'opacity-20 cursor-pointer group-hover:!opacity-100'} 
                         rounded-full shadow-lg w-8 h-8 sm:w-10 sm:h-10
                     `}
                     onClick={() => carouselRef?.scrollBy({ left: scrollAmount(), behavior: "smooth" })}
@@ -159,9 +159,9 @@ export const Reviews = () => {
                 >
                     <IoIosArrowBack className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
-                
+
                 {/* Carousel Section - responsive padding */}
-                <section 
+                <section
                     ref={ref => setCarouselRef(ref)}
                     onScroll={updateCarouselPosition}
                     className="carousel w-full gap-3 sm:gap-4 px-4 sm:px-8 lg:px-12"

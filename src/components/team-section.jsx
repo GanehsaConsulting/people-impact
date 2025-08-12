@@ -4,6 +4,24 @@ import { useEffect, useState } from "react";
 import { FiArrowRight, FiX, FiLinkedin, FiMail, FiAward, FiBookOpen } from "react-icons/fi";
 import { Title } from "./ui/title";
 
+// Function to format bio text into HTML paragraphs
+const formatBio = (bioText) => {
+  // Split by double line breaks first, then single line breaks
+  const paragraphs = bioText.split('\n\n').map(paragraph => paragraph.replace(/\n/g, ' '));
+  
+  return paragraphs.map((paragraph, index) => {
+    // Clean up any extra spaces
+    const cleanParagraph = paragraph.trim();
+    if (!cleanParagraph) return null;
+    
+    return (
+      <p key={index} className="text-darkColor/80 dark:text-lightColor/80 leading-relaxed text-base mb-4 last:mb-0">
+        {cleanParagraph}
+      </p>
+    );
+  }).filter(Boolean);
+};
+
 export const TeamSection = () => {
   const [selectedMember, setSelectedMember] = useState(null);
 
@@ -14,7 +32,7 @@ export const TeamSection = () => {
       position: "Managing Partner & Co-Founder People Impact",
       photo: "https://cms-ganesha.ganeshaconsulting.co.id/uploads/Meiske_cc2fb34123.webp",
       alt: "Lady Meiske Photo",
-      bio: "Meiske brings over 20 years of experience across industries like Agritech, FMCG, hospitality, and education, with the past 10 years focused on strategic HR leadership. She holds a Diploma in Project Management (S.A.C.) from Stonebridge Associated Colleges, United Kingdom. Before joining People Impact, Meiske served as VP of People Culture & Corporate Support at an Agritech startup, where she played a pivotal role in building and shaping the organization’s HR framework.\n\nHer areas of expertise encompass a wide range of HR functions, including Recruiting, Onboarding, Talent Management, Communication, Training, Compensation and Succession Planning, Organizational Development, Leadership Development, Compliance, HRIS, Data Analytics, Fundraising, Business Process Improvement, Change Management, and Project Management.\n\nMeiske’s extensive background equips her with a unique analytical perspective, enabling her to guide business leaders on effectively adopting HR strategies that align with their talent objectives. She is passionate about providing resources and insights to empower the next generation of talent, preparing them for the future of work.",
+      bio: "Meiske brings over 20 years of experience across industries like Agritech, FMCG, hospitality, and education, with the past 10 years focused on strategic HR leadership. She holds a Diploma in Project Management (S.A.C.) from Stonebridge Associated Colleges, United Kingdom. Before joining People Impact, Meiske served as VP of People Culture & Corporate Support at an Agritech startup, where she played a pivotal role in building and shaping the organization's HR framework.\n\nHer areas of expertise encompass a wide range of HR functions, including Recruiting, Onboarding, Talent Management, Communication, Training, Compensation and Succession Planning, Organizational Development, Leadership Development, Compliance, HRIS, Data Analytics, Fundraising, Business Process Improvement, Change Management, and Project Management.\n\nMeiske's extensive background equips her with a unique analytical perspective, enabling her to guide business leaders on effectively adopting HR strategies that align with their talent objectives. She is passionate about providing resources and insights to empower the next generation of talent, preparing them for the future of work.",
       expertise: [
         "Recruiting",
         "Onboarding",
@@ -41,7 +59,7 @@ export const TeamSection = () => {
       position: "Managing Partner & Co-Founder People Impact",
       photo: "https://cms-ganesha.ganeshaconsulting.co.id/uploads/Siska_bb0f49beb9.webp",
       alt: "Siska Rajagukguk Photo",
-      bio: "Siska is a Certified Human Resources Professional with over 18 years of experience across NGOs, donor-funded projects (World Bank, DFAT, USAID, etc), private companies, and start-ups. She holds a Bachelor's degree in Human Resources Management from Atma Jaya Catholic University, Jakarta. Previously, Siska served as the HR Director at an NGO, where she played a key role in strengthening the organization’s HR functions, systems, and structure.\n\nHer expertise covers HR strategy, organizational development, compliance, change management, recruitment, contracts, compensation & benefit, performance management, HRIS, and policy design. She has led national HR operations, built HR systems from scratch, managed over 3,000 hires, and supported remote teams across Indonesia.\n\nAs an independent consultant, Siska has provided strategic advice to a diverse range of organizations—including wealth management firms, reinsurance companies, logistics firms, banks, NGOs, and early-stage start-ups—helping them establish ethical, scalable, and compliant HR practices. A people-centered leader and strategic partner, Siska is dedicated to aligning HR initiatives with organizational objectives while fostering inclusive, values-driven, and impactful workplaces.",
+      bio: "Siska is a Certified Human Resources Professional with over 18 years of experience across NGOs, donor-funded projects (World Bank, DFAT, USAID, etc), private companies, and start-ups. She holds a Bachelor's degree in Human Resources Management from Atma Jaya Catholic University, Jakarta. Previously, Siska served as the HR Director at an NGO, where she played a key role in strengthening the organization's HR functions, systems, and structure.\n\nHer expertise covers HR strategy, organizational development, compliance, change management, recruitment, contracts, compensation & benefit, performance management, HRIS, and policy design. She has led national HR operations, built HR systems from scratch, managed over 3,000 hires, and supported remote teams across Indonesia.\n\nAs an independent consultant, Siska has provided strategic advice to a diverse range of organizations—including wealth management firms, reinsurance companies, logistics firms, banks, NGOs, and early-stage start-ups—helping them establish ethical, scalable, and compliant HR practices. A people-centered leader and strategic partner, Siska is dedicated to aligning HR initiatives with organizational objectives while fostering inclusive, values-driven, and impactful workplaces.",
       expertise: ["HR Strategy", "Organizational Development", "Compliance", "Change Management", "Recruitment", "Contracts", "Compensation & Benefit", "Performance Management", "HRIS", "Policy Design"],
       linkedin: "https://www.linkedin.com/in/siska-rajagukguk-280b4988/",
       summary: "Certified HR Professional with 18+ years across NGOs, private companies, and start-ups",
@@ -96,9 +114,8 @@ export const TeamSection = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
-                className={`group relative bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800 dark:to-gray-900/50 rounded-main p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer border border-secondaryLight/50 dark:border-darkColor/50 backdrop-blur-sm ${
-                  index === 0 ? "hover:shadow-main-1/20" : "hover:shadow-main-3/20"
-                }`}
+                className={`overflow-hidden group relative bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800 dark:to-gray-900/50 rounded-main p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer border border-secondaryLight/50 dark:border-darkColor/50 backdrop-blur-sm ${index === 0 ? "hover:shadow-main-1/20" : "hover:shadow-main-3/20"
+                  }`}
                 onClick={() => openModal(member)}
                 style={{
                   background: index === 0 ? "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(99, 102, 241, 0.05) 100%)" : "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(16, 185, 129, 0.05) 100%)",
@@ -114,9 +131,8 @@ export const TeamSection = () => {
                     {/* Profile Photo */}
                     <div className="relative">
                       <div
-                        className={`w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 ring-4 transition-all duration-300 group-hover:ring-8 ${
-                          index === 0 ? "ring-main-1/20 group-hover:ring-main-1/30" : "ring-main-3/20 group-hover:ring-main-3/30"
-                        }`}
+                        className={`w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 ring-4 transition-all duration-300 group-hover:ring-8 ${index === 0 ? "ring-main-1/20 group-hover:ring-main-1/30" : "ring-main-3/20 group-hover:ring-main-3/30"
+                          }`}
                       >
                         <img src={member.photo} alt={member.alt} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" />
                       </div>
@@ -145,9 +161,8 @@ export const TeamSection = () => {
                       {member.expertise.slice(0, 2).map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 group-hover:scale-105 ${
-                            index === 0 ? "bg-main-1/10 text-main-1 group-hover:bg-main-1/20" : "bg-main-3/10 text-main-3 group-hover:bg-main-3/20"
-                          }`}
+                          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 group-hover:scale-105 ${index === 0 ? "bg-main-1/10 text-main-1 group-hover:bg-main-1/20" : "bg-main-3/10 text-main-3 group-hover:bg-main-3/20"
+                            }`}
                         >
                           {skill}
                         </span>
@@ -162,9 +177,8 @@ export const TeamSection = () => {
                   <div className="flex justify-end">
                     <div className="opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105">
                       <div
-                        className={`flex items-center gap-2 font-semibold text-sm group/btn px-4 py-2.5 rounded-xl transition-all duration-300 ${
-                          index === 0 ? "bg-main-1/10 text-main-1 hover:bg-main-1/20 hover:shadow-lg hover:shadow-main-1/25" : "bg-main-3/10 text-main-3 hover:bg-main-3/20 hover:shadow-lg hover:shadow-main-3/25"
-                        }`}
+                        className={`flex items-center gap-2 font-semibold text-sm group/btn px-4 py-2.5 rounded-xl transition-all duration-300 ${index === 0 ? "bg-main-1/10 text-main-1 hover:bg-main-1/20 hover:shadow-lg hover:shadow-main-1/25" : "bg-main-3/10 text-main-3 hover:bg-main-3/20 hover:shadow-lg hover:shadow-main-3/25"
+                          }`}
                       >
                         View Full Profile
                         <FiArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
@@ -229,11 +243,13 @@ export const TeamSection = () => {
                 <div className="lg:col-span-2 space-y-8">
                   {/* Bio */}
                   <div className="bg-gradient-to-br from-gray-50/50 to-white dark:from-gray-800/50 dark:to-gray-900/50 rounded-2xl p-6">
-                    <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-4 flex items-center gap-2">
+                    <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-6 flex items-center gap-2">
                       <div className="w-6 h-6 bg-main-2 dark:bg-main-1 rounded-lg"></div>
                       Professional Background
                     </h4>
-                    <p className="text-darkColor/80 dark:text-lightColor/80 leading-relaxed text-lg">{selectedMember.bio}</p>
+                    <div className="prose prose-lg max-w-none text-justify">
+                      {formatBio(selectedMember.bio)}
+                    </div>
                   </div>
 
                   {/* Expertise */}

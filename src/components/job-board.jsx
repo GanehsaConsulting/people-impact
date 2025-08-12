@@ -282,7 +282,7 @@ export const JobBoard = () => {
                                 href="mailto:careers@peopleimpact.com"
                                 className="text-main-3 hover:text-main-2 font-medium transition-colors duration-200"
                             >
-                                careers@peopleimpact.com
+                                support@peopleimpact.co.id
                             </a>
                         </div>
                     </div>

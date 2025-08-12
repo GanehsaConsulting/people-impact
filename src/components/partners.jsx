@@ -18,7 +18,7 @@ const partners = [
 export const Partners = () => {
     return (
         <>
-            <section className="margin space-y-5 mt-10">
+            <section className="margin space-y-5 spacing">
                 <div className="mb-10">
                     <Title>
                         Our Trusted Partner

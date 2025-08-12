@@ -75,9 +75,9 @@ export const OurStory = () => {
   ];
 
   return (
-    <main className="margin spacing space-y-12 md:space-y-16 lg:space-y-20">
+    <main className="">
       {/* Vision Section - Responsive Layout */}
-      <section className="relative">
+      <section className="margin spacing relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           {/* Image - Mobile First, Desktop Left */}
           <div className="relative order-1 lg:order-1">
@@ -106,7 +106,7 @@ export const OurStory = () => {
       </section>
 
       {/* Mission Section - Enhanced with Icons */}
-      <section className="space-y-8 md:space-y-12 lg:space-y-16">
+      <section className="margin spacing">
         <div className="text-left space-y-4 md:space-y-6">
           <Title>Our Mission</Title>
           <div className="space-y-4">
@@ -118,7 +118,7 @@ export const OurStory = () => {
         </div>
 
         {/* Mission Cards - Enhanced Icon-Based Design with Custom Theme */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 md:gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6 md:gap-3 mt-5">
           {consultingServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -144,22 +144,13 @@ export const OurStory = () => {
                   </h3>
 
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">{service.description}</p>
-
-                  {/* Hover Arrow */}
-                  <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-10px] group-hover:translate-x-0">
-                    <span className={`text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>Learn More</span>
-                    <svg className={`w-4 h-4 ${service.iconColor} transition-transform duration-300 group-hover:translate-x-1`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
                 </div>
 
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div
-                  className={`absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr ${
-                    service.iconColor === "text-main-1" ? "from-main-1/5" : "from-main-3/5"
-                  } to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  className={`absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr ${service.iconColor === "text-main-1" ? "from-main-1/5" : "from-main-3/5"
+                    } to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 ></div>
               </div>
             );

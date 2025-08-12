@@ -30,7 +30,7 @@ export const WhyUs = () => {
     ];
 
     return (
-        <main className="margin space-y-5 mt-10">
+        <main className="margin space-y-5 spacing">
             <Title>
                 Why Choose Us?
             </Title>
