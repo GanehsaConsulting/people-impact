@@ -82,12 +82,7 @@ export const OurStory = () => {
           {/* Image - Mobile First, Desktop Left */}
           <div className="relative order-1 lg:order-1">
             <div className="relative">
-              <img
-                className="w-full h-48 sm:h-64 md:h-80 lg:h-full min-h-[400px] object-cover rounded-main shadow-xl"
-                src="/vision.png"
-                alt="Vision - Team collaboration and growth"
-                loading="lazy"
-              />
+              <img className="w-full h-48 sm:h-64 md:h-80 lg:h-full min-h-[400px] object-cover rounded-main shadow-xl" src="/vision.png" alt="Vision - Team collaboration and growth" loading="lazy" />
               {/* Decorative element - hidden on mobile */}
               <div className="hidden lg:block absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-main-1/20 to-main-3/20 rounded-main -z-10"></div>
             </div>
@@ -99,11 +94,9 @@ export const OurStory = () => {
 
             <div className="space-y-4 md:space-y-5 text-gray-700 dark:text-gray-300 text-sm md:text-base lg:text-md leading-6 md:leading-7 lg:leading-8 text-justify">
               <p className="text-base md:text-lg font-medium text-main-3 leading-relaxed">
-                At People Impact, our vision is to transform organizations through innovative, strategic, and people-focused solutions.
+                At People Impact, our vision is to transform the organization we partner with by providing innovative, strategic, and people-focused solutions that drive sustainable growth and create a meaningful impact.
               </p>
-              <p className="text-justify">
-                We drive sustainable growth and create meaningful impact by empowering organizations to unlock their full potential while cultivating environments where both businesses and individuals can thrive.
-              </p>
+              <p className="text-justify">We aspire to empower organizations to unlock their full potential while cultivating environments where both businesses and individuals can thrive.</p>
             </div>
           </div>
         </div>
@@ -115,10 +108,10 @@ export const OurStory = () => {
           <Title>Our Mission</Title>
           <div className="space-y-4">
             <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-justify">
-              Our mission is founded on the belief that organizations flourish when their people thrive.
+              Our mission is founded on the belief that organizations flourish when their people thrive. Through tailored consulting strategies
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-justify">
-              Through tailored consulting strategies and innovative approaches, we are dedicated to creating lasting impact that transforms businesses, empowers leaders, and drives sustainable success across all levels of your organization.
+              we are dedicated to:
             </p>
           </div>
         </div>
@@ -149,16 +142,15 @@ export const OurStory = () => {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-justify">
-                    {service.description}
-                  </p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-justify">{service.description}</p>
                 </div>
 
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div
-                  className={`absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr ${service.iconColor === "text-main-1" ? "from-main-1/5" : "from-main-3/5"
-                    } to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  className={`absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr ${
+                    service.iconColor === "text-main-1" ? "from-main-1/5" : "from-main-3/5"
+                  } to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 ></div>
               </div>
             );

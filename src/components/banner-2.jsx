@@ -96,10 +96,8 @@ export const BannerTwo = () => {
                         <div className="max-w-3xl">
                             <p className="text-xs xs:text-sm md:text-base leading-relaxed text-white/90 backdrop-blur-sm">
                                 <span className="hidden md:block">
-                                    At People Impact, we recognize that  every organization is unique. Our tailored approach combines deep understanding of your goals with strategic solutions that drive meaningful transformation. Through integrated business strategy, leadership development, and process optimization, we empower organizations to thrive in today's competitive landscape.
-                                </span>
-                                <span className="block md:hidden">
-                                    People Impact delivers tailored HR solutions that align with your unique goals—combining strategy, leadership development, and optimization to drive sustainable success.
+                                    At People Impact, we recognized that every organization is distinct, which is why we adopt a tailored approach for each engagement. By gaining a thorough understanding of your goals, challenges, and opportunities, we create customized solutions that align perfectly with your vision for success. Our comprehensive methodology integrates business strategy, leadership development, and process optimization, empowering our clients to flourish in a competitive environment.
+
                                 </span>
                             </p>
                         </div>

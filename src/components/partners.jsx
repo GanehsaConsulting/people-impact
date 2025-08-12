@@ -21,7 +21,7 @@ export const Partners = () => {
             <section className="margin space-y-5 spacing">
                 <div className="mb-10">
                     <Title>
-                        Our Trusted Partner
+                        Our Clients and Partners
                     </Title>
                 </div>
                 <div className="w-full md:h-full h-fit dark:bg-darkColor bg-lightColor py-4 md:py-8 space-y-6 rounded-lg">

@@ -10,15 +10,16 @@ export const About = () => {
                 </Title>
                 <div className="space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300 text-sm md:text-base leading-6 md:leading-7 text-justify">
                     <p>
-                        We are a dedicated team of Human Resources professionals committed to empowering organizations and enhancing workplace environments. With years of experience across various industries, our mission is to provide tailored HR solutions that align with your company's goals and values.
+                       We are a dedicated team of Human Resources professionals committed to empowering organizations and enhancing workplace environments. With years of experience across various industries, our mission is to provide tailored HR solutions that align with your company’s goals and values.
+
                     </p>
 
                     <p>
-                        We believe that people are the foundation of every successful organization. Our approach emphasizes collaboration, innovation, and best practices to help you attract, develop, and retain top talent. From strategic workforce planning to employee engagement initiatives, we offer comprehensive services designed to meet your unique needs.
+                        We believe that people are the foundation of every successful organization. Our approach emphasizes collaboration, innovation, and best practices to help you attract, develop, and retain top talent. From strategic workforce planning to employee engagement initiatives, we offer comprehensive services designs to meet your unique needs.
                     </p>
 
                     <p>
-                        Our team combines deep industry knowledge with a passion for fostering positive workplace cultures. We pride ourselves on our integrity, responsiveness, and commitment to excellence, ensuring our clients are equipped with the tools and strategies needed to thrive in today's competitive landscape.
+                        Our team combines deep industry knowledge with a passion for fostering positive workplace cultures. We pride ourselves on our integrity, responsiveness, and commitment to excellence, ensuring our clients are equipped with the tools and strategies needed to thrive in today’s competitive landscape.
                     </p>
 
                     <p className="font-medium text-main-3 text-sm md:text-base">
