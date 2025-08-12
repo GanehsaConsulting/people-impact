@@ -8,7 +8,7 @@ export const About = () => {
                 <Title>
                     Who We Are
                 </Title>
-                <div className="space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300 text-sm md:text-base leading-6 md:leading-7">
+                <div className="space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300 text-sm md:text-base leading-6 md:leading-7 text-justify">
                     <p>
                         We are a dedicated team of Human Resources professionals committed to empowering organizations and enhancing workplace environments. With years of experience across various industries, our mission is to provide tailored HR solutions that align with your company's goals and values.
                     </p>

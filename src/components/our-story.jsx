@@ -94,12 +94,16 @@ export const OurStory = () => {
           </div>
 
           {/* Content - Mobile Second, Desktop Right */}
-          <div className="space-y-4 md:space-y-6 order-2 lg:order-2 flex flex-col ">
+          <div className="space-y-4 md:space-y-6 order-2 lg:order-2 flex flex-col">
             <Title>Our Vision</Title>
 
-            <div className="space-y-4 md:space-y-5 text-gray-700 dark:text-gray-300 text-sm md:text-base lg:text-md leading-6 md:leading-7 lg:leading-8">
-              <p className="text-base md:text-lg font-medium text-main-3 leading-relaxed">At People Impact, our vision is to transform organizations through innovative, strategic, and people-focused solutions.</p>
-              <p>We drive sustainable growth and create meaningful impact by empowering organizations to unlock their full potential while cultivating environments where both businesses and individuals can thrive.</p>
+            <div className="space-y-4 md:space-y-5 text-gray-700 dark:text-gray-300 text-sm md:text-base lg:text-md leading-6 md:leading-7 lg:leading-8 text-justify">
+              <p className="text-base md:text-lg font-medium text-main-3 leading-relaxed">
+                At People Impact, our vision is to transform organizations through innovative, strategic, and people-focused solutions.
+              </p>
+              <p className="text-justify">
+                We drive sustainable growth and create meaningful impact by empowering organizations to unlock their full potential while cultivating environments where both businesses and individuals can thrive.
+              </p>
             </div>
           </div>
         </div>
@@ -107,11 +111,13 @@ export const OurStory = () => {
 
       {/* Mission Section - Enhanced with Icons */}
       <section className="margin spacing">
-        <div className="text-left space-y-4 md:space-y-6">
+        <div className="space-y-4 md:space-y-6">
           <Title>Our Mission</Title>
           <div className="space-y-4">
-            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed">Our mission is founded on the belief that organizations flourish when their people thrive.</p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-justify">
+              Our mission is founded on the belief that organizations flourish when their people thrive.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-justify">
               Through tailored consulting strategies and innovative approaches, we are dedicated to creating lasting impact that transforms businesses, empowers leaders, and drives sustainable success across all levels of your organization.
             </p>
           </div>
@@ -143,7 +149,9 @@ export const OurStory = () => {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">{service.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-justify">
+                    {service.description}
+                  </p>
                 </div>
 
                 {/* Decorative Elements */}
