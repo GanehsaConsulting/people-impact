@@ -116,110 +116,171 @@ const CTAButton = ({ href, children, variant = "primary", className = "" }) => {
   );
 };
 
+// Simplified Hero Banner with Custom Color Palette and Wave Patterns
 const HeroBanner = ({ IconComponent, serviceCount }) => (
-  <div className="relative rounded-main overflow-hidden min-h-[320px] md:min-h-[420px] lg:min-h-[520px]" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
-    {/* Main Background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-main-1 via-main-2 to-main-5"></div>
+  <div className="relative rounded-main overflow-hidden min-h-[320px] md:min-h-[420px] lg:min-h-[480px]" style={{ boxShadow: 'var(--shadow-mainShadow)' }}>
+    {/* Custom Color Background Gradient */}
+    <div className="absolute inset-0" style={{
+      background: `linear-gradient(135deg, 
+        var(--color-sec-1) 0%, 
+        var(--color-main-1) 30%, 
+        var(--color-sec-2) 70%, 
+        var(--color-main-2) 100%
+      )`
+    }}></div>
     
-    {/* Wave Layers */}
-    <WaveLayers />
+    {/* Simple Wave Patterns */}
+    <SoothingWavePatterns />
     
-    {/* Animated SVG Waves */}
-    <AnimatedWaves />
-    
-    {/* Floating Particles */}
-    <FloatingParticles />
-    
-    {/* Geometric Patterns */}
-    <GeometricPatterns />
+    {/* Clean Floating Elements */}
+    <CleanFloatingElements />
     
     {/* Main Icon */}
     <div className="absolute inset-0 flex items-center justify-center z-10">
       <div className="relative">
-        <div className="absolute inset-0 bg-white/10 rounded-full blur-xl scale-150"></div>
-        <div className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 bg-white/15 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/20 shadow-2xl">
-          <div className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-white/10 rounded-full flex items-center justify-center border border-white/30">
-            <IconComponent className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 text-white drop-shadow-2xl" />
+        {/* Soft Glow Effect */}
+        <div className="absolute inset-0 rounded-full blur-2xl scale-150" style={{
+          background: `linear-gradient(45deg, 
+            var(--color-main-1, #119bd3)20, 
+            var(--color-sec-1, #7ecff4)15
+          )`
+        }}></div>
+        
+        {/* Main Icon Container */}
+        <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-white/90 dark:bg-[var(--color-main-2)]/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg" style={{
+          border: `1px solid var(--color-sec-1, #7ecff4)40`
+        }}>
+          <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center" style={{
+            background: `linear-gradient(135deg, 
+              var(--color-sec-1, #7ecff4)20, 
+              var(--color-main-1, #119bd3)10
+            )`
+          }}>
+            <IconComponent className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" style={{
+              color: 'var(--color-main-2, #1c305d)'
+            }} />
           </div>
         </div>
-        <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-white/30 border-r-white/20 animate-spin" style={{ animationDuration: '8s' }}></div>
+        
+        {/* Subtle Rotating Ring */}
+        <div className="absolute inset-0 rounded-full animate-spin" style={{ 
+          animationDuration: '12s',
+          border: `1px solid var(--color-sec-1, #7ecff4)30`
+        }}></div>
       </div>
     </div>
 
-    {/* Floating Badges */}
-    <FloatingBadges serviceCount={serviceCount} />
+    {/* Clean Service Count Badge */}
+    <div className="absolute top-6 right-6 md:top-8 md:right-8 bg-white/95 dark:bg-[var(--color-main-2)]/90 backdrop-blur-sm rounded-xl px-3 py-2 md:px-4 md:py-2 shadow-sm z-20" style={{
+      border: `1px solid var(--color-sec-1, #7ecff4)30`
+    }}>
+      <span className="text-xs md:text-sm font-medium" style={{
+        color: 'var(--color-main-2, #1c305d)'
+      }}>
+        {serviceCount} Services
+      </span>
+    </div>
     
-    {/* Decorative Elements */}
-    <div className="hidden lg:block absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-main-1/20 to-main-2/20 rounded-full -z-10"></div>
-    <div className="hidden lg:block absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-sec-1/20 to-main-3/20 rounded-full -z-10"></div>
-  </div>
-);
-
-const WaveLayers = () => (
-  <div className="absolute inset-0">
-    <div className="absolute bottom-0 left-0 w-full h-32 md:h-40 bg-main-5/80" 
-         style={{ clipPath: 'polygon(0 60%, 100% 40%, 100% 100%, 0% 100%)' }}>
-    </div>
-    <div className="absolute bottom-0 left-0 w-full h-24 md:h-32 bg-main-4/60" 
-         style={{ clipPath: 'polygon(0 70%, 100% 50%, 100% 100%, 0% 100%)' }}>
-    </div>
-    <div className="absolute top-0 left-0 w-full h-20 md:h-24 bg-sec-1/20" 
-         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 40%)' }}>
-    </div>
-  </div>
-);
-
-const AnimatedWaves = () => (
-  <div className="absolute inset-0 opacity-30">
-    <svg className="absolute bottom-0 w-full h-32 md:h-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,60 C200,100 300,20 600,60 C900,100 1000,20 1200,60 L1200,120 L0,120 Z" 
-            fill="rgba(255,255,255,0.1)" 
-            className="animate-pulse">
-      </path>
-    </svg>
-    <svg className="absolute bottom-0 w-full h-24 md:h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,80 C300,40 400,100 600,80 C800,60 900,120 1200,80 L1200,120 L0,120 Z" 
-            fill="rgba(255,255,255,0.05)" 
-            className="animate-pulse delay-1000">
-      </path>
-    </svg>
-  </div>
-);
-
-const FloatingParticles = () => (
-  <div className="absolute inset-0">
-    <div className="absolute top-[20%] left-[15%] w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
-    <div className="absolute top-[60%] right-[20%] w-1.5 h-1.5 bg-sec-1/40 rounded-full animate-pulse delay-500"></div>
-    <div className="absolute top-[40%] left-[70%] w-1 h-1 bg-main-3/30 rounded-full animate-pulse delay-1000"></div>
-    <div className="absolute bottom-[30%] left-[25%] w-2.5 h-2.5 bg-white/15 rounded-full animate-pulse delay-700"></div>
-    <div className="absolute top-[80%] right-[40%] w-1.5 h-1.5 bg-sec-4/30 rounded-full animate-pulse delay-300"></div>
-  </div>
-);
-
-const GeometricPatterns = () => (
-  <div className="absolute inset-0 opacity-10">
-    <div className="absolute top-[10%] right-[10%] w-20 h-20 md:w-28 md:h-28 border border-white/20 rounded-full"></div>
-    <div className="absolute bottom-[20%] left-[5%] w-16 h-16 md:w-20 md:h-20 border border-white/15 rounded-full"></div>
-    <div className="absolute top-[50%] left-[5%] w-12 h-12 md:w-16 md:h-16 border border-white/25 rounded-full"></div>
-  </div>
-);
-
-const FloatingBadges = ({ serviceCount }) => (
-  <>
-    <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8 bg-white/90 dark:bg-secondaryDark/90 backdrop-blur-md rounded-xl p-3 md:p-4 border border-white/30 shadow-xl z-20">
-      <div className="flex items-center gap-2 md:gap-3">
-        <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-main-1 rounded-full flex-shrink-0 animate-pulse"></div>
-        <span className="text-xs md:text-sm font-semibold text-darkColor dark:text-lightColor whitespace-nowrap">
+    {/* Status Badge */}
+    <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-white/95 dark:bg-[var(--color-main-2)]/90 backdrop-blur-sm rounded-xl p-3 md:p-4 shadow-sm z-20" style={{
+      border: `1px solid var(--color-sec-1, #7ecff4)30`
+    }}>
+      <div className="flex items-center gap-2">
+        <div className="w-2 h-2 rounded-full animate-pulse" style={{
+          backgroundColor: 'var(--color-main-3, #8dbb3f)'
+        }}></div>
+        <span className="text-xs md:text-sm font-medium" style={{
+          color: 'var(--color-main-2, #1c305d)'
+        }}>
           Expert Solutions
         </span>
       </div>
     </div>
-    <div className="absolute top-4 right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 bg-main-1/90 backdrop-blur-md rounded-full px-3 py-1.5 md:px-4 md:py-2 border border-white/20 shadow-lg z-20">
-      <span className="text-xs md:text-sm font-bold text-white whitespace-nowrap">
-        {serviceCount} Services
-      </span>
-    </div>
-  </>
+  </div>
+);
+
+// Simplified Wave Patterns with Custom Colors
+const SoothingWavePatterns = () => (
+  <div className="absolute inset-0">
+    {/* Bottom Wave */}
+    <svg className="absolute bottom-0 w-full h-32 md:h-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path 
+        d="M0,60 C300,100 600,20 900,60 C1000,80 1100,40 1200,60 L1200,120 L0,120 Z" 
+        fill="var(--color-main-2)"
+        fillOpacity="0.15"
+        className="animate-pulse"
+        style={{ animationDuration: '4s' }}
+      />
+    </svg>
+    
+    {/* Top Wave */}
+    <svg className="absolute top-0 w-full h-24 md:h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path 
+        d="M0,40 C400,80 800,20 1200,50 L1200,0 L0,0 Z" 
+        fill="var(--color-sec-1)"
+        fillOpacity="0.12"
+        className="animate-pulse"
+        style={{ animationDuration: '6s', animationDelay: '1s' }}
+      />
+    </svg>
+    
+    {/* Middle Subtle Wave */}
+    <svg className="absolute top-1/2 w-full h-20 md:h-24 transform -translate-y-1/2" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path 
+        d="M0,50 C200,20 400,80 600,50 C800,20 1000,80 1200,50 L1200,70 L0,70 Z" 
+        fill="var(--color-main-1)"
+        fillOpacity="0.08"
+        className="animate-pulse"
+        style={{ animationDuration: '8s', animationDelay: '2s' }}
+      />
+    </svg>
+  </div>
+);
+
+// Clean Floating Elements with Custom Colors
+const CleanFloatingElements = () => (
+  <div className="absolute inset-0 opacity-60">
+    {/* Subtle Floating Dots */}
+    <div className="absolute top-[20%] left-[10%] w-1.5 h-1.5 rounded-full animate-pulse" 
+         style={{ 
+           backgroundColor: 'var(--color-sec-2)',
+           opacity: '0.4',
+           animationDuration: '3s' 
+         }}></div>
+    <div className="absolute top-[70%] right-[15%] w-1 h-1 rounded-full animate-pulse" 
+         style={{ 
+           backgroundColor: 'var(--color-main-3)',
+           opacity: '0.3',
+           animationDuration: '4s', 
+           animationDelay: '1s' 
+         }}></div>
+    <div className="absolute top-[40%] right-[25%] w-2 h-2 rounded-full animate-pulse" 
+         style={{ 
+           backgroundColor: 'var(--color-sec-4)',
+           opacity: '0.25',
+           animationDuration: '5s', 
+           animationDelay: '2s' 
+         }}></div>
+    <div className="absolute bottom-[40%] left-[20%] w-1.5 h-1.5 rounded-full animate-pulse" 
+         style={{ 
+           backgroundColor: 'var(--color-sec-1)',
+           opacity: '0.35',
+           animationDuration: '3.5s', 
+           animationDelay: '0.5s' 
+         }}></div>
+    
+    {/* Gentle Geometric Shapes */}
+    <div className="absolute top-[15%] right-[8%] w-16 h-16 md:w-20 md:h-20 rounded-full" 
+         style={{ 
+           border: `1px solid var(--color-sec-1)`, 
+           opacity: '0.2' 
+         }}></div>
+    <div className="absolute bottom-[25%] left-[8%] w-12 h-12 md:w-16 md:h-16 rounded-full" 
+         style={{ 
+           border: `1px solid var(--color-main-3)`, 
+           opacity: '0.15' 
+         }}></div>
+  </div>
 );
 
 const ServiceCard = ({ service, index }) => {
