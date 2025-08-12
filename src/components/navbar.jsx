@@ -77,7 +77,7 @@ export const Navbar = ({ children }) => {
                     <div className="md:fixed top-0 left-0 right-0 h-35 z-40 pointer-events-none linear-blur-to-b" />
                 </>
             )}
-            <div className={`hidden md:flex navbar z-50 sticky top-2 w-auto mx-2 py-2 rounded-main min-h-16 h-17
+            <div className={`hidden md:flex navbar z-50 sticky top-2 w-auto mx-3 py-10 px-5 rounded-main min-h-16 h-17
                 ${isScrolled ? "bg-lightColor/70 dark:bg-darkColor/70 shadow-custom border border-neutral-300/30 dark:border-secondaryGray/10" : "bg-white dark:bg-black"}
                 `}
             >

@@ -110,10 +110,19 @@ export const Reviews = () => {
             setIsAtEnd(scrollLeft + clientWidth >= scrollWidth - 5);
         }
     };
+
+    const scrollAmount = () => {
+        if (typeof window !== 'undefined') {
+            if (window.innerWidth < 640) return 280; // mobile
+            if (window.innerWidth < 1024) return 350; // tablet
+            return 300; // desktop
+        }
+        return 300;
+    };
     
     return (
-        <main className="spacing space-y-5">
-            <div className="margin">
+        <main className="space-y-5 mt-10">
+            <div className="margin mb-10">
                 <Title>
                     What Our Clients Say
                 </Title>
@@ -121,66 +130,71 @@ export const Reviews = () => {
             
             {/* Container untuk carousel dan arrows */}
             <div className="relative">
-                {/* Left Arrow - positioned at center left of carousel */}
+                {/* Left Arrow - responsive positioning */}
                 <Button
                     size={"icon"}
                     variant={"glassColor"}
-                    onClick={() => carouselRef?.scrollBy({ left: -300, behavior: "smooth" })}
+                    onClick={() => carouselRef?.scrollBy({ left: -scrollAmount(), behavior: "smooth" })}
                     disabled={isAtStart}
                     className={`
-                        absolute left-15 top-1/2 transform -translate-y-1/2 z-15 backdrop-blur-md
+                        absolute left-2 sm:left-4 lg:left-15 top-1/2 transform -translate-y-1/2 z-15 backdrop-blur-md
                         ${isAtStart ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} 
-                        rounded-full shadow-lg
+                        rounded-full shadow-lg w-8 h-8 sm:w-10 sm:h-10
                     `}
                 >
-                    <IoIosArrowBack />
+                    <IoIosArrowBack className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
                 
-                {/* Right Arrow - positioned at center right of carousel */}
+                {/* Right Arrow - responsive positioning */}
                 <Button
                     size={"icon"}
                     variant={"glassColor"}
                     className={`
-                        absolute right-15 top-1/2 transform -translate-y-1/2 z-10 rotate-180 backdrop-blur-md
+                        absolute right-2 sm:right-4 lg:right-15 top-1/2 transform -translate-y-1/2 z-10 rotate-180 backdrop-blur-md
                         ${isAtEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'} 
-                        rounded-full shadow-lg
+                        rounded-full shadow-lg w-8 h-8 sm:w-10 sm:h-10
                     `}
-                    onClick={() => carouselRef?.scrollBy({ left: 300, behavior: "smooth" })}
+                    onClick={() => carouselRef?.scrollBy({ left: scrollAmount(), behavior: "smooth" })}
                     disabled={isAtEnd}
                 >
-                    <IoIosArrowBack />
+                    <IoIosArrowBack className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
                 
-                {/* Carousel Section */}
+                {/* Carousel Section - responsive padding */}
                 <section 
                     ref={ref => setCarouselRef(ref)}
                     onScroll={updateCarouselPosition}
-                    className="carousel w-full gap-4 px-12"
+                    className="carousel w-full gap-3 sm:gap-4 px-4 sm:px-8 lg:px-12"
                 >
                     {clientReviews.map((el, idx) => (
                         <div
                             key={idx}
                             className={`
                             ${idx == 0 && "ml-0"} ${clientReviews.length - 1 == idx && "mr-0"}
-                            min-w-[calc(25%-12px)] w-[calc(25%-12px)] p-4 rounded-main bg-lightColor dark:bg-darkColor flex flex-col
+                            min-w-[calc(85%-12px)] w-[calc(85%-12px)] 
+                            sm:min-w-[calc(60%-12px)] sm:w-[calc(60%-12px)]
+                            md:min-w-[calc(45%-12px)] md:w-[calc(45%-12px)]
+                            lg:min-w-[calc(33.333%-12px)] lg:w-[calc(33.333%-12px)]
+                            xl:min-w-[calc(25%-12px)] xl:w-[calc(25%-12px)]
+                            p-3 sm:p-4 rounded-main bg-lightColor dark:bg-darkColor flex flex-col
                             `}>
-                            <div className="flex items-start mb-4">
+                            <div className="flex items-start mb-3 sm:mb-4">
                                 {[...Array(el.rating)].map((_, i) => (
-                                    <span key={i} className="text-yellow-500">
+                                    <span key={i} className="text-yellow-500 text-sm sm:text-base">
                                         <FaStar />
                                     </span>
                                 ))}
                                 {[...Array(5 - el.rating)].map((_, i) => (
-                                    <span key={i} className="text-baseColorDark/30 dark:text-baseColorLight/40">
+                                    <span key={i} className="text-baseColorDark/30 dark:text-baseColorLight/40 text-sm sm:text-base">
                                         <FaStar />
                                     </span>
                                 ))}
                             </div>
                             <div className="text-main-2 dark:text-main-1 flex items-center gap-2 mb-2">
-                                <h2 className="text-lg font-semibold">{el.name}</h2>
+                                <h2 className="text-base sm:text-lg font-semibold">{el.name}</h2>
                             </div>
-                            <p className="text-sm opacity-70 mb-2">{el.company}</p>
-                            <p className="text-[15px] leading-5.5">{el.review}</p>
+                            <p className="text-xs sm:text-sm opacity-70 mb-2">{el.company}</p>
+                            <p className="text-sm sm:text-[15px] leading-5 sm:leading-5.5">{el.review}</p>
                         </div>
                     ))}
                 </section>

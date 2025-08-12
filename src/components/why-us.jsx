@@ -30,11 +30,11 @@ export const WhyUs = () => {
     ];
 
     return (
-        <main className="margin spacing space-y-5">
+        <main className="margin space-y-5 mt-10">
             <Title>
                 Why Choose Us?
             </Title>
-            <section>
+            <section className="mt-10" >
                 {/* Mobile Layout */}
                 <div className="block lg:hidden space-y-4">
                     {/* Cards Grid for Mobile */}
