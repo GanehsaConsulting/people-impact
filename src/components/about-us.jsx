@@ -2,9 +2,9 @@ import { Title } from "./ui/title"
 
 export const About = () => {
     return (
-        <main className="margin spacing grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
+        <main className="margin spacing grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {/* Content Section */}
-            <section className=" space-y-4 md:space-y-5 order-2 lg:order-1 flex flex-col justify-center">
+            <section className=" space-y-4 md:space-y-5 order-2 lg:order-1 flex flex-col justify-start">
                 <Title>
                     Who We Are
                 </Title>

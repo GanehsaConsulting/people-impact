@@ -140,7 +140,7 @@ export const Footer = () => {
                       People Impact
                     </h1>
                   </Link>
-                  <p className="text-darkColor/70 dark:text-lightColor/70 leading-relaxed text-lg">Empowering people, transforming organizations through innovative HR solutions.</p>
+                  <p className="text-darkColor/70 dark:text-lightColor/70 text-base">Empowering people, transforming organizations through innovative HR solutions.</p>
                 </div>
 
                 <div className="space-y-4">
@@ -198,7 +198,7 @@ export const Footer = () => {
                 <div>
                   <a
                     href="tel:+6281297770201"
-                    className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-4 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
+                    className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 px-4 py-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                   >
                     <div className="bg-gradient-to-r from-main-3 to-sec-4 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
                       <FiPhone className="w-5 h-5" />
@@ -211,7 +211,7 @@ export const Footer = () => {
 
                   <a
                     href="mailto:support@peopleimpact.co.id"
-                    className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-4 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
+                    className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 px-4 py-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                   >
                     <div className="bg-gradient-to-r from-main-1 to-sec-1 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
                       <FiMail className="w-5 h-5" />
@@ -226,7 +226,7 @@ export const Footer = () => {
                     href="https://maps.google.com/?q=Epicentrum Walk Jakarta"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 p-4 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
+                    className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 px-4 py-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                   >
                     <div className="bg-gradient-to-r from-main-2 to-sec-3 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
                       <FiMapPin className="w-5 h-5" />
@@ -252,19 +252,19 @@ export const Footer = () => {
                   <div>
                     <Link
                       href="/about-us"
-                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
+                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-[2px] text-sm px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
                     >
                       About Us
                     </Link>
                     <Link
                       href="/services"
-                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
+                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-[2px] text-sm px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
                     >
                       Our Services
                     </Link>
                     <Link
                       href="/contact"
-                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
+                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-[2px] text-sm px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
                     >
                       Contact Us
                     </Link>
@@ -272,19 +272,19 @@ export const Footer = () => {
                   <div>
                     <Link
                       href="/job-board"
-                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
+                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-[2px] text-sm px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
                     >
                       Job Board
                     </Link>
                     <Link
                       href="/blog"
-                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
+                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-[2px] text-sm px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
                     >
                       Resources
                     </Link>
                     <Link
                       href="/services/custom-services"
-                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
+                      className="block text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 py-[2px] text-sm px-3 rounded-lg hover:bg-white/30 dark:hover:bg-white/5 backdrop-blur-sm"
                     >
                       Custom Solutions
                     </Link>
@@ -315,7 +315,7 @@ export const Footer = () => {
             </div>
 
             {/* Bottom Section - Copyright & Links */}
-            <div className="border-t border-white/20 dark:border-white/10 pt-10 pb-0">
+            <div className="border-t border-white/20 dark:border-white/10 pt-7 pb-0">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 <p className="text-darkColor/60 dark:text-lightColor/60 text-center md:text-left">Copyright ©2025 People Impact - Human Resources Consultant. All Rights Reserved.</p>
 

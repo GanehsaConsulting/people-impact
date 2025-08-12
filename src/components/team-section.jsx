@@ -11,34 +11,48 @@ export const TeamSection = () => {
     {
       id: 1,
       name: "Lady Meiske",
-      position: "Managing Partner",
+      position: "Managing Partner & Co-Founder People Impact",
       photo: "https://cms-ganesha.ganeshaconsulting.co.id/uploads/Meiske_cc2fb34123.webp",
       alt: "Lady Meiske Photo",
-      bio: "Lady is a seasoned HR professional with 12+ years of experience in talent acquisition, employee engagement, and HR technology implementation. She has extensive experience in scaling HR operations for rapidly growing companies and implementing innovative HR solutions that drive organizational success.",
-      expertise: ["Talent Acquisition", "Employee Engagement", "HR Technology", "Performance Management"],
-      education: "Bachelor's in Psychology, Master's in Business Administration",
-      certifications: ["PHR Certified", "Certified Talent Management Professional", "Agile HR Practitioner"],
+      bio: "Meiske brings over 20 years of experience across industries like Agritech, FMCG, hospitality, and education, with the past 10 years focused on strategic HR leadership. She holds a Diploma in Project Management (S.A.C.) from Stonebridge Associated Colleges, United Kingdom. Before joining People Impact, Meiske served as VP of People Culture & Corporate Support at an Agritech startup, where she played a pivotal role in building and shaping the organization’s HR framework.\n\nHer areas of expertise encompass a wide range of HR functions, including Recruiting, Onboarding, Talent Management, Communication, Training, Compensation and Succession Planning, Organizational Development, Leadership Development, Compliance, HRIS, Data Analytics, Fundraising, Business Process Improvement, Change Management, and Project Management.\n\nMeiske’s extensive background equips her with a unique analytical perspective, enabling her to guide business leaders on effectively adopting HR strategies that align with their talent objectives. She is passionate about providing resources and insights to empower the next generation of talent, preparing them for the future of work.",
+      expertise: [
+        "Recruiting",
+        "Onboarding",
+        "Talent Management",
+        "Organizational Development",
+        "Leadership Development",
+        "Compensation & Succession Planning",
+        "Compliance",
+        "HRIS",
+        "Data Analytics",
+        "Fundraising",
+        "Business Process Improvement",
+        "Change Management",
+        "Project Management",
+      ],
+      education: "Diploma in Project Management (S.A.C.), Stonebridge Associated Colleges, United Kingdom",
+      certifications: [],
       email: "lady@example.com",
       linkedin: "https://linkedin.com/in/lady-meiske",
-      summary: "Seasoned HR professional with 12+ years of expertise in talent acquisition and HR technology implementation",
-      experience: "12+ Years",
-      specialty: "HR Technology & Talent Management",
+      summary: "20+ years experience across multiple industries, 10 years in strategic HR leadership",
+      experience: "20+ Years",
+      specialty: "Strategic HR Leadership & Organizational Development",
     },
     {
       id: 2,
       name: "Siska Rajagukguk",
-      position: "Managing Partner",
+      position: "Managing Partner & Co-Founder People Impact",
       photo: "https://cms-ganesha.ganeshaconsulting.co.id/uploads/Siska_bb0f49beb9.webp",
       alt: "Siska Rajagukguk Photo",
-      bio: "Siska brings over 15 years of comprehensive HR experience, specializing in organizational development, talent management, and strategic HR consulting. She has successfully led HR transformations for Fortune 500 companies and has a proven track record in building high-performance teams that exceed organizational goals.",
-      expertise: ["Strategic HR Planning", "Organizational Development", "Leadership Development", "Change Management"],
-      education: "Master's in Human Resources Management, University of Indonesia",
-      certifications: ["SHRM-SCP", "Certified Executive Coach", "Six Sigma Black Belt"],
+      bio: "Siska is a Certified Human Resources Professional with over 18 years of experience across NGOs, donor-funded projects (World Bank, DFAT, USAID, etc), private companies, and start-ups. She holds a Bachelor's degree in Human Resources Management from Atma Jaya Catholic University, Jakarta. Previously, Siska served as the HR Director at an NGO, where she played a key role in strengthening the organization’s HR functions, systems, and structure.\n\nHer expertise covers HR strategy, organizational development, compliance, change management, recruitment, contracts, compensation & benefit, performance management, HRIS, and policy design. She has led national HR operations, built HR systems from scratch, managed over 3,000 hires, and supported remote teams across Indonesia.\n\nAs an independent consultant, Siska has provided strategic advice to a diverse range of organizations—including wealth management firms, reinsurance companies, logistics firms, banks, NGOs, and early-stage start-ups—helping them establish ethical, scalable, and compliant HR practices. A people-centered leader and strategic partner, Siska is dedicated to aligning HR initiatives with organizational objectives while fostering inclusive, values-driven, and impactful workplaces.",
+      expertise: ["HR Strategy", "Organizational Development", "Compliance", "Change Management", "Recruitment", "Contracts", "Compensation & Benefit", "Performance Management", "HRIS", "Policy Design"],
+      education: "Bachelor's in Human Resources Management, Atma Jaya Catholic University, Jakarta",
+      certifications: ["Certified Human Resources Professional"],
       email: "siska@example.com",
       linkedin: "https://linkedin.com/in/siska-rajagukguk",
-      summary: "Strategic HR leader with 15+ years of experience in organizational development and Fortune 500 transformations",
-      experience: "15+ Years",
-      specialty: "Strategic Planning & Organizational Development",
+      summary: "Certified HR Professional with 18+ years across NGOs, private companies, and start-ups",
+      experience: "18+ Years",
+      specialty: "HR Strategy & Organizational Development",
     },
   ];
 
@@ -126,11 +140,15 @@ export const TeamSection = () => {
 
                       {/* Quick Stats */}
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="flex items-center gap-2 text-sm text-darkColor/70 dark:text-lightColor/70">
-                          <FiAward className="w-4 h-4" />
-                          <span>{member.certifications.length} Certs</span>
-                        </div>
-                        <div className="w-1 h-1 bg-darkColor/30 dark:bg-lightColor/30 rounded-full"></div>
+                        {member.certifications.length != 0 && (
+                          <>
+                            <div className="flex items-center gap-2 text-sm text-darkColor/70 dark:text-lightColor/70">
+                              <FiAward className="w-4 h-4" />
+                              <span>{member.certifications.length} Certs</span>
+                            </div>
+                            <div className="w-1 h-1 bg-darkColor/30 dark:bg-lightColor/30 rounded-full"></div>
+                          </>
+                        )}
                         <div className="flex items-center gap-2 text-sm text-darkColor/70 dark:text-lightColor/70">
                           <FiBookOpen className="w-4 h-4" />
                           <span>Advanced Degree</span>
@@ -284,23 +302,25 @@ export const TeamSection = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-4 flex items-center gap-2">
-                        <FiAward className="w-5 h-5" />
-                        Certifications
-                      </h4>
-                      <div className="space-y-3">
-                        {selectedMember.certifications.map((cert, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-3 p-3 bg-gradient-to-r from-main-3/5 to-transparent dark:from-main-3/10 rounded-xl group hover:from-main-3/10 dark:hover:from-main-3/20 transition-all duration-300"
-                          >
-                            <div className="w-3 h-3 bg-main-3 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                            <span className="text-sm text-darkColor dark:text-lightColor font-medium">{cert}</span>
-                          </div>
-                        ))}
+                    {selectedMember?.certifications.length != 0 && (
+                      <div>
+                        <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-4 flex items-center gap-2">
+                          <FiAward className="w-5 h-5" />
+                          Certifications
+                        </h4>
+                        <div className="space-y-3">
+                          {selectedMember.certifications.map((cert, index) => (
+                            <div
+                              key={index}
+                              className="flex items-center gap-3 p-3 bg-gradient-to-r from-main-3/5 to-transparent dark:from-main-3/10 rounded-xl group hover:from-main-3/10 dark:hover:from-main-3/20 transition-all duration-300"
+                            >
+                              <div className="w-3 h-3 bg-main-3 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                              <span className="text-sm text-darkColor dark:text-lightColor font-medium">{cert}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
