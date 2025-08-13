@@ -136,8 +136,6 @@ export const TeamSection = () => {
                       >
                         <img src={member.photo} alt={member.alt} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" />
                       </div>
-                      {/* Experience Badge */}
-                      <div className={`absolute -bottom-2 -right-2 px-3 py-1 rounded-full text-xs font-semibold text-white shadow-lg ${index === 0 ? "bg-main-1" : "bg-main-3"}`}>{member.experience}</div>
                     </div>
 
                     {/* Basic Info */}
@@ -153,24 +151,6 @@ export const TeamSection = () => {
                   {/* Summary */}
                   <div className="mb-6">
                     <p className="text-darkColor/80 dark:text-lightColor/80 leading-relaxed text-sm">{member.summary}</p>
-                  </div>
-
-                  {/* Expertise Tags */}
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-2">
-                      {member.expertise.slice(0, 2).map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 group-hover:scale-105 ${index === 0 ? "bg-main-1/10 text-main-1 group-hover:bg-main-1/20" : "bg-main-3/10 text-main-3 group-hover:bg-main-3/20"
-                            }`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                      {member.expertise.length > 2 && (
-                        <span className="px-3 py-1.5 bg-secondaryGray/50 dark:bg-darkColor/50 rounded-full text-xs text-darkColor/60 dark:text-lightColor/60 font-medium">+{member.expertise.length - 2} more</span>
-                      )}
-                    </div>
                   </div>
 
                   {/* Action Button */}
@@ -249,25 +229,6 @@ export const TeamSection = () => {
                     </h4>
                     <div className="prose prose-lg max-w-none text-justify">
                       {formatBio(selectedMember.bio)}
-                    </div>
-                  </div>
-
-                  {/* Expertise */}
-                  <div>
-                    <h4 className="text-xl font-bold text-main-2 dark:text-main-1 mb-6 flex items-center gap-2">
-                      <div className="w-6 h-6 bg-main-3 rounded-lg"></div>
-                      Areas of Expertise
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {selectedMember.expertise.map((skill, index) => (
-                        <div
-                          key={index}
-                          className="group flex items-center gap-3 p-4 bg-gradient-to-r from-main-1/5 to-main-3/5 dark:from-main-1/10 dark:to-main-3/10 rounded-xl hover:from-main-1/10 hover:to-main-3/10 dark:hover:from-main-1/20 dark:hover:to-main-3/20 transition-all duration-300"
-                        >
-                          <div className="w-2 h-2 bg-main-3 rounded-full group-hover:w-3 group-hover:h-3 transition-all duration-300"></div>
-                          <span className="text-darkColor dark:text-lightColor font-medium">{skill}</span>
-                        </div>
-                      ))}
                     </div>
                   </div>
 
