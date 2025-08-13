@@ -7,12 +7,12 @@ const MainCoreValues = ({ coreValues }) => {
   return (
     <>
       {/* Header */}
-      <div className="text-center space-y-4 md:space-y-3 mb-5">
+      <div className="text-center space-y-4 md:space-y-3 mb-10">
         <Title>Our Core Values</Title>
-        <div className="max-w-3xl mx-auto space-y-3">
-          <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed">
-            The principles that guide our work and define our commitment to excellence. These values shape our culture, drive our decisions, and inspire us to create meaningful impact for every client we serve.
-          </p>
+        <div className="max-w-3xl mx-auto ">
+          <p className="text-lg md:text-xl text-main-3 font-medium">The principles that guide our work and define our commitment to excellence.</p>
+          <p className="text-lg md:text-xl text-main-3 font-medium">These values shape our culture, drive our decisions,</p>
+          <p className="text-lg md:text-xl text-main-3 font-medium">and inspire us to create meaningful impact for every client we serve.</p>
         </div>
       </div>
       <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -40,12 +40,8 @@ const MainCoreValues = ({ coreValues }) => {
 
               {/* Content */}
               <div className="relative text-center space-y-4">
-                <h3 className={`text-xl md:text-2xl font-bold text-darkColor dark:text-lightColor transition-all duration-500 ${value.hoverColor}`}>
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
-                  {value.description}
-                </p>
+                <h3 className={`text-xl md:text-2xl font-bold text-darkColor dark:text-lightColor transition-all duration-500 ${value.hoverColor}`}>{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">{value.description}</p>
                 {/* Hover Indicator */}
                 <div className="flex justify-center">
                   <div className="w-0 group-hover:w-12 h-0.5 bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
@@ -68,12 +64,8 @@ const DrivingValues = ({ additionalValues }) => {
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h3 className="text-xl md:text-2xl font-semibold text-darkColor dark:text-lightColor mb-3">
-          What Drives Us Forward
-        </h3>
-        <p className="text-darkColor/70 dark:text-lightColor/70 mx-auto text-sm md:text-base">
-          Additional principles that fuel our passion and commitment to your success.
-        </p>
+        <h3 className="text-xl md:text-2xl font-semibold text-darkColor dark:text-lightColor mb-3">What Drives Us Forward</h3>
+        <p className="text-darkColor/70 dark:text-lightColor/70 mx-auto text-sm md:text-base">Additional principles that fuel our passion and commitment to your success.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
@@ -88,12 +80,8 @@ const DrivingValues = ({ additionalValues }) => {
               <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-black shadow-md mb-3 group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
                 <IconComponent className={`w-6 h-6 md:w-7 md:h-7 ${value.color} transition-all duration-300 group-hover:scale-110`} />
               </div>
-              <h4 className="text-lg font-semibold text-darkColor dark:text-lightColor mb-2 group-hover:text-main-1 transition-colors duration-300">
-                {value.title}
-              </h4>
-              <p className="text-xs md:text-sm text-darkColor/70 dark:text-lightColor/70 group-hover:text-darkColor/80 dark:group-hover:text-lightColor/80 transition-colors duration-300">
-                {value.description}
-              </p>
+              <h4 className="text-lg font-semibold text-darkColor dark:text-lightColor mb-2 group-hover:text-main-1 transition-colors duration-300">{value.title}</h4>
+              <p className="text-xs md:text-sm text-darkColor/70 dark:text-lightColor/70 group-hover:text-darkColor/80 dark:group-hover:text-lightColor/80 transition-colors duration-300">{value.description}</p>
             </div>
           );
         })}
@@ -106,22 +94,14 @@ const DrivingValues = ({ additionalValues }) => {
 const ValuesCallToAction = () => {
   return (
     <div className=" text-center bg-gradient-to-r from-main-1/5 via-main-2/5 to-main-3/5 dark:from-main-1/10 dark:via-main-2/10 dark:to-main-3/10 rounded-main p-6 md:p-8 border border-gray-200/50 dark:border-gray-700/50">
-      <h3 className="text-xl md:text-2xl font-bold text-darkColor dark:text-lightColor mb-3">
-        See Our Values in Action
-      </h3>
-      <p className="text-darkColor/70 dark:text-lightColor/70 mb-6 max-w-2xl mx-auto text-sm md:text-base">
-        These aren't just words on a page—they're the foundation of every project, partnership, and solution we deliver.
-      </p>
+      <h3 className="text-xl md:text-2xl font-bold text-darkColor dark:text-lightColor mb-3">See Our Values in Action</h3>
+      <p className="text-darkColor/70 dark:text-lightColor/70 mb-6 max-w-2xl mx-auto text-sm md:text-base">These aren't just words on a page—they're the foundation of every project, partnership, and solution we deliver.</p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-        <a
-          href="/services"
-          className="inline-flex items-center space-x-2 bg-gradient-to-r from-main-1 to-main-2 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+        <a href="/services" className="inline-flex items-center space-x-2 bg-gradient-to-r from-main-1 to-main-2 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
           <span>Learn About Our Services</span>
           <FiTrendingUp className="w-4 h-4" />
         </a>
-        <a
-          href="/contact"
-          className="inline-flex items-center space-x-2 border-2 border-main-1 text-main-1 px-6 py-3 rounded-lg font-semibold hover:bg-main-1 hover:text-white transition-all duration-300">
+        <a href="/contact" className="inline-flex items-center space-x-2 border-2 border-main-1 text-main-1 px-6 py-3 rounded-lg font-semibold hover:bg-main-1 hover:text-white transition-all duration-300">
           <span>Contact Us</span>
           <FiPhoneCall className="w-4 h-4" />
         </a>

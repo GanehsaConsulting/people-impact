@@ -14,24 +14,6 @@ export const OurStory = () => {
     },
     {
       id: 2,
-      title: "Optimizing People & Processes",
-      description: "Enhancing organizational efficiency, talent management, and operational excellence through customized consulting approaches that drive results.",
-      icon: FaUsers,
-      color: "from-main-3 to-main-3/80",
-      bgColor: "bg-main-3/5 dark:bg-main-3/10",
-      iconColor: "text-main-3",
-    },
-    {
-      id: 3,
-      title: "Partnering for Success",
-      description: "Building robust, trust-based relationships with our clients and providing expert guidance and ongoing support throughout their journey.",
-      icon: FaHandshake,
-      color: "from-main-1 to-main-1/80",
-      bgColor: "bg-main-1/5 dark:bg-main-1/10",
-      iconColor: "text-main-1",
-    },
-    {
-      id: 4,
       title: "Empowering Leadership",
       description: "Developing strong and dynamic leaders and teams that promote collaboration, innovation, and a vibrant workplace culture that inspires excellence.",
       icon: FaCrown,
@@ -40,10 +22,28 @@ export const OurStory = () => {
       iconColor: "text-main-3",
     },
     {
-      id: 5,
+      id: 3,
+      title: "Optimizing People & Processes",
+      description: "Enhancing organizational efficiency, talent management, and operational excellence through customized consulting approaches that drive results.",
+      icon: FaUsers,
+      color: "from-main-3 to-main-3/80",
+      bgColor: "bg-main-3/5 dark:bg-main-3/10",
+      iconColor: "text-main-3",
+    },
+    {
+      id: 4,
       title: "Driving Sustainable Impact",
       description: "Offering solutions that tackle immediate challenges while fostering lasting, positive transformations for future success and environmental responsibility.",
       icon: FaLeaf,
+      color: "from-main-1 to-main-1/80",
+      bgColor: "bg-main-1/5 dark:bg-main-1/10",
+      iconColor: "text-main-1",
+    },
+    {
+      id: 5,
+      title: "Partnering for Success",
+      description: "Building robust, trust-based relationships with our clients and providing expert guidance and ongoing support throughout their journey.",
+      icon: FaHandshake,
       color: "from-main-1 to-main-1/80",
       bgColor: "bg-main-1/5 dark:bg-main-1/10",
       iconColor: "text-main-1",
@@ -104,14 +104,11 @@ export const OurStory = () => {
 
       {/* Mission Section - Enhanced with Icons */}
       <section className="margin spacing">
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-4 md:space-y-6 text-center">
           <Title>Our Mission</Title>
           <div className="space-y-4">
-            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-justify">
-              Our mission is founded on the belief that organizations flourish when their people thrive. Through tailored consulting strategies
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-justify">
-              we are dedicated to:
+            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-center">
+              Our mission is founded on the belief that organizations flourish when their people thrive. Through tailored consulting strategies.  we are dedicated to:
             </p>
           </div>
         </div>
@@ -123,7 +120,7 @@ export const OurStory = () => {
             return (
               <div
                 key={service.id}
-                className={`group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 ${service.bgColor} p-6 md:p-8 transition-all ease-in-out duration-500 hover:shadow-2xl hover:-translate-y-2`}
+                className={`group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 ${service.bgColor} p-6 md:p-8 transition-all ease-in-out duration-500 hover:shadow-2xl hover:-translate-y-2 text-center`}
               >
                 {/* Background Gradient Effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
@@ -138,11 +135,11 @@ export const OurStory = () => {
 
                 {/* Content */}
                 <div className="relative space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-main-1 group-hover:to-main-3 transition-all duration-500">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-main-1 group-hover:to-main-3 transition-all duration-500 text-start">
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-justify">{service.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300 text-start">{service.description}</p>
                 </div>
 
                 {/* Decorative Elements */}

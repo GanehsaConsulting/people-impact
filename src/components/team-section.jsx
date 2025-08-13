@@ -31,7 +31,7 @@ export const TeamSection = () => {
     {
       id: 1,
       name: "Lady Meiske",
-      position: "Managing Partner & Co-Founder People Impact",
+      position: "Managing Partner & Founder People Impact",
       photo: "https://cms-ganesha.ganeshaconsulting.co.id/uploads/Meiske_cc2fb34123.webp",
       alt: "Lady Meiske Photo",
       bio: "Meiske brings over 20 years of experience across industries like Agritech, FMCG, hospitality, and education, with the past 10 years focused on strategic HR leadership. She holds a Diploma in Project Management (S.A.C.) from Stonebridge Associated Colleges, United Kingdom. Before joining People Impact, Meiske served as VP of People Culture & Corporate Support at an Agritech startup, where she played a pivotal role in building and shaping the organization's HR framework.\n\nHer areas of expertise encompass a wide range of HR functions, including Recruiting, Onboarding, Talent Management, Communication, Training, Compensation and Succession Planning, Organizational Development, Leadership Development, Compliance, HRIS, Data Analytics, Fundraising, Business Process Improvement, Change Management, and Project Management.\n\nMeiske's extensive background equips her with a unique analytical perspective, enabling her to guide business leaders on effectively adopting HR strategies that align with their talent objectives. She is passionate about providing resources and insights to empower the next generation of talent, preparing them for the future of work.",
@@ -58,7 +58,7 @@ export const TeamSection = () => {
     {
       id: 2,
       name: "Siska Rajagukguk",
-      position: "Managing Partner & Co-Founder People Impact",
+      position: "Managing Partner & Founder People Impact",
       photo: "https://cms-ganesha.ganeshaconsulting.co.id/uploads/Siska_bb0f49beb9.webp",
       alt: "Siska Rajagukguk Photo",
       bio: "Siska is a Certified Human Resources Professional with over 18 years of experience across NGOs, donor-funded projects (World Bank, DFAT, USAID, etc), private companies, and start-ups. She holds a Bachelor's degree in Human Resources Management from Atma Jaya Catholic University, Jakarta. Previously, Siska served as the HR Director at an NGO, where she played a key role in strengthening the organization's HR functions, systems, and structure.\n\nHer expertise covers HR strategy, organizational development, compliance, change management, recruitment, contracts, compensation & benefit, performance management, HRIS, and policy design. She has led national HR operations, built HR systems from scratch, managed over 3,000 hires, and supported remote teams across Indonesia.\n\nAs an independent consultant, Siska has provided strategic advice to a diverse range of organizations—including wealth management firms, reinsurance companies, logistics firms, banks, NGOs, and early-stage start-ups—helping them establish ethical, scalable, and compliant HR practices. A people-centered leader and strategic partner, Siska is dedicated to aligning HR initiatives with organizational objectives while fostering inclusive, values-driven, and impactful workplaces.",
@@ -99,14 +99,12 @@ export const TeamSection = () => {
       <section>
         <div className="margin spacing">
           {/* Section Header */}
-          <div className="text-left mb-16">
+          <div className="text-center mb-16">
             <Title>Our Team</Title>
             <div className="mt-6">
               <p className="text-lg text-darkColor/80 dark:text-lightColor/80 leading-relaxed mb-4">
-                Our team is spearheaded by two accomplished HR professionals, Siska Rajagukguk and Lady Meiske, along with our diverse and highly skilled team of HR professionals.
-              </p>
-              <p className="text-darkColor/70 dark:text-lightColor/70 leading-relaxed">
-                Each member brings a wealth of experience, expertise, and dedication, ensuring that we deliver exceptional HR consulting services tailored to your unique organizational needs.
+                Our team is spearheaded by two accomplished HR professionals, Siska Rajagukguk and Lady Meiske, along with our diverse and highly skilled team of HR professionals. Each member brings a wealth of experience, expertise, and
+                dedication, ensuring that we deliver exceptional HR consulting services tailored to your unique organizational needs.
               </p>
             </div>
           </div>
