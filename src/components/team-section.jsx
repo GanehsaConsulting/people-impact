@@ -113,8 +113,8 @@ export const TeamSection = () => {
                 className={`overflow-hidden group relative rounded-main p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer backdrop-blur-sm
     ${
       index === 0
-        ? "bg-gradient-to-br from-white to-gray-50/50 border border-secondaryLight/50 hover:shadow-main-1/20 dark:bg-[#131313] dark:border-[#119bd3]/20 dark:hover:shadow-[#119bd3]/30"
-        : "bg-gradient-to-br from-white to-gray-50/50 border border-secondaryLight/50 hover:shadow-main-3/20 dark:bg-[#131313] dark:border-[#8dbb3f]/20 dark:hover:shadow-[#8dbb3f]/30"
+        ? "bg-gradient-to-br from-white to-gray-50/50  hover:shadow-main-1/20 dark:bg-[#131313]  dark:hover:shadow-[#119bd3]/30"
+        : "bg-gradient-to-br from-white to-gray-50/50  hover:shadow-main-3/20 dark:bg-[#131313]  dark:hover:shadow-[#8dbb3f]/30"
     }`}
                 onClick={() => openModal(member)}
                 style={{
@@ -154,7 +154,6 @@ export const TeamSection = () => {
                       <div className="mb-4">
                         <h3 className="text-2xl font-bold text-darkColor dark:text-white leading-tight mb-1 group-hover:text-main-2 dark:group-hover:text-[#119bd3] transition-colors duration-300">{member.name}</h3>
                         <p className={`font-semibold text-lg mb-2 ${index === 0 ? "text-main-1 dark:text-[#119bd3]" : "text-main-3 dark:text-[#8dbb3f]"}`}>{member.position}</p>
-                        
                       </div>
                     </div>
                   </div>
