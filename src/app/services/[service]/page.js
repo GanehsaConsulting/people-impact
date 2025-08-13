@@ -23,12 +23,14 @@ import {
 } from 'react-icons/hi';
 import { IoIosArrowForward } from 'react-icons/io';
 import { servicesData } from '@/lib/servicesData';
+import { PiPersonArmsSpreadFill } from "react-icons/pi";
 
 // Icon mapping
 const SERVICE_ICONS = {
   'talent-acquisition-recruitment': HiOutlineUsers,
   'performance-management': HiOutlineChartBar,
   'employee-engagement-retention': HiOutlineHeart,
+  'training-development': PiPersonArmsSpreadFill,
   'compensation-benefits': HiOutlineCurrencyDollar,
   'payroll-services': HiOutlineCalculator,
   'hr-policies-procedures': HiOutlineDocumentText,
@@ -193,16 +195,6 @@ const ServiceCard = ({ service, index }) => {
         <p className="text-darkColor/70 dark:text-lightColor/70 leading-relaxed text-sm md:text-base group-hover:text-darkColor/80 dark:group-hover:text-lightColor/80">
           {service.description}
         </p>
-        <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
-          <span
-            className={`text-sm font-medium bg-gradient-to-r ${scheme.gradientColor} bg-clip-text text-transparent`}
-          >
-            Learn More
-          </span>
-          <FiArrowRight
-            className={`w-4 h-4 ${scheme.iconColor} transition-transform group-hover:translate-x-1`}
-          />
-        </div>
       </div>
 
       {/* Decorative Elements */}

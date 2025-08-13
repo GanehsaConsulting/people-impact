@@ -152,6 +152,40 @@ export const servicesData = {
     ctaDescription: "Contact us today to discover how our Employee Engagement & Retention services can help you create a motivated and dedicated workforce.",
   },
 
+  "training-development": {
+    id: 4,
+    title: "Training & Development",
+    subtitle: "Empowering Your People. Elevating Your Organization.",
+    description:
+      "When your people grow, your business grows with them. Our Training & Development services are designed to unlock potential, sharpen skills, and prepare your workforce to meet today’s challenges—and tomorrow’s opportunities. We combine practical learning with strategic vision to create a culture of continuous growth.",
+    heroImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    services: [
+      {
+        title: "Skills Gap Analysis & Learning Needs Assessment",
+        description: "We start by understanding where your team is today and where they need to be. Through targeted assessments, we identify skill gaps and map out the training pathways that will have the biggest impact on performance.",
+        icon: FaClipboardList,
+      },
+      {
+        title: "Customized Training Programs",
+        description:
+          "From leadership development to technical upskilling, our programs are tailored to your industry, culture, and goals—delivered in-person, online, or blended—to ensure learning is relevant, engaging, and immediately applicable.",
+        icon: FaHeart,
+      },
+      {
+        title: "Professional Development & Career Pathing",
+        description: "We help employees see a future with your organization by creating clear career pathways supported by ongoing learning. This builds capability while inspiring loyalty and motivation.",
+        icon: FaUserShield,
+      },
+      {
+        title: "Coaching & Mentoring Programs",
+        description: "Personalized guidance from experienced mentors accelerates growth. We structure programs that encourage knowledge sharing, build confidence, and foster leadership skills across all levels.",
+        icon: FaHandshake,
+      },
+    ],
+    ctaText: "Invest in Your Team. Invest in Your Future.",
+    ctaDescription: "Contact us today to discover how our Training & Development services can help you create a development strategy that keeps your workforce agile, confident, and ready for what’s next.",
+  },
+
   "compensation-benefits": {
     id: 5,
     title: "Compensation & Benefits",
