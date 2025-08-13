@@ -77,12 +77,6 @@ export const ServiceMenu = ({ expandedId, onClose }) => {
             slug: "employee-engagement-retention"
         },
         {
-            title: "Training & Development",
-            icon: <FaChalkboardTeacher />,
-            desc: "Develop skills through tailored learning",
-            slug: "training-development"
-        },
-        {
             title: "Compensation & Benefits",
             icon: <FaMoneyCheckAlt />,
             desc: "Design attractive pay and benefits",
