@@ -51,9 +51,7 @@ export const TeamSection = () => {
         "Project Management",
       ],
       linkedin: "https://www.linkedin.com/in/lady-meiske",
-      summary: "20+ years experience across multiple industries, 10 years in strategic HR leadership",
-      experience: "20+ Years",
-      specialty: "Strategic HR Leadership & Organizational Development",
+      summary: "Strategic HR leader with cross-industry experience in agritech, FMCG, hospitality, and education",
     },
     {
       id: 2,
@@ -64,9 +62,7 @@ export const TeamSection = () => {
       bio: "Siska is a Certified Human Resources Professional with over 18 years of experience across NGOs, donor-funded projects (World Bank, DFAT, USAID, etc), private companies, and start-ups. She holds a Bachelor's degree in Human Resources Management from Atma Jaya Catholic University, Jakarta. Previously, Siska served as the HR Director at an NGO, where she played a key role in strengthening the organization's HR functions, systems, and structure.\n\nHer expertise covers HR strategy, organizational development, compliance, change management, recruitment, contracts, compensation & benefit, performance management, HRIS, and policy design. She has led national HR operations, built HR systems from scratch, managed over 3,000 hires, and supported remote teams across Indonesia.\n\nAs an independent consultant, Siska has provided strategic advice to a diverse range of organizations—including wealth management firms, reinsurance companies, logistics firms, banks, NGOs, and early-stage start-ups—helping them establish ethical, scalable, and compliant HR practices. A people-centered leader and strategic partner, Siska is dedicated to aligning HR initiatives with organizational objectives while fostering inclusive, values-driven, and impactful workplaces.",
       expertise: ["HR Strategy", "Organizational Development", "Compliance", "Change Management", "Recruitment", "Contracts", "Compensation & Benefit", "Performance Management", "HRIS", "Policy Design"],
       linkedin: "https://www.linkedin.com/in/siska-rajagukguk-280b4988/",
-      summary: "Certified HR Professional with 18+ years across NGOs, private companies, and start-ups",
-      experience: "18+ Years",
-      specialty: "HR Strategy & Organizational Development",
+      summary: "Certified HR Professional specializing in organizational development and compliance across diverse sectors",
     },
   ];
 
@@ -158,7 +154,7 @@ export const TeamSection = () => {
                       <div className="mb-4">
                         <h3 className="text-2xl font-bold text-darkColor dark:text-white leading-tight mb-1 group-hover:text-main-2 dark:group-hover:text-[#119bd3] transition-colors duration-300">{member.name}</h3>
                         <p className={`font-semibold text-lg mb-2 ${index === 0 ? "text-main-1 dark:text-[#119bd3]" : "text-main-3 dark:text-[#8dbb3f]"}`}>{member.position}</p>
-                        <p className="text-sm text-darkColor/60 dark:text-white/60 font-medium">{member.specialty}</p>
+                        
                       </div>
                     </div>
                   </div>

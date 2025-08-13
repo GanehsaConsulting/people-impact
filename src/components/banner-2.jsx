@@ -116,7 +116,7 @@ export const BannerTwo = () => {
                                     </>
                                 ) : (
                                     <>
-                                        <span>Enroll Now</span>
+                                        <span>Enquire Now</span>
                                         <MdArrowOutward className="w-3 h-3 xs:w-4 xs:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                                     </>
                                 )}

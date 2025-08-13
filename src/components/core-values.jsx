@@ -139,7 +139,7 @@ export const CoreValues = () => {
       id: 3,
       title: "Empowerment",
       shortTitle: "Empowerment",
-      description: "We empower individuals and teams to take ownership of their growth, enabling them to actively contribute to the organization's success.",
+      description: "We empower individuals and teams to take ownership of their growth, enabling them to actively contribute to the organization’s success.",
       icon: FiTrendingUp,
       color: "text-sec-3",
       bgColor: "bg-sec-3/10 dark:bg-sec-3/20",
