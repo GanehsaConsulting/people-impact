@@ -75,7 +75,7 @@ export const OurStory = () => {
   ];
 
   return (
-    <main className="">
+    <main className= "">
       {/* Vision Section - Responsive Layout */}
       <section className="margin spacing relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
@@ -104,10 +104,10 @@ export const OurStory = () => {
 
       {/* Mission Section - Enhanced with Icons */}
       <section className="margin spacing">
-        <div className="space-y-4 md:space-y-6 text-center">
+        <div className="space-y-4 md:space-y-6 text-left">
           <Title>Our Mission</Title>
           <div className="space-y-4">
-            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-center">
+            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-left">
               Our mission is founded on the belief that organizations flourish when their people thrive. Through tailored consulting strategies, we are dedicated to:
             </p>
           </div>

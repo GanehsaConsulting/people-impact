@@ -30,7 +30,7 @@ export const BannerTwo = () => {
 
     return (
         <>
-            <main className="mx-0 my-0 md:my-4 h-[60vh] sm:h-[70vh] md:h-[90vh] relative overflow-hidden flex flex-col group">
+            <main className="mx-0 my-0 md:my-4 h-[60vh] sm:h-[70vh] md:h-[90vh] h-90vh relative overflow-hidden flex flex-col group">
                 {/* Background Image with Enhanced Effects */}
                 <div className="absolute inset-0 rounded-none overflow-hidden">
                     <img
@@ -45,79 +45,43 @@ export const BannerTwo = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
                 </div>
 
-                {/* Stats Cards - Mobile Hidden, Desktop Visible */}
-                {/* <div className="hidden  lg:block absolute bottom-6 right-6 space-y-3">
-                    <div className="flex items-center gap-2">
-                        <div className="min-w-[30vh] bg-white/10 backdrop-blur-md rounded-xl p-4 text-white border border-white/20">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-sec-2/30 rounded-lg">
-                                    <FiUsers className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <div className="text-sm opacity-90">Organizations Served</div>
-                                    <div className="text-xl font-bold">500+</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="min-w-[30vh] bg-white/10 backdrop-blur-md rounded-xl p-4 text-white border border-white/20">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-sec-4/30 rounded-lg">
-                                    <FiTrendingUp className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <div className="text-sm opacity-90">Success Rate</div>
-                                    <div className="text-xl font-bold">98%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> */}
-
-                {/* Main Content - Responsive Positioning */}
-                <div className="absolute bottom-6 sm:bottom-8 md:bottom-17 left-3 sm:left-4 md:left-15 right-3 sm:right-4 md:right-15">
-                    <div className="max-w-4xl text-white space-y-3 sm:space-y-4 md:space-y-6">
-                        {/* Badge */}
-                        {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-medium">
-                            <FiCheckCircle className="w-4 h-4 text-green-400" />
-                            <span>Trusted by Industry Leaders</span>
-                        </div> */}
-
+                {/* Main Content - Enhanced Responsive Positioning */}
+                <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-12 xl:bottom-17 left-2 sm:left-3 md:left-4 lg:left-8 xl:left-15 right-2 sm:right-3 md:right-4 lg:right-8 xl:right-15">
+                    <div className="max-w-4xl text-white space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
                         {/* Main Heading with Enhanced Responsive Typography */}
-                        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight drop-shadow-2xl leading-tight">
+                        <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight drop-shadow-2xl leading-tight">
                             <span className="block">Empowering People</span>
                             <span className="block bg-gradient-to-r from-white via-sky-200 to-white bg-clip-text text-transparent">
                                 Transforming Organizations
                             </span>
                         </h1>
 
-                        {/* Description with Better Responsive Typography */}
-                        <div className="max-w-3xl">
-                            <p className="text-xs xs:text-sm md:text-base leading-relaxed text-white/90 backdrop-blur-sm">
-                                <span className="hidden md:block">
-                                    At People Impact, we recognized that every organization is distinct, which is why we adopt a tailored approach for each engagement. By gaining a thorough understanding of your goals, challenges, and opportunities, we create customized solutions that align perfectly with your vision for success. Our comprehensive methodology integrates business strategy, leadership development, and process optimization, empowering our clients to flourish in a competitive environment.
-
+                        {/* Description with Better Responsive Typography and Spacing */}
+                        <div className="max-w-2xl sm:max-w-3xl">
+                            <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-white/90 backdrop-blur-sm">
+                                <span className="">
+                                    At People Impact, we recognized that every organization is distinct, which is why we adopt a tailored approach for each engagement. By gaining a thorough understanding of your goals, challenges, and opportunities, we create customized solutions that align perfectly with your vision for success. 
+                                    <span className="hidden sm:inline"> Our comprehensive methodology integrates business strategy, leadership development, and process optimization, empowering our clients to flourish in a competitive environment.</span>
                                 </span>
                             </p>
                         </div>
 
                         {/* Enhanced Responsive Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 pt-2 w-full">
+                        <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-1 sm:pt-2 w-full max-w-md xs:max-w-none">
                             <Button
                                 onClick={handleEnrollNow}
                                 disabled={isEnrolling}
-                                className="bg-white dark:bg-black dark:text-white hover:bg-gray-100 text-darkColor font-semibold px-4 xs:px-6 py-2.5 xs:py-3 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group flex items-center justify-center gap-2 min-w-[140px] xs:min-w-[160px] text-sm xs:text-base"
+                                className="bg-white dark:bg-black dark:text-white hover:bg-gray-100 text-darkColor font-semibold px-3 xs:px-4 sm:px-6 py-2 xs:py-2.5 sm:py-3 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group flex items-center justify-center gap-1.5 xs:gap-2 min-w-[120px] xs:min-w-[140px] sm:min-w-[160px] text-xs xs:text-sm sm:text-base"
                             >
                                 {isEnrolling ? (
                                     <>
-                                        <div className="w-3 h-3 xs:w-4 xs:h-4 border-2 border-main-1 border-t-transparent rounded-full animate-spin"></div>
-                                        <span className="text-xs xs:text-sm">Opening Form...</span>
+                                        <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-main-1 border-t-transparent rounded-full animate-spin"></div>
+                                        <span className="text-xs sm:text-sm">Opening Form...</span>
                                     </>
                                 ) : (
                                     <>
                                         <span>Enquire Now</span>
-                                        <MdArrowOutward className="w-3 h-3 xs:w-4 xs:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                                        <MdArrowOutward className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                                     </>
                                 )}
                             </Button>
@@ -125,10 +89,10 @@ export const BannerTwo = () => {
                             <Button
                                 onClick={scrollToExplore}
                                 variant="glass"
-                                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold px-4 xs:px-6 py-2.5 xs:py-3 transition-all duration-300 transform hover:scale-105 group flex items-center justify-center gap-2 text-sm xs:text-base"
+                                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold px-3 xs:px-4 sm:px-6 py-2 xs:py-2.5 sm:py-3 transition-all duration-300 transform hover:scale-105 group flex items-center justify-center gap-1.5 xs:gap-2 text-xs xs:text-sm sm:text-base"
                             >
                                 <span>Explore Services</span>
-                                <MdArrowDownward className="w-3 h-3 xs:w-4 xs:h-4 group-hover:translate-y-1 transition-transform duration-300" />
+                                <MdArrowDownward className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-y-1 transition-transform duration-300" />
                             </Button>
                         </div>
                     </div>

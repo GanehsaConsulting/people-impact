@@ -10,7 +10,7 @@ export const JobBoard = () => {
     const [isUploading, setIsUploading] = useState(false);
     const [isUploaded, setIsUploaded] = useState(false);
 
-    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdAF8d7IHa6hM0UjzDQ0f6hzOBbCuPsKewngojLdrhsW-5CkQ/viewform";
+    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScVPZxIsnAAnQWgRvr3Sdg7LeRkbHMEghjh5Ssc1asi8QNHFw/viewform";
 
     const handleFileSelect = (event) => {
         const file = event.target.files[0];
@@ -69,7 +69,7 @@ export const JobBoard = () => {
     };
 
     return (
-        <section className="margin spacing text-xl">
+        <section className="margin spacing sm:text-xl text-base">
             <div className="">
                 {/* Header */}
                 <div className="mb-12 space-y-4">
@@ -97,7 +97,7 @@ export const JobBoard = () => {
                                 <div className="inline-flex items-center gap-2 text-2xl font-semibold text-darkColor dark:text-lightColor mb-2">
                                     <FaPaperclip /> Drop your CV here:
                                 </div>
-                                <p className="text-xl text-darkColor/70 dark:text-lightColor/70">
+                                <p className="sm:text-xl text-base text-darkColor/70 dark:text-lightColor/70">
                                     Upload your CV in PDF format (Max 10MB)
                                 </p>
                             </div>
@@ -117,7 +117,7 @@ export const JobBoard = () => {
                                             <p className="text-lg font-medium text-darkColor dark:text-lightColor mb-2">
                                                 Click to upload or drag and drop
                                             </p>
-                                            <p className="text-xl text-darkColor/60 dark:text-lightColor/60">
+                                            <p className="sm:text-xl text-base text-darkColor/60 dark:text-lightColor/60">
                                                 PDF files only
                                             </p>
                                         </div>
@@ -131,7 +131,7 @@ export const JobBoard = () => {
                                                 <p className="font-medium text-darkColor dark:text-lightColor truncate">
                                                     {selectedFile.name}
                                                 </p>
-                                                <p className="text-xl text-darkColor/60 dark:text-lightColor/60">
+                                                <p className="sm:text-xl text-base text-darkColor/60 dark:text-lightColor/60">
                                                     {formatFileSize(selectedFile.size)}
                                                 </p>
                                             </div>
@@ -168,7 +168,7 @@ export const JobBoard = () => {
                                                     <FiCheck className="w-5 h-5" />
                                                     <p className="font-medium">CV uploaded successfully!</p>
                                                 </div>
-                                                <p className="text-xl text-darkColor/70 dark:text-lightColor/70 mt-1">
+                                                <p className="sm:text-xl text-base text-darkColor/70 dark:text-lightColor/70 mt-1">
                                                     Our team will review your profile and contact you if there's a suitable opportunity.
                                                 </p>
                                             </div>
@@ -196,7 +196,7 @@ export const JobBoard = () => {
                             <div className="absolute inset-0 flex items-center">
                                 <div className="w-full border-t border-secondaryLight dark:border-secondaryDark"></div>
                             </div>
-                            <div className="relative flex justify-center text-xl">
+                            <div className="relative flex justify-center sm:text-xl text-base">
                                 <span className="px-4 bg-white dark:bg-black text-darkColor/60 dark:text-lightColor/60">
                                     OR
                                 </span>
@@ -209,7 +209,7 @@ export const JobBoard = () => {
                                 <div className="inline-flex items-center gap-2 text-2xl font-semibold text-darkColor dark:text-lightColor mb-2">
                                     <FaNewspaper /> Complete Application Form
                                 </div>
-                                <p className="text-xl text-darkColor/70 dark:text-lightColor/70">
+                                <p className="sm:text-xl text-base text-darkColor/70 dark:text-lightColor/70">
                                     Fill out our comprehensive form with your details and upload your CV
                                 </p>
                             </div>
@@ -217,10 +217,10 @@ export const JobBoard = () => {
                             <div className="space-y-6">
                                 {/* Form Preview */}
                                 <div className="bg-main-3/5 dark:bg-main-3/10 rounded-secondary p-6">
-                                    <h4 className="font-semibold text-darkColor text-xl dark:text-lightColor mb-3">
+                                    <h4 className="font-semibold text-darkColor sm:text-xl text-base dark:text-lightColor mb-3">
                                         What's included in the form:
                                     </h4>
-                                    <ul className="space-y-2 text-xl text-darkColor/80 dark:text-lightColor/80">
+                                    <ul className="space-y-2 sm:text-xl text-base text-darkColor/80 dark:text-lightColor/80">
                                         <li className="flex items-center gap-2">
                                             <div className="w-2 h-2 bg-main-3 rounded-full"></div>
                                             Personal Information & Contact Details
@@ -233,17 +233,13 @@ export const JobBoard = () => {
                                             <div className="w-2 h-2 bg-main-3 rounded-full"></div>
                                             CV Upload Section
                                         </li>
-                                        <li className="flex items-center gap-2">
-                                            <div className="w-2 h-2 bg-main-3 rounded-full"></div>
-                                            Career Preferences
-                                        </li>
                                     </ul>
                                 </div>
 
                                 {/* Open Form Button */}
                                 <button
                                     onClick={handleGoogleFormSubmit}
-                                    className="w-full bg-main-3 hover:bg-main-4 text-white font-medium py-4 px-6 rounded-secondary transition-colors duration-200 flex items-center justify-center gap-3 group"
+                                    className="w-full bg-main-3 hover:bg-main-4 text-white font-medium py-4 sm:px-6 px-3 rounded-secondary transition-colors duration-200 flex items-center justify-center gap-3 group"
                                 >
                                     <span>Open Application Form</span>
                                     <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -264,7 +260,7 @@ export const JobBoard = () => {
                                     <h4 className="font-semibold text-darkColor dark:text-lightColor mb-2 flex items-center gap-2">
                                         Privacy & Confidentiality
                                     </h4>
-                                    <p className="text-xl text-darkColor/80 dark:text-lightColor/80 leading-relaxed">
+                                    <p className="sm:text-xl text-base text-darkColor/80 dark:text-lightColor/80 leading-relaxed">
                                         Your information will be kept confidential and only used for recruitment purposes.
                                         We comply with data protection regulations and will not share your information
                                         with third parties without your consent.
@@ -275,7 +271,7 @@ export const JobBoard = () => {
 
                         {/* Contact Info */}
                         <div className="text-center p-6 bg-white dark:bg-secondaryDark rounded-secondary">
-                            <p className="text-xl text-darkColor/70 dark:text-lightColor/70 mb-2">
+                            <p className="sm:text-xl text-base text-darkColor/70 dark:text-lightColor/70 mb-2">
                                 Have questions about opportunities?
                             </p>
                             <a
