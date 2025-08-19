@@ -107,7 +107,7 @@ export const OurStory = () => {
         <div className="space-y-4 md:space-y-6 text-left">
           <Title>Our Mission</Title>
           <div className="space-y-4">
-            <p className="text-lg md:text-xl text-main-3 font-medium leading-relaxed text-left">
+            <p className="text-base sm:text-lg text-main-3 font-medium leading-relaxed text-left">
               Our mission is founded on the belief that organizations flourish when their people thrive. Through tailored consulting strategies, we are dedicated to:
             </p>
           </div>

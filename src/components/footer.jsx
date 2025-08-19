@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FiPhone, FiMail, FiMapPin, FiExternalLink, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiMail, FiMapPin, FiExternalLink, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa";
 
 // Configuration for document images
 const DOCUMENTS = {
@@ -201,14 +202,14 @@ export const Footer = () => {
 
                 <div>
                   <a
-                    href="tel:+6281297770201"
+                    href="https://api.whatsapp.com/send?phone=6281297770201"
                     className="group flex items-start space-x-4 text-darkColor/70 dark:text-lightColor/70 hover:text-main-1 dark:hover:text-main-1 transition-all duration-300 px-4 py-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 backdrop-blur-sm"
                   >
                     <div className="bg-gradient-to-r from-main-3 to-sec-4 p-3 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
-                      <FiPhone className="w-5 h-5" />
+                      <FaWhatsapp className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-darkColor dark:text-lightColor">Phone</p>
+                      <p className="font-medium text-darkColor dark:text-lightColor">Whatsapp</p>
                       <p className="text-sm">+62 812 9777 0201</p>
                     </div>
                   </a>
