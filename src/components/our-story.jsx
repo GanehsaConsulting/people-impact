@@ -15,7 +15,7 @@ export const OurStory = () => {
     {
       id: 2,
       title: "Empowering Leadership",
-      description: "Developing strong and dynamic leaders and teams that promote collaboration, innovation, and a vibrant workplace culture",
+      description: "Developing strong and dynamic leaders and teams that promote collaboration, innovation, and a vibrant workplace culture.",
       icon: FaCrown,
       color: "from-main-3 to-main-3/80",
       bgColor: "bg-main-3/5 dark:bg-main-3/10",
