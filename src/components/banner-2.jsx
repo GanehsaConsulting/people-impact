@@ -67,7 +67,7 @@ export const BannerTwo = () => {
                         </div>
 
                         {/* Enhanced Responsive Action Buttons */}
-                        <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-1 sm:pt-2 w-full max-w-md xs:max-w-none">
+                        <div className="flex sm:flex-row flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-1 sm:pt-2 w-full max-w-md xs:max-w-none">
                             <Button
                                 onClick={handleEnrollNow}
                                 disabled={isEnrolling}
